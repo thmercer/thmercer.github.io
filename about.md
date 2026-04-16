@@ -5,7 +5,9 @@ title: About
 
 ## T.H. Mercer
 
-Fiction writer. [Whatever you want here — former engineer, working on a novel,
-published in X, Y, Z.]
+Former engineer. Fiction writer. Working on it.
 
-Stories appear in *[venues]*.
+Speculative fiction — near-future, sometimes far. Stories where 
+things get hard and people find ways to be better than they expected.
+
+Also occasional essays, posted here.
