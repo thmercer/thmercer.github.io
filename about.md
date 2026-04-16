@@ -7,8 +7,6 @@ title: About
 <img class="about-avatar" src="/assets/images/thmercer-avatar.webp" alt="T. H. Mercer" width="104" height="104" decoding="async">
 <div class="about-body" markdown="1">
 
-## T. H. Mercer
-
 Former engineer. Fiction writer. Working on it.
 
 Speculative fiction — near-future, sometimes far. Stories where
