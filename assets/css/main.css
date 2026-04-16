@@ -1,0 +1,54 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  line-height: 1.75;
+  color: #1a1a1a;
+  background: #fafaf8;
+  max-width: 65ch;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 5vw, 3rem) 1.25rem;
+}
+
+a { color: inherit; text-underline-offset: 3px; }
+a:hover { opacity: 0.6; }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0dc;
+}
+
+.site-title { font-weight: 600; text-decoration: none; }
+
+nav { display: flex; gap: 1.5rem; font-size: 0.9rem; }
+nav a { text-decoration: none; }
+
+h1 { font-size: clamp(1.4rem, 1.2rem + 1vw, 1.9rem); line-height: 1.25; margin-bottom: 0.4rem; }
+h2 { font-size: 1.15rem; margin: 2rem 0 0.5rem; }
+
+time { display: block; font-size: 0.85rem; color: #888; margin-bottom: 2rem; font-style: italic; }
+
+p { margin-bottom: 1.25rem; }
+p:last-child { margin-bottom: 0; }
+
+article { margin-bottom: 3rem; }
+
+/* Post list on index */
+.post-list { list-style: none; }
+.post-list li { margin-bottom: 2rem; }
+.post-list .post-meta { font-size: 0.85rem; color: #888; font-style: italic; }
+.post-list a { text-decoration: none; font-weight: 600; }
+.post-list a:hover { opacity: 0.6; }
+
+footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0dc;
+  font-size: 0.85rem;
+  color: #888;
+}

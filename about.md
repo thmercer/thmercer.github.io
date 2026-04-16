@@ -1,7 +1,11 @@
 ---
-layout: page
+layout: default
 title: About
-permalink: /about/
 ---
 
-This is the about page. Edit `about.md` in the repository root to change this content.
+## T.H. Mercer
+
+Fiction writer. [Whatever you want here — former engineer, working on a novel,
+published in X, Y, Z.]
+
+Stories appear in *[venues]*.

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  {% feed_meta %}
+  {% seo %}
+</head>
+<body>
+  <header>
+    <a href="/" class="site-title">{{ site.title }}</a>
+    <nav>
+      <a href="/">Writing</a>
+      <a href="/about">About</a>
+      <a href="/feed.xml">RSS</a>
+    </nav>
+  </header>
+  <main>{{ content }}</main>
+  <footer>
+    <a href="https://bsky.app/profile/thmercer.bsky.social" target="_blank" rel="noopener">Bluesky</a>
+  </footer>
+</body>
+</html>
