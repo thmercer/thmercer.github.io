@@ -9,10 +9,9 @@ title: About
 </figure>
 <div class="about-body" markdown="1">
 
-Former engineer. Speculative fiction and essays. Working on it.
+Former engineer. Speculative fiction and essays.
 
-This site holds speculative fiction — near-future, sometimes far — and essays. Stories where
-things get hard and people find ways to be better than they expected.
+This site holds speculative fiction — near-future, sometimes far — and essays. Stories where things get hard and people find ways to be better than they expected.
 
 Essays appear when something won’t stay in the margins.
 

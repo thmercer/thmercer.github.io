@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<p class="site-intro">I'm T. H. Mercer — speculative fiction. Essays in the meantime.</p>
+<p class="site-intro">I'm T. H. Mercer — speculative fiction and essays. Stories where things get hard. People who rise to meet them.</p>
 
 {% assign posts = site.posts %}
 {% if posts.size > 0 %}
