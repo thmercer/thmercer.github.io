@@ -1,7 +1,6 @@
 title: T.H. Mercer
 description: Fiction.
 url: "https://thmercer.github.io"
-banner_image: "/assets/images/banner.png"
 permalink: /:year/:slug/
 markdown: kramdown
 plugins:

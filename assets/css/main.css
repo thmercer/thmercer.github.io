@@ -23,16 +23,6 @@ header {
   border-bottom: 1px solid #e0e0dc;
 }
 
-.site-banner {
-  margin: -1rem 0 2rem;
-}
-
-.site-banner img {
-  display: block;
-  width: 100%;
-  border-radius: 8px;
-}
-
 .site-title { font-weight: 600; text-decoration: none; }
 
 nav { display: flex; gap: 1.5rem; font-size: 0.9rem; }
