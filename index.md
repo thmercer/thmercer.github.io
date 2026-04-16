@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<p class="site-intro">I’m T. H. Mercer — speculative fiction and essays on this site. Essays appear when something won’t stay in the margins.</p>
+<p class="site-intro">I'm T. H. Mercer — speculative fiction. Essays in the meantime.</p>
 
 {% assign posts = site.posts %}
 {% if posts.size > 0 %}

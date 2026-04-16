@@ -2,7 +2,7 @@
 layout: post
 title: "The Funeral Was Last Decade"
 date: 2026-04-12
-listing_hook: "Generative AI makes a satisfying villain for what happened to writing. The receipts say the squeeze started long before a chatbot could finish this sentence."
+listing_hook: "British author median income fell 60% in real terms between 2006 and 2022. The full-time professional writer population halved. The midlist collapsed. ChatGPT shipped in November 2022. One of these things did not cause the others."
 ---
 
 Writing communities are at war over artificial intelligence. The villain is satisfyingly legible: a technology that ingests human creativity and produces cheaper approximations of it. If you write with AI, you've felt the heat. You've been called a fraud, a scab, a collaborator in the destruction of a profession that matters.
