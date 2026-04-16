@@ -11,10 +11,10 @@ title: About
 
 Former engineer. Fiction writer. Working on it.
 
-Speculative fiction — near-future, sometimes far. Stories where
+This site holds speculative fiction — near-future, sometimes far — and essays. Stories where
 things get hard and people find ways to be better than they expected.
 
-Also occasional essays, posted here.
+Essays show up when something won’t stay in the margins.
 
 </div>
 </div>

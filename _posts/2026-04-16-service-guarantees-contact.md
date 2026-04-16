@@ -2,7 +2,7 @@
 layout: post
 title: "Service Guarantees Contact"
 date: 2026-04-16
-excerpt: "Heinlein's Starship Troopers premise is usually read as moral screening for the vote; contact-hypothesis research suggests mandatory service instead works as structured, high-stakes exposure across lines that would otherwise stay sorted."
+excerpt: "*Starship Troopers* is taught like a test of civic virtue. The messier read is about who you stop sorting as the enemy once your life depends on them in a room you did not choose."
 ---
 
 Everyone argues about *Starship Troopers*. They've been arguing about it since 1959\. The left calls it fascist; the right calls it aspirational. Both sides accept Robert Heinlein's premise without questioning it: that mandatory federal service, as a prerequisite for the franchise, works because it screens for civic virtue. The Federation's citizens earn the vote by demonstrating that they value the group above themselves. Sacrifice reveals character. Service proves worthiness.
