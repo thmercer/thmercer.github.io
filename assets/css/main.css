@@ -52,3 +52,24 @@ footer {
   font-size: 0.85rem;
   color: #888;
 }
+
+/* About: avatar as drop cap */
+.about-with-avatar::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.about-with-avatar .about-avatar {
+  float: left;
+  width: clamp(4.25rem, 11vw, 6.5rem);
+  height: clamp(4.25rem, 11vw, 6.5rem);
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0.12em 1.1rem 0.65rem 0;
+  shape-outside: circle(50%);
+}
+
+.about-with-avatar .about-body > h2:first-child {
+  margin-top: 0;
+}
