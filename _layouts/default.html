@@ -11,17 +11,18 @@
   {% seo %}
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header>
-    <a href="/" class="site-title">{{ site.title }}</a>
+    <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
     <nav>
-      <a href="/">Writing</a>
-      <a href="/about">About</a>
-      <a href="/feed.xml">RSS</a>
+      <a href="{{ '/' | relative_url }}">Writing</a>
+      <a href="{{ '/about/' | relative_url }}">About</a>
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
     </nav>
   </header>
-  <main>{{ content }}</main>
+  <main id="main">{{ content }}</main>
   <footer>
-    <a href="https://bsky.app/profile/thmercer.bsky.social" target="_blank" rel="noopener">Bluesky</a>
+    <a href="https://bsky.app/profile/thmercer.bsky.social" target="_blank" rel="noopener me">Bluesky</a>
   </footer>
 </body>
 </html>

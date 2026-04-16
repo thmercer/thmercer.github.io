@@ -13,6 +13,47 @@ body {
 
 a { color: inherit; text-underline-offset: 3px; }
 a:hover { opacity: 0.6; }
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+  opacity: 1;
+}
+a:focus:not(:focus-visible) { outline: none; }
+
+.skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.skip-link:focus {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1000;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  background: #1a1a1a;
+  color: #fafaf8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-radius: 2px;
+}
+
+.site-intro {
+  margin-bottom: 2.25rem;
+  color: #333;
+}
 
 header {
   display: flex;

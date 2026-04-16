@@ -2,6 +2,7 @@
 layout: post
 title: "Service Guarantees Contact"
 date: 2026-04-16
+excerpt: "Heinlein's Starship Troopers premise is usually read as moral screening for the vote; contact-hypothesis research suggests mandatory service instead works as structured, high-stakes exposure across lines that would otherwise stay sorted."
 ---
 
 Everyone argues about *Starship Troopers*. They've been arguing about it since 1959\. The left calls it fascist; the right calls it aspirational. Both sides accept Robert Heinlein's premise without questioning it: that mandatory federal service, as a prerequisite for the franchise, works because it screens for civic virtue. The Federation's citizens earn the vote by demonstrating that they value the group above themselves. Sacrifice reveals character. Service proves worthiness.
@@ -43,3 +44,11 @@ Heinlein built a fictional society where service produced functional democracy a
 We had an institution that did this, imperfectly and inequitably, for decades. We eliminated it in 1973 and replaced it with nothing. The polarization curve that followed is not mysterious if you take the contact mechanism seriously. Neither is the fact that no one in a position to restore it has sufficient incentive to try.
 
 Heinlein's question was whether citizens should earn the franchise through service. The better question: can a democracy survive without forcing its citizens to know each other?
+
+## Sources
+
+- [Contact hypothesis](https://en.wikipedia.org/wiki/Contact_hypothesis) — readable summary of Allport’s line of work; for meta-analytic treatment see Pettigrew & Tropp (2006) and later updates.
+- [Chagai Weiss — compulsory military service and affective polarization](https://cddrl.fsi.stanford.edu/events/compulsory-military-service-reduces-affective-polarization) — Stanford Freeman Spogli Institute event describing the European RD design referenced above (with pointers to working papers and published versions).
+- [Papadakis, *The Political Impact of Conscription*](https://thesis.eur.nl/pub/70224) — Erasmus University thesis on conscription and political outcomes; one accessible entry point in the same research ecosystem as the populism / parochialism claim in the essay.
+- [H.R.163 (108th Congress)](https://www.congress.gov/bill/108th-congress/house-bill/163) — early “universal service” / conscription-related legislation associated with Representative Rangel’s repeated introductions in the 2000s–2010s.
+- [Carnegie Corporation, national service initiative](https://www.carnegie.org/news/articles/new-support-state-and-national-service-carnegie-corporation-new-york/) — reporting on contemporary national-service coalitions and convenings in the same policy conversation as the 2025 summit mentioned above.

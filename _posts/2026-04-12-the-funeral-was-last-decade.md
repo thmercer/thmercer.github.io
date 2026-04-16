@@ -2,6 +2,7 @@
 layout: post
 title: "The Funeral Was Last Decade"
 date: 2026-04-12
+excerpt: "UK author income data shows the profession’s economic squeeze long predates ChatGPT; recent surveys naming AI are describing a collapse that was already underway."
 ---
 
 Writing communities are at war over artificial intelligence. The villain is satisfyingly legible: a technology that ingests human creativity and produces cheaper approximations of it. If you write with AI, you've felt the heat. You've been called a fraud, a scab, a collaborator in the destruction of a profession that matters.
@@ -49,3 +50,9 @@ The human contribution is not editing AI prose. It is the willingness to reach f
 Writing as a practice will survive; humans need to make meaning through language regardless of economics. Writing as a profession is probably gone for good. AI showed up after the funeral and got blamed for the body.
 
 The only question is whether what you build next is worth reading.
+
+## Sources
+
+- [UK Authors’ Earnings and Contracts 2022](https://www.create.ac.uk/blog/2022/12/07/uk-authors-earnings-and-contracts-2022-a-survey-of-60000-writers/) — CREATe report for the ALCS; includes the longitudinal series (from 2006) behind the income figures above.
+- [Society of Authors, report on the AI and copyright consultation](https://societyofauthors.org/2025/03/26/soa-report-into-authors-views-on-the-ai-and-copyright-consultation/) — 2025 member survey and write-up in the same news cycle as the “AI harmed earnings” headlines referenced in the essay.
+- [The Long Tail](https://en.wikipedia.org/wiki/The_Long_Tail) — concise overview of Chris Anderson’s thesis as it relates to digital distribution and “head vs. tail” market structure.

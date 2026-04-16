@@ -4,7 +4,7 @@ Jekyll site for [GitHub Pages](https://pages.github.com/), using the [`github-pa
 
 ## Local preview
 
-**Use an HTTP URL.** Opening `_site/**/*.html` directly in the browser (`file://`) will not load `/assets/css/main.css` (the leading `/` resolves from the filesystem root), so layout rules like `float` and `border-radius` will appear “missing” until you add them by hand in DevTools.
+**Use an HTTP URL.** Built pages use **site-root-relative** URLs (paths beginning with `/` for CSS, navigation, and assets). Opening `_site/**/*.html` via `file://` resolves those against the machine root, not the file’s directory, so stylesheets and many links will not load. Liquid’s `relative_url` filter keeps URLs correct when `baseurl` is set (for example project Pages); it does **not** produce `file://`-safe paths. Use `jekyll serve` (below) for an accurate preview.
 
 ### Docker (recommended)
 
