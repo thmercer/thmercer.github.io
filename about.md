@@ -3,7 +3,7 @@ layout: default
 title: About
 ---
 
-## T.H. Mercer
+## T. H. Mercer
 
 Former engineer. Fiction writer. Working on it.
 
