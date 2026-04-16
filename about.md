@@ -5,7 +5,7 @@ title: About
 
 <div class="about-with-avatar">
 <figure class="about-avatar-float">
-<img class="about-avatar" src="/assets/images/thmercer-avatar.webp" alt="T. H. Mercer" width="104" height="104" decoding="async">
+<img class="about-avatar" src="{{ '/assets/images/thmercer-avatar.webp' | relative_url }}" alt="T. H. Mercer" width="104" height="104" decoding="async">
 </figure>
 <div class="about-body" markdown="1">
 

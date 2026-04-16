@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+# Reproducible Jekyll via Docker (matches Gemfile / github-pages).
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+CMD="${1:-build}"
+shift || true
+
+docker_run() {
+  docker run --rm \
+    -v "$ROOT:/app" \
+    -w /app \
+    -e BUNDLE_PATH=/app/vendor/bundle \
+    -e BUNDLE_APP_CONFIG=/app/.bundle \
+    "$@"
+}
+
+case "$CMD" in
+  build)
+    docker_run ruby:3.2-bookworm bash -lc '
+      set -e
+      gem install bundler --no-document
+      bundle install --jobs 4
+      bundle exec jekyll build
+    '
+    ;;
+  serve)
+    docker_run -p 4000:4000 -it ruby:3.2-bookworm bash -lc '
+      set -e
+      gem install bundler --no-document
+      bundle install --jobs 4
+      exec bundle exec jekyll serve --host 0.0.0.0
+    '
+    ;;
+  bash|shell)
+    docker_run -it ruby:3.2-bookworm bash -lc "exec bash -l"
+    ;;
+  *)
+    echo "Usage: $0 {build|serve|bash}" >&2
+    echo "  build  — write to _site/" >&2
+    echo "  serve  — http://127.0.0.1:4000 (do not open _site/*.html via file://)" >&2
+    exit 1
+    ;;
+esac

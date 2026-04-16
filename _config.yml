@@ -6,4 +6,7 @@ markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-exclude: [README.md]
+exclude:
+  - README.md
+  - vendor
+  - bin

@@ -4,6 +4,22 @@ Jekyll site for [GitHub Pages](https://pages.github.com/), using the [`github-pa
 
 ## Local preview
 
+**Use an HTTP URL.** Opening `_site/**/*.html` directly in the browser (`file://`) will not load `/assets/css/main.css` (the leading `/` resolves from the filesystem root), so layout rules like `float` and `border-radius` will appear “missing” until you add them by hand in DevTools.
+
+### Docker (recommended)
+
+From the repo root:
+
+```bash
+chmod +x bin/jekyll   # once
+./bin/jekyll build    # writes _site/
+./bin/jekyll serve    # http://127.0.0.1:4000
+```
+
+Gems are cached under `vendor/bundle/` (gitignored).
+
+### Native Ruby
+
 With Ruby and Bundler installed:
 
 ```bash
@@ -12,13 +28,6 @@ bundle exec jekyll serve
 ```
 
 Then open http://127.0.0.1:4000.
-
-Without a local Ruby toolchain, you can use Docker (from this directory):
-
-```bash
-docker run --rm -it -p 4000:4000 -v "$PWD":/app -w /app ruby:3.2-bookworm bash -lc \
-  "gem install bundler --no-document && bundle install && bundle exec jekyll serve --host 0.0.0.0"
-```
 
 ## GitHub Pages
 

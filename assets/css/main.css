@@ -53,9 +53,11 @@ footer {
   color: #888;
 }
 
-/* About: circular avatar + text wrap (float + shape-outside on wrapper) */
-.about-with-avatar {
-  display: flow-root;
+/* About: circular avatar + text wrap (needs main.css loaded — use jekyll serve, not file://) */
+.about-with-avatar::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 .about-with-avatar .about-avatar-float {
@@ -67,6 +69,7 @@ footer {
   border: 0;
   border-radius: 50%;
   overflow: hidden;
+  clip-path: circle(50% at 50% 50%);
   shape-outside: circle(50%);
   -webkit-shape-outside: circle(50%);
 }
@@ -75,6 +78,7 @@ footer {
   display: block;
   width: 100%;
   height: 100%;
+  max-width: none;
   object-fit: cover;
   border-radius: 0;
 }
