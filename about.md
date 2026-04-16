@@ -9,12 +9,12 @@ title: About
 </figure>
 <div class="about-body" markdown="1">
 
-Former engineer. Fiction writer. Working on it.
+Former engineer. Speculative fiction and essays. Working on it.
 
 This site holds speculative fiction — near-future, sometimes far — and essays. Stories where
 things get hard and people find ways to be better than they expected.
 
-Essays show up when something won’t stay in the margins.
+Essays appear when something won’t stay in the margins.
 
 </div>
 </div>

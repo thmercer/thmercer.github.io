@@ -2,7 +2,7 @@
 layout: post
 title: "The Funeral Was Last Decade"
 date: 2026-04-12
-excerpt: "Generative AI makes a satisfying villain for what happened to writing. The receipts say the squeeze started long before a chatbot could finish this sentence."
+listing_hook: "Generative AI makes a satisfying villain for what happened to writing. The receipts say the squeeze started long before a chatbot could finish this sentence."
 ---
 
 Writing communities are at war over artificial intelligence. The villain is satisfyingly legible: a technology that ingests human creativity and produces cheaper approximations of it. If you write with AI, you've felt the heat. You've been called a fraud, a scab, a collaborator in the destruction of a profession that matters.
