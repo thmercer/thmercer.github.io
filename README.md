@@ -13,10 +13,50 @@ From the repo root:
 ```bash
 chmod +x bin/jekyll   # once
 ./bin/jekyll build    # writes _site/
-./bin/jekyll serve    # http://127.0.0.1:4000
+./bin/jekyll serve    # foreground on :4000, Ctrl-C to stop
 ```
 
 Gems are cached under `vendor/bundle/` (gitignored).
+
+### LAN preview from the Home Lab dev VM
+
+The server binds `0.0.0.0` and publishes ports **4000** (HTTP) and **35729**
+(LiveReload) on the host, so any machine on the LAN can open it. Run it
+detached so it survives SSH disconnects:
+
+```bash
+./bin/jekyll start    # start detached, auto-restarts on reboot
+./bin/jekyll status   # show state + reachable URLs
+./bin/jekyll logs     # follow server logs
+./bin/jekyll stop     # stop + remove the container
+./bin/jekyll restart  # stop, then start
+./bin/jekyll check    # smoke test — crawl every page + asset, report 404s
+```
+
+### Pre-push hook
+
+A version-controlled `pre-push` hook under `.githooks/` runs `./bin/jekyll
+check` automatically and aborts the push if the crawl finds a broken link
+or missing asset. Enable it once per clone:
+
+```bash
+git config core.hooksPath .githooks
+```
+
+Bypass on demand:
+
+```bash
+SKIP_JEKYLL_CHECK=1 git push   # one-off
+git push --no-verify           # also skips all hooks
+```
+
+From your desktop on the same network, open one of:
+
+- `http://<dev-vm-ip>:4000`
+- `http://<dev-vm-hostname>.local:4000` (if mDNS/Avahi is available)
+
+LiveReload auto-refreshes the page when you edit a file. Override ports with
+`JEKYLL_HTTP_PORT` / `JEKYLL_LR_PORT` if 4000 / 35729 are taken.
 
 ### Native Ruby
 

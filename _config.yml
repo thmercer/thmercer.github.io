@@ -6,6 +6,17 @@ markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
+
+author:
+  name: T. H. Mercer
+  url: https://thmercer.github.io
+
+social:
+  name: T. H. Mercer
+  links:
+    - https://bsky.app/profile/thmercer.bsky.social
+
 exclude:
   - README.md
   - vendor

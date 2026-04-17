@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   {% feed_meta %}
@@ -14,9 +15,9 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header>
     <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
-    <nav>
-      <a href="{{ '/' | relative_url }}">Writing</a>
-      <a href="{{ '/about/' | relative_url }}">About</a>
+    <nav aria-label="Primary">
+      <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Writing</a>
+      <a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>About</a>
       <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
     </nav>
   </header>

@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+# Pre-push hook: smoke-test the built site before it reaches GitHub.
+#
+# Installed via `core.hooksPath=.githooks` so it's version-controlled
+# and applies automatically after `git clone` once the path is set.
+#
+# Skip with:   git push --no-verify
+# or env var:  SKIP_JEKYLL_CHECK=1 git push
+
+set -euo pipefail
+
+if [[ "${SKIP_JEKYLL_CHECK:-0}" = "1" ]]; then
+  echo "[pre-push] SKIP_JEKYLL_CHECK=1 — skipping site check."
+  exit 0
+fi
+
+repo_root="$(git rev-parse --show-toplevel)"
+
+# If nothing is actually being pushed (e.g. branch deletion), skip.
+pushing_commits=0
+while read -r local_ref local_sha remote_ref remote_sha; do
+  [[ -z "${local_sha:-}" ]] && continue
+  if [[ "$local_sha" != "0000000000000000000000000000000000000000" ]]; then
+    pushing_commits=1
+  fi
+done
+
+if [[ "$pushing_commits" = 0 ]]; then
+  echo "[pre-push] No commits being pushed — skipping site check."
+  exit 0
+fi
+
+echo "[pre-push] Running site smoke test..."
+if ! "$repo_root/bin/jekyll" check; then
+  cat >&2 <<'EOF'
+
+[pre-push] Site check failed. Push aborted.
+
+Fix the issues above, or bypass with:
+  SKIP_JEKYLL_CHECK=1 git push
+  git push --no-verify
+EOF
+  exit 1
+fi
+
+echo "[pre-push] Site OK — proceeding with push."

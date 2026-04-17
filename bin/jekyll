@@ -1,9 +1,38 @@
 #!/usr/bin/env bash
 # Reproducible Jekyll via Docker (matches Gemfile / github-pages).
+#
+# Commands:
+#   build          write to _site/
+#   serve          foreground server on :4000 (LiveReload :35729), Ctrl-C to stop
+#   start          run the server detached, survives SSH logout
+#   stop           stop + remove the detached container
+#   restart        stop then start
+#   logs           follow detached container logs
+#   status         show container state and LAN URLs
+#   check          smoke-test: ensure server up, crawl every page + asset,
+#                  report 404s / broken links / missing assets
+#   bash | shell   drop into a Ruby container shell in the repo
+#
+# The server binds 0.0.0.0 inside the container and publishes
+# 4000 (HTTP) and 35729 (LiveReload WebSocket) on the host, so it is
+# reachable from other machines on the LAN.
+
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+IMAGE="ruby:3.2-bookworm"
+NAME="thmercer-preview"
+HTTP_PORT="${JEKYLL_HTTP_PORT:-4000}"
+LR_PORT="${JEKYLL_LR_PORT:-35729}"
+
 CMD="${1:-build}"
 shift || true
+
+# Use -it only when attached to a TTY; otherwise Docker errors with
+# "the input device is not a TTY" under systemd / ssh -T / CI.
+tty_flags=()
+if [[ -t 0 && -t 1 ]]; then
+  tty_flags=(-it)
+fi
 
 docker_run() {
   docker run --rm \
@@ -14,30 +43,183 @@ docker_run() {
     "$@"
 }
 
+serve_cmd() {
+  # Jekyll 3 (github-pages) reuses --host for LiveReload, so binding
+  # 0.0.0.0 here exposes both the site and the WebSocket to the LAN.
+  # --force_polling is needed for reliable change detection over bind mounts.
+  cat <<'SH'
+set -e
+gem install bundler --no-document
+bundle install --jobs 4
+exec bundle exec jekyll serve \
+  --host 0.0.0.0 \
+  --port 4000 \
+  --livereload \
+  --livereload-port 35729 \
+  --force_polling
+SH
+}
+
+lan_ip() {
+  # First non-loopback, non-docker IPv4 address.
+  hostname -I 2>/dev/null | tr ' ' '\n' \
+    | grep -vE '^(127\.|172\.(1[6-9]|2[0-9]|3[01])\.|$)' \
+    | head -n1
+}
+
+lan_urls() {
+  local ip host
+  ip="$(lan_ip || true)"
+  host="$(hostname -s 2>/dev/null || true)"
+  [[ -n "$ip"   ]] && echo "  http://${ip}:${HTTP_PORT}"
+  [[ -n "$host" ]] && echo "  http://${host}.local:${HTTP_PORT}"
+  echo "  http://localhost:${HTTP_PORT}"
+}
+
 case "$CMD" in
   build)
-    docker_run ruby:3.2-bookworm bash -lc '
+    docker_run "${tty_flags[@]}" "$IMAGE" bash -lc '
       set -e
       gem install bundler --no-document
       bundle install --jobs 4
       bundle exec jekyll build
     '
     ;;
+
   serve)
-    docker_run -p 4000:4000 -it ruby:3.2-bookworm bash -lc '
-      set -e
-      gem install bundler --no-document
-      bundle install --jobs 4
-      exec bundle exec jekyll serve --host 0.0.0.0
-    '
+    echo "Preview will be reachable at:"
+    lan_urls
+    echo
+    docker_run "${tty_flags[@]}" \
+      -p "${HTTP_PORT}:4000" \
+      -p "${LR_PORT}:35729" \
+      "$IMAGE" bash -lc "$(serve_cmd)"
     ;;
+
+  start)
+    if docker ps -a --format '{{.Names}}' | grep -qx "$NAME"; then
+      echo "Container '$NAME' already exists. Use '$0 restart' or '$0 stop' first." >&2
+      exit 1
+    fi
+    docker run -d \
+      --name "$NAME" \
+      --restart unless-stopped \
+      -v "$ROOT:/app" \
+      -w /app \
+      -e BUNDLE_PATH=/app/vendor/bundle \
+      -e BUNDLE_APP_CONFIG=/app/.bundle \
+      -p "${HTTP_PORT}:4000" \
+      -p "${LR_PORT}:35729" \
+      "$IMAGE" bash -lc "$(serve_cmd)" >/dev/null
+    echo "Started '$NAME'. Preview:"
+    lan_urls
+    echo
+    echo "Logs:  $0 logs"
+    echo "Stop:  $0 stop"
+    ;;
+
+  stop)
+    if docker ps -a --format '{{.Names}}' | grep -qx "$NAME"; then
+      docker rm -f "$NAME" >/dev/null
+      echo "Stopped '$NAME'."
+    else
+      echo "No container '$NAME' running."
+    fi
+    ;;
+
+  restart)
+    "$0" stop || true
+    exec "$0" start
+    ;;
+
+  logs)
+    exec docker logs -f "$NAME"
+    ;;
+
+  status)
+    if docker ps --format '{{.Names}}' | grep -qx "$NAME"; then
+      echo "Running. Preview:"
+      lan_urls
+    elif docker ps -a --format '{{.Names}}' | grep -qx "$NAME"; then
+      echo "Container '$NAME' exists but is stopped. Run '$0 start'."
+    else
+      echo "Not running. Run '$0 start' (detached) or '$0 serve' (foreground)."
+    fi
+    ;;
+
+  check)
+    base="http://localhost:${HTTP_PORT}"
+    started_here=0
+    if ! docker ps --format '{{.Names}}' | grep -qx "$NAME"; then
+      echo "Server not running; starting it for the check..."
+      "$0" start >/dev/null
+      started_here=1
+    fi
+    echo -n "Waiting for $base "
+    ready=0
+    for i in $(seq 1 60); do
+      if curl -fsS -o /dev/null "$base/"; then ready=1; echo " ok"; break; fi
+      sleep 2; echo -n .
+    done
+    if [[ "$ready" != 1 ]]; then
+      echo " timed out." >&2
+      echo "Recent logs:" >&2
+      docker logs --tail 40 "$NAME" >&2 || true
+      exit 1
+    fi
+
+    log="$(mktemp -t jekyll-check.XXXXXX.log)"
+    trap 'rm -f "$log"' EXIT
+
+    # -r -l inf   recurse without depth limit
+    # -p          also fetch page requisites (CSS, images, JS)
+    # --spider    don't save to disk, just check
+    # -nv         non-verbose but still print errors
+    # -nd         don't create directory structure
+    # -e robots=off  the preview server has no robots, but just in case
+    # -R '*?*'    skip query-string duplicates
+    # --reject-regex  stay on-site (wget's -D/--domains handles host;
+    #                 off-site links are followed once by spider but
+    #                 we filter them out of the report)
+    echo "Crawling site..."
+    wget --spider -r -l inf -p -nv -nd \
+      -e robots=off \
+      --tries=1 --timeout=10 \
+      -D localhost \
+      -o "$log" \
+      "$base/" || true
+
+    # wget prints 'Found no broken links.' on success or
+    # 'Found N broken links.' followed by a list on failure.
+    n_fetched="$(grep -cE '^URL:|URL:http' "$log" || true)"
+    echo
+    echo "Checked $n_fetched URLs."
+
+    if grep -qE '^Found no broken links\.' "$log"; then
+      echo "OK — no broken links or missing assets."
+      for extra in /feed.xml /sitemap.xml; do
+        code="$(curl -sS -o /dev/null -w '%{http_code}' "$base$extra")"
+        printf '  %-14s -> HTTP %s\n' "$extra" "$code"
+      done
+      exit 0
+    fi
+
+    echo "FAIL — broken links / bad responses:" >&2
+    # Everything wget flagged: non-2xx responses and unreachable URLs.
+    grep -E 'broken link|ERROR [0-9]+|failed:|Not Found|response\. 4|response\. 5' "$log" \
+      | sed 's/^/  /' >&2 || true
+    echo >&2
+    echo "Full log: $log" >&2
+    trap - EXIT
+    exit 1
+    ;;
+
   bash|shell)
-    docker_run -it ruby:3.2-bookworm bash -lc "exec bash -l"
+    docker_run -it "$IMAGE" bash -lc "exec bash -l"
     ;;
+
   *)
-    echo "Usage: $0 {build|serve|bash}" >&2
-    echo "  build  — write to _site/" >&2
-    echo "  serve  — http://127.0.0.1:4000 (do not open _site/*.html via file://)" >&2
+    sed -n '3,20p' "$0" >&2
     exit 1
     ;;
 esac
