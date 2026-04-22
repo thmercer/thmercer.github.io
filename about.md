@@ -2,6 +2,7 @@
 layout: about
 title: About
 ---
+T. H. Mercer is a speculative fiction author and essayist writing near-future and sci-fi short stories. Mercer's work focuses on themes of human resilience, technological adaptation, and ethics.
 
 Former engineer. Occasional cyborg. Storyteller.
 
