@@ -79,6 +79,32 @@ p:last-child { margin-bottom: 0; }
 
 article { margin-bottom: 3rem; }
 
+article details {
+  margin: 0 0 1.75rem;
+  padding: 0.65rem 1rem 1rem;
+  border: 1px solid #e0e0dc;
+  border-radius: 2px;
+  background: #fdfdf9;
+}
+
+article summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #444;
+}
+
+article details[open] summary {
+  margin-bottom: 0.65rem;
+}
+
+article details > p {
+  margin-bottom: 0.75rem;
+}
+
+article details > p:last-child {
+  margin-bottom: 0;
+}
+
 /* Post list on index */
 .post-list { list-style: none; }
 .post-list li { margin-bottom: 2rem; }

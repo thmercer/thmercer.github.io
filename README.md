@@ -88,6 +88,39 @@ The home page (`index.md`) emits a `Person` graph (with `sameAs` from `social.li
 
 Author name and profile URLs come from `author` and `social.links` in `_config.yml`.
 
+### Fiction posts (`layout: story`)
+
+Use this structure for each new story under `_posts/` (filename `YYYY-MM-DD-slug.md`).
+
+1. **YAML front matter:** `layout: story`, `title`, `date`, plus **`genre`** and **`about`** as arrays of short strings. Treat `genre` as shelf- or mode-style labels (for example Hopepunk, cli-fi) and `about` as thematic keywords (for example human interconnectedness, grief, consent). They map to `ShortStory` JSON-LD as documented above.
+2. **`listing_hook`:** Strongly recommended — a one-line, spoiler-free blurb in markdown. The home page uses `listing_hook` when present; if you omit it, the auto-generated excerpt can be poor when the body begins with raw HTML.
+3. **Dust jacket:** Right below the front matter, before the story text, add a **1–2 sentence** spoiler-free teaser that explicitly names the author (**T. H. Mercer**, matching `author.name` in `_config.yml`), the story’s **genre** in plain language (aligned with `genre`), and **core themes** (aligned with `about`). Wrap it in HTML `<details>` **without** the `open` attribute so it stays collapsed by default. Give `<summary>` a clear label (for example “Dust jacket” or “About this story”).
+
+**Kramdown:** raw HTML in the body is fine. Avoid starting the first markdown paragraph immediately after `</details>` on the same line as a list marker, which can confuse the parser.
+
+Example skeleton:
+
+```markdown
+---
+layout: story
+title: "Your Title"
+date: 2026-04-22
+genre:
+  - "Hopepunk"
+about:
+  - "Human interconnectedness"
+  - "Mutual aid"
+listing_hook: "One spoiler-free line for the home page listing."
+---
+
+<details>
+<summary>Dust jacket</summary>
+<p>…one or two sentences naming T. H. Mercer, the genre, and the themes…</p>
+</details>
+
+First paragraph of the story…
+```
+
 ## GitHub Pages
 
 In the repository on GitHub: **Settings → Pages → Build and deployment**
