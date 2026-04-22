@@ -1,6 +1,6 @@
 title: T. H. Mercer
 description: Speculative fiction and essays by T. H. Mercer.
-url: "https://thmercer.github.io"
+url: "https://thmercer.com"
 permalink: /:year/:slug/
 markdown: kramdown
 plugins:
@@ -10,7 +10,7 @@ plugins:
 
 author:
   name: T. H. Mercer
-  url: https://thmercer.github.io
+  url: https://thmercer.com
 
 social:
   name: T. H. Mercer
