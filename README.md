@@ -69,6 +69,25 @@ bundle exec jekyll serve
 
 Then open http://127.0.0.1:4000.
 
+## Content types and SEO (JSON-LD)
+
+Posts use one of two layouts:
+
+| Layout | Use | Schema.org type (custom block in `_includes/jsonld.html`) |
+|--------|-----|-------------------------------------------------------------|
+| `essay` | Nonfiction / commentary | `BlogPosting` |
+| `story` | Fiction | `ShortStory` |
+
+The home page (`index.md`) emits a `Person` graph (with `sameAs` from `social.links` in `_config.yml`). The About page emits `AboutPage` with `mainEntity` pointing at the same person.
+
+**Optional front matter on posts**
+
+- `about` — list of topic strings (maps to `about` as `Thing` entities in JSON-LD).
+- `keywords` — list of strings (essays only; joined into `BlogPosting.keywords`).
+- `genre` — list of strings (stories only; `ShortStory.genre`).
+
+Author name and profile URLs come from `author` and `social.links` in `_config.yml`.
+
 ## GitHub Pages
 
 In the repository on GitHub: **Settings → Pages → Build and deployment**

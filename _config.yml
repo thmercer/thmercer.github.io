@@ -16,6 +16,7 @@ social:
   name: T. H. Mercer
   links:
     - https://bsky.app/profile/thmercer.bsky.social
+    - https://github.com/thmercer
 
 exclude:
   - README.md

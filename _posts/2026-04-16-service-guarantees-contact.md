@@ -1,8 +1,17 @@
 ---
-layout: post
+layout: essay
 title: "Service Guarantees Contact"
 date: 2026-04-16
 listing_hook: "The argument about *Starship Troopers* is whether the franchise requirement is fascist or aspirational. That's the wrong question. Service doesn't select for virtue — it manufactures contact with people you'd never choose. You can't dehumanize someone who kept you alive. The polarization data after 1973 follows from there."
+about:
+  - "Political Polarization"
+  - "Military Service"
+  - "Civic Virtue"
+  - "Starship Troopers"
+keywords:
+  - "Heinlein"
+  - "polarization"
+  - "federal service"
 ---
 
 Everyone argues about *Starship Troopers*. They've been arguing about it since 1959\. The left calls it fascist; the right calls it aspirational. Both sides accept Robert Heinlein's premise without questioning it: that mandatory federal service, as a prerequisite for the franchise, works because it screens for civic virtue. The Federation's citizens earn the vote by demonstrating that they value the group above themselves. Sacrifice reveals character. Service proves worthiness.
