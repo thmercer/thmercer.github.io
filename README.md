@@ -95,4 +95,4 @@ In the repository on GitHub: **Settings → Pages → Build and deployment**
 - **Source:** Deploy from a branch  
 - **Branch:** `main`, folder **`/` (root)**
 
-After the first successful deploy, the site is available at https://thmercer.github.io
+After the first successful deploy, the site is available at https://thmercer.com (custom domain via `CNAME`; GitHub may still redirect from https://thmercer.github.io).
