@@ -15,7 +15,7 @@ listing_hook: "Ben Tomaszewski catches everything within arm's reach—mugs, pho
 
 <details>
 <summary>Dust jacket</summary>
-<p>In this story by <strong>T. H. Mercer</strong>, quiet magical realism meets the texture of a life in D.C.: a man with a small, perfect gift does the obvious right thing, while the narrative steps sideways to show how tiny powers and smaller mercies keep the world stitched together—often without anyone taking credit.</p>
+<p>In this story by <strong>T. H. Mercer</strong>, quiet magical realism meets the texture of a life in D.C.: a man with a small, perfect gift does the obvious right thing, while the while the story drifts sideways to catch the tiny powers and smaller mercies keep the world stitched together—often without anyone taking credit.</p>
 </details>
 
 Here is something most people don't know: everyone has a superpower.
