@@ -142,6 +142,86 @@ footer {
   color: #888;
 }
 
+/* Collection landing page */
+.collection-cover-wrap {
+  float: right;
+  width: clamp(130px, 26%, 175px);
+  margin: 0.25rem 0 1.5rem 1.75rem;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.18);
+  cursor: default;
+}
+
+.collection-cover-static,
+.collection-cover-video {
+  display: block;
+  width: 100%;
+}
+
+.collection-cover-video { display: none; }
+
+.collection-cover-wrap:hover .collection-cover-static { display: none; }
+.collection-cover-wrap:hover .collection-cover-video { display: block; }
+
+.collection-hook {
+  margin: 1.5rem 0 2.5rem;
+  font-style: italic;
+  color: #444;
+  line-height: 1.75;
+}
+
+.collection-header::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.collection-cta {
+  margin-bottom: 3rem;
+}
+
+.cta-link {
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  padding: 0.55rem 1.25rem;
+  border: 1.5px solid #1a1a1a;
+  display: inline-block;
+  letter-spacing: 0.02em;
+}
+
+.collection-stories { margin-top: 1rem; }
+
+.story-entry {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid #e0e0dc;
+}
+
+.story-entry:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.story-entry h2 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+}
+
+.story-blurb {
+  color: #444;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+/* Home page collection callout */
+.collection-callout {
+  margin-bottom: 2.25rem;
+  font-size: 0.92em;
+  color: #888;
+}
+
+.collection-callout a { font-weight: 600; }
+
 /* About: circular avatar + text wrap (needs main.css loaded — use jekyll serve, not file://) */
 .about-with-avatar::after {
   content: "";
