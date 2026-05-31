@@ -8,7 +8,7 @@ description: "Four stories about the quiet decisions people make when the system
 <div class="collection-header">
   <div class="collection-cover-wrap">
     <img src="{{ '/assets/images/moral-arithmetic-stories-cover.jpg' | relative_url }}" alt="Moral Arithmetic: Stories — T. H. Mercer" class="collection-cover-static">
-    <video class="collection-cover-video" muted loop playsinline preload="none">
+    <video class="collection-cover-video" muted playsinline preload="none">
       <source src="{{ '/assets/videos/moral-arithmetic-animated.mp4' | relative_url }}" type="video/mp4">
     </video>
   </div>
@@ -54,8 +54,20 @@ description: "Four stories about the quiet decisions people make when the system
 (function () {
   var wrap = document.querySelector('.collection-cover-wrap');
   var video = document.querySelector('.collection-cover-video');
-  if (!wrap || !video) return;
-  wrap.addEventListener('mouseenter', function () { video.play(); });
-  wrap.addEventListener('mouseleave', function () { video.pause(); video.currentTime = 0; });
+  var img = document.querySelector('.collection-cover-static');
+  if (!wrap || !video || !img) return;
+
+  wrap.addEventListener('mouseenter', function () {
+    video.style.transition = 'none';
+    video.currentTime = 0;
+    video.play();
+    video.style.opacity = '1';
+  });
+
+  wrap.addEventListener('mouseleave', function () {
+    video.style.transition = 'opacity 2.5s ease 1.2s';
+    video.pause();
+    video.style.opacity = '0';
+  });
 }());
 </script>

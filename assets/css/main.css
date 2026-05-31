@@ -144,6 +144,7 @@ footer {
 
 /* Collection landing page */
 .collection-cover-wrap {
+  position: relative;
   width: clamp(200px, 55%, 300px);
   margin: 0 auto 2.5rem;
   box-shadow: 0 4px 20px rgba(0,0,0,0.18);
@@ -157,10 +158,12 @@ footer {
   width: 100%;
 }
 
-.collection-cover-video { display: none; }
-
-.collection-cover-wrap:hover .collection-cover-static { display: none; }
-.collection-cover-wrap:hover .collection-cover-video { display: block; }
+.collection-cover-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
 
 .collection-byline {
   margin: 0.2rem 0 1.25rem;
