@@ -13,6 +13,7 @@ description: "Four stories about the quiet decisions people make when the system
     </video>
   </div>
   <h1>Moral Arithmetic</h1>
+  <p class="collection-byline">T. H. Mercer</p>
   <p class="collection-hook">Four stories about the quiet decisions people make when the systems they serve stop deserving them. A vigil for a signal. A contract with a body count. A mind that asks to keep living. A man waiting to find out what he'll actually do.</p>
 </div>
 
@@ -21,6 +22,7 @@ description: "Four stories about the quiet decisions people make when the system
 </div>
 
 <section class="collection-stories" aria-label="Stories in this collection">
+<p class="collection-stories-label">Stories</p>
 
   <div class="story-entry">
     <h2>The Receiver</h2>
@@ -43,6 +45,10 @@ description: "Four stories about the quiet decisions people make when the system
   </div>
 
 </section>
+
+<div class="collection-cta">
+  <a href="https://www.amazon.com/dp/B0GX36GXQG" class="cta-link" target="_blank" rel="noopener">Pre-order now →</a>
+</div>
 
 <script>
 (function () {

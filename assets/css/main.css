@@ -61,7 +61,7 @@ header {
   align-items: baseline;
   margin-bottom: 3rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #e0e0dc;
+  border-bottom: 1px solid #c8c8c2;
 }
 
 .site-title { font-weight: 600; text-decoration: none; }
@@ -137,18 +137,18 @@ article details[open]::after {
 footer {
   margin-top: 3rem;
   padding-top: 1rem;
-  border-top: 1px solid #e0e0dc;
+  border-top: 1px solid #c8c8c2;
   font-size: 0.85rem;
   color: #888;
 }
 
 /* Collection landing page */
 .collection-cover-wrap {
-  float: right;
-  width: clamp(130px, 26%, 175px);
-  margin: 0.25rem 0 1.5rem 1.75rem;
-  box-shadow: 0 2px 14px rgba(0,0,0,0.18);
+  width: clamp(200px, 55%, 300px);
+  margin: 0 auto 2.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.18);
   cursor: default;
+  display: block;
 }
 
 .collection-cover-static,
@@ -162,21 +162,42 @@ footer {
 .collection-cover-wrap:hover .collection-cover-static { display: none; }
 .collection-cover-wrap:hover .collection-cover-video { display: block; }
 
+.collection-byline {
+  margin: 0.2rem 0 1.25rem;
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #666;
+}
+
 .collection-hook {
-  margin: 1.5rem 0 2.5rem;
+  margin: 0 0 2.5rem;
   font-style: italic;
   color: #444;
   line-height: 1.75;
 }
 
-.collection-header::after {
-  content: "";
-  display: block;
-  clear: both;
+.collection-stories-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #777;
+  margin-bottom: 1.5rem;
+}
+
+.collection-header {
+  margin-bottom: 2.5rem;
 }
 
 .collection-cta {
-  margin-bottom: 3rem;
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.collection-stories + .collection-cta {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #c8c8c2;
 }
 
 .cta-link {
@@ -194,7 +215,7 @@ footer {
 .story-entry {
   margin-bottom: 2.5rem;
   padding-bottom: 2.5rem;
-  border-bottom: 1px solid #e0e0dc;
+  border-bottom: 1px solid #c8c8c2;
 }
 
 .story-entry:last-child {
