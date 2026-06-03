@@ -18,7 +18,7 @@ description: "Four stories about the quiet decisions people make when the system
 </div>
 
 <div class="collection-cta">
-  <a href="https://www.amazon.com/dp/B0GX36GXQG" class="cta-link" target="_blank" rel="noopener">Pre-order now →</a>
+  <a href="https://www.amazon.com/dp/B0GX36GXQG" class="btn-primary" target="_blank" rel="noopener">Pre-order now →</a>
 </div>
 
 <section class="collection-stories" aria-label="Stories in this collection">
@@ -47,7 +47,7 @@ description: "Four stories about the quiet decisions people make when the system
 </section>
 
 <div class="collection-cta">
-  <a href="https://www.amazon.com/dp/B0GX36GXQG" class="cta-link" target="_blank" rel="noopener">Pre-order now →</a>
+  <a href="https://www.amazon.com/dp/B0GX36GXQG" class="btn-primary" target="_blank" rel="noopener">Pre-order now →</a>
 </div>
 
 <script>
