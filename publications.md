@@ -12,9 +12,19 @@ description: "Anthology and journal credits by T. H. Mercer."
 <ul class="pub-list">
   {% for pub in pubs %}
   <li class="pub-entry">
+    {% if pub.landing %}
+    <a href="{{ pub.landing | relative_url }}" class="pub-entry-cover-link">
+      <img class="pub-entry-cover" src="{{ pub.cover | relative_url }}" alt="{{ pub.cover_alt }}" width="120" height="180" loading="lazy" decoding="async">
+    </a>
+    {% else %}
     <img class="pub-entry-cover" src="{{ pub.cover | relative_url }}" alt="{{ pub.cover_alt }}" width="120" height="180" loading="lazy" decoding="async">
+    {% endif %}
     <div class="pub-entry-body">
+      {% if pub.landing %}
+      <h2 class="pub-story-title"><a href="{{ pub.landing | relative_url }}">{{ pub.title }}</a></h2>
+      {% else %}
       <h2 class="pub-story-title">{{ pub.title }}</h2>
+      {% endif %}
       {% if pub.anthology %}
       <p class="pub-anthology-name">in <em>{{ pub.anthology }}</em></p>
       {% elsif pub.subtitle %}
