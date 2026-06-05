@@ -9,7 +9,7 @@ plugins:
   - jekyll-sitemap
 
 # Set true to show Free / In Anthology badges on the Fiction listing (Option A mockup).
-fiction_availability_badges: false
+fiction_availability_badges: true
 
 author:
   name: T. H. Mercer
