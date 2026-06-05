@@ -1,0 +1,16 @@
+{% comment %}
+  Renders Free / In Anthology badges on fiction listings when enabled in _config.yml.
+  Usage: {% include fiction-availability-badge.html availability=post.availability %}
+  availability: "free" (default) | "anthology"
+{% endcomment %}
+{% if site.fiction_availability_badges %}
+{% assign availability = include.availability | default: "free" %}
+{% if availability == "anthology" %}
+<span class="badge badge-paid" aria-label="Published in anthology — not available for free reading">
+  <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="5" width="8" height="6" rx="1"/><path d="M4 5V3.5a2 2 0 114 0V5"/></svg>
+  In Anthology
+</span>
+{% else %}
+<span class="badge badge-free">Free</span>
+{% endif %}
+{% endif %}

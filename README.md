@@ -85,6 +85,7 @@ The home page (`index.md`) emits a `Person` graph (with `sameAs` from `social.li
 - `about` — list of topic strings (maps to `about` as `Thing` entities in JSON-LD).
 - `keywords` — list of strings (essays only; joined into `BlogPosting.keywords`).
 - `genre` — list of strings (stories only; `ShortStory.genre`).
+- `word_count` — optional integer override for Fiction/Essays listing word counts. Omit to auto-count from the post body (rounded to the nearest 100).
 
 Author name and profile URLs come from `author` and `social.links` in `_config.yml`.
 
@@ -93,8 +94,9 @@ Author name and profile URLs come from `author` and `social.links` in `_config.y
 Use this structure for each new story under `_posts/` (filename `YYYY-MM-DD-slug.md`).
 
 1. **YAML front matter:** `layout: story`, `title`, `date`, plus **`genre`** and **`about`** as arrays of short strings. Treat `genre` as shelf- or mode-style labels (for example Hopepunk, cli-fi) and `about` as thematic keywords (for example human interconnectedness, grief, consent). They map to `ShortStory` JSON-LD as documented above.
-2. **`listing_hook`:** Strongly recommended — a one-line, spoiler-free blurb in markdown. The home page uses `listing_hook` when present; if you omit it, the auto-generated excerpt can be poor when the body begins with raw HTML.
-3. **Dust jacket:** Right below the front matter, before the story text, add a **1–2 sentence** spoiler-free teaser that explicitly names the author (**T. H. Mercer**, matching `author.name` in `_config.yml`), the story’s **genre** in plain language (aligned with `genre`), and **core themes** (aligned with `about`). Wrap it in HTML `<details>` **without** the `open` attribute so it stays collapsed by default. Give `<summary>` a clear label (for example “Dust jacket” or “About this story”).
+2. **`availability`** (optional, off by default): When `fiction_availability_badges` is `true` in `_config.yml`, the Fiction listing shows a **Free** or **In Anthology** badge per story. Omit `availability` (or set `availability: free`) for free-to-read posts; set `availability: anthology` for paid anthology entries surfaced in the feed.
+3. **`listing_hook`:** Strongly recommended — a one-line, spoiler-free blurb in markdown. The home page uses `listing_hook` when present; if you omit it, the auto-generated excerpt can be poor when the body begins with raw HTML.
+4. **Dust jacket:** Right below the front matter, before the story text, add a **1–2 sentence** spoiler-free teaser that explicitly names the author (**T. H. Mercer**, matching `author.name` in `_config.yml`), the story’s **genre** in plain language (aligned with `genre`), and **core themes** (aligned with `about`). Wrap it in HTML `<details>` **without** the `open` attribute so it stays collapsed by default. Give `<summary>` a clear label (for example “Dust jacket” or “About this story”).
 
 **Kramdown:** raw HTML in the body is fine. Avoid starting the first markdown paragraph immediately after `</details>` on the same line as a list marker, which can confuse the parser.
 

@@ -1,0 +1,14 @@
+{% comment %}
+  Word count for fiction/essay listings. Auto-calculated from body, rounded to nearest 100.
+  Optional front matter override: word_count: 4200
+  Usage: {% include post-word-count.html content=post.content word_count=post.word_count %}
+{% endcomment %}
+{% if include.word_count %}
+{% assign raw_words = include.word_count %}
+{% else %}
+{% assign raw_words = include.content | strip_html | number_of_words %}
+{% endif %}
+{% assign rounded_words = raw_words | plus: 50 | divided_by: 100 | times: 100 %}
+{% if rounded_words > 0 %}
+<span class="post-word-count">{% if rounded_words >= 1000 %}{% assign wc_hi = rounded_words | divided_by: 1000 %}{% assign wc_lo = rounded_words | modulo: 1000 %}{{ wc_hi }},{% if wc_lo < 100 %}0{% endif %}{% if wc_lo < 10 %}0{% endif %}{{ wc_lo }}{% else %}{{ rounded_words }}{% endif %} words</span>
+{% endif %}
