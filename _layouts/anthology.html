@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<article class="anthology-entry">
+  <div class="post-card">
+    <div class="post-card-header">
+      <p class="post-eyebrow">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Published in Anthology · Not available for free reading
+      </p>
+      <h1 class="post-title">{{ page.title }}</h1>
+      {% if page.anthology %}
+      <p class="post-anthology">
+        Appears in <strong>{{ page.anthology }}</strong>{% if page.editor %}, ed. {{ page.editor }}{% endif %}{% if page.press %} — {{ page.press }}{% endif %}, {{ page.anthology_year | default: page.date | date: "%Y" }}
+      </p>
+      {% endif %}
+      {% if content != blank %}
+      <div class="post-body">{{ content }}</div>
+      {% endif %}
+    </div>
+    <div class="post-card-footer">
+      <p class="footer-note">{{ page.footer_note | default: "This story is available exclusively in the anthology. Buy the collection to read it." }}</p>
+      {% if page.buy_url %}
+      <a href="{{ page.buy_url }}" class="btn-primary" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        {{ page.cta_label | default: "Buy collection" }}
+      </a>
+      {% else %}
+      <span class="btn-primary btn-primary--disabled" aria-disabled="true">{{ page.cta_label | default: "Coming soon" }}</span>
+      {% endif %}
+    </div>
+  </div>
+</article>

@@ -71,12 +71,13 @@ Then open http://127.0.0.1:4000.
 
 ## Content types and SEO (JSON-LD)
 
-Posts use one of two layouts:
+Posts use one of three layouts:
 
 | Layout | Use | Schema.org type (custom block in `_includes/jsonld.html`) |
 |--------|-----|-------------------------------------------------------------|
 | `essay` | Nonfiction / commentary | `BlogPosting` |
-| `story` | Fiction | `ShortStory` |
+| `story` | Free fiction on site | `ShortStory` |
+| `anthology` | Paid anthology credit (no story text) | `ShortStory` (`isAccessibleForFree: false`) |
 
 The home page (`index.md`) emits a `Person` graph (with `sameAs` from `social.links` in `_config.yml`). The About page emits `AboutPage` with `mainEntity` pointing at the same person.
 
@@ -121,6 +122,37 @@ listing_hook: "One spoiler-free line for the home page listing."
 </details>
 
 First paragraph of the story…
+```
+
+### Anthology entries (`layout: anthology`)
+
+Use for stories published in paid anthologies — Option A from the publication mockup. No story text on site; the page is context plus a buy link. These posts appear on the Fiction listing alongside free stories (with an **In Anthology** badge when `fiction_availability_badges` is enabled).
+
+1. **YAML front matter:** `layout: anthology`, `title`, `date`, **`anthology`** (collection title). Optional: `editor`, `press`, `anthology_year` (defaults to `date` year), `buy_url`, `cta_label`, `footer_note`, `listing_hook`, `word_count` (recommended — body is usually a short blurb), `genre`, `about`.
+2. **Body:** One or two spoiler-free paragraphs describing the story (not the story itself).
+
+Example skeleton:
+
+```markdown
+---
+layout: anthology
+title: "How the Herd Remembers Its Wolves"
+date: 2025-11-01
+anthology: "Strange Migrations"
+editor: "Fiona Kwan"
+press: "Wyrm & Thorn Press"
+buy_url: "https://example.com/strange-migrations"
+cta_label: "Buy Strange Migrations"
+listing_hook: "A generation ship learns what it lost when it left predators behind."
+word_count: 4800
+genre:
+  - "Science fiction"
+about:
+  - "Generation ships"
+  - "Fear and survival"
+---
+
+A generation ship three centuries into its crossing has no predators. Which means it also has no fear…
 ```
 
 ## GitHub Pages
