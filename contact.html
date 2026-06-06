@@ -1,0 +1,42 @@
+---
+layout: default
+title: Contact
+permalink: /contact/
+---
+
+<p class="site-intro">If something you read stayed with you — or you just want to say you read it — I'd like to know. Rights enquiries and other messages welcome too.</p>
+
+<div class="contact-success" data-fs-success>
+  <p>Thanks — I'll get back to you soon.</p>
+</div>
+<p class="contact-global-error" data-fs-error></p>
+
+<form id="contact-form" class="contact-form" novalidate>
+  <div class="contact-form-group">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" autocomplete="name" required data-fs-field>
+    <span class="contact-field-error" data-fs-error="name"></span>
+  </div>
+
+  <div class="contact-form-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" autocomplete="email" required data-fs-field>
+    <span class="contact-field-error" data-fs-error="email"></span>
+  </div>
+
+  <div class="contact-form-group">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="6" required data-fs-field></textarea>
+    <span class="contact-field-error" data-fs-error="message"></span>
+  </div>
+
+  <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
+
+  <button type="submit" class="contact-submit" data-fs-submit-btn>Send message</button>
+</form>
+
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'mwvjvjgz' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
