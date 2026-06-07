@@ -40,6 +40,11 @@ layout: default
 </section>
 {% endif %}
 
+<div class="newsletter-inline">
+  <p class="newsletter-inline-text">New stories and essays, when there's something worth sending.</p>
+  <a href="/subscribe/" class="cta-link">Join the mailing list</a>
+</div>
+
 <ul class="post-list">
   <li><a href="{{ '/fiction/' | relative_url }}">Fiction</a><div class="post-excerpt">Short stories, mostly speculative.</div></li>
   <li><a href="{{ '/essays/' | relative_url }}">Essays</a><div class="post-excerpt">When something won't stay in the margins.</div></li>

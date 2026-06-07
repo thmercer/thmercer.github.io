@@ -26,3 +26,5 @@ permalink: /fiction/
 {% else %}
 <p>Stories forthcoming.</p>
 {% endif %}
+
+<p class="fiction-newsletter-note">New stories go to the <a href="/subscribe/">mailing list</a> first — subscribe to catch them.</p>
