@@ -12,12 +12,19 @@ description: "Anthology and journal credits by T. H. Mercer."
 <ul class="pub-list">
   {% for pub in pubs %}
   <li class="pub-entry">
-    {% if pub.landing %}
-    <a href="{{ pub.landing | relative_url }}" class="pub-entry-cover-link">
+    {% if pub.cover %}
+      {% if pub.landing %}
+      <a href="{{ pub.landing | relative_url }}" class="pub-entry-cover-link">
+        <img class="pub-entry-cover" src="{{ pub.cover | relative_url }}" alt="{{ pub.cover_alt }}" width="120" height="180" loading="lazy" decoding="async">
+      </a>
+      {% else %}
       <img class="pub-entry-cover" src="{{ pub.cover | relative_url }}" alt="{{ pub.cover_alt }}" width="120" height="180" loading="lazy" decoding="async">
-    </a>
+      {% endif %}
     {% else %}
-    <img class="pub-entry-cover" src="{{ pub.cover | relative_url }}" alt="{{ pub.cover_alt }}" width="120" height="180" loading="lazy" decoding="async">
+    <div class="pub-entry-cover pub-entry-cover--placeholder" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      <span>Cover coming</span>
+    </div>
     {% endif %}
     <div class="pub-entry-body">
       {% if pub.landing %}
