@@ -922,6 +922,13 @@ button.cta-link:hover {
   border-radius: var(--radius-sm);
 }
 
+.pub-entry-cover--logo {
+  background: #fff;
+  padding: var(--space-3);
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
 .pub-entry-cover--placeholder {
   display: flex;
   flex-direction: column;

@@ -18,6 +18,8 @@
   anthology: "Wyrd Warfare 3"
   press: "Raconteur Press"
   date: 2026-07-17
+  cover: /assets/images/wyrd-warfare-3.jpg
+  cover_alt: "Wyrd Warfare 3 anthology cover"
 - title: "The Woodsboro Correspondence"
   anthology: "Slayer"
   press: "Dragon Soul Press"
@@ -26,3 +28,11 @@
   cover_alt: "Slayer anthology cover"
   url: "http://books2read.com/DSPSlayer"
   cta_label: "Pre-order"
+- title: "Exit Conditions"
+  anthology: "The Ones Behind the Bookshelves"
+  press: "Substack literary series"
+  date: 2026-09-01
+  date_label: "Fall 2026"
+  cover: /assets/images/the-ones-behind-the-bookshelves.png
+  cover_alt: "The Ones Behind the Bookshelves — literary series logo"
+  cover_logo: true

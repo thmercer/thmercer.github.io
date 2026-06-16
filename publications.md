@@ -15,10 +15,10 @@ description: "Anthology and journal credits by T. H. Mercer."
     {% if pub.cover %}
       {% if pub.landing %}
       <a href="{{ pub.landing | relative_url }}" class="pub-entry-cover-link">
-        <img class="pub-entry-cover" src="{{ pub.cover | relative_url }}" alt="{{ pub.cover_alt }}" width="120" height="180" loading="lazy" decoding="async">
+        <img class="pub-entry-cover{% if pub.cover_logo %} pub-entry-cover--logo{% endif %}" src="{{ pub.cover | relative_url }}" alt="{{ pub.cover_alt }}" width="120" height="180" loading="lazy" decoding="async">
       </a>
       {% else %}
-      <img class="pub-entry-cover" src="{{ pub.cover | relative_url }}" alt="{{ pub.cover_alt }}" width="120" height="180" loading="lazy" decoding="async">
+      <img class="pub-entry-cover{% if pub.cover_logo %} pub-entry-cover--logo{% endif %}" src="{{ pub.cover | relative_url }}" alt="{{ pub.cover_alt }}" width="120" height="180" loading="lazy" decoding="async">
       {% endif %}
     {% else %}
     <div class="pub-entry-cover pub-entry-cover--placeholder" aria-hidden="true">
@@ -46,7 +46,7 @@ description: "Anthology and journal credits by T. H. Mercer."
     {% if pub.url %}
     <a href="{{ pub.url }}" class="pub-buy-btn" target="_blank" rel="noopener">{{ pub.cta_label | default: "Buy collection" }}</a>
     {% else %}
-    <span class="pub-buy-btn pub-buy-btn--disabled" aria-disabled="true">Coming soon · {{ pub.date | date: "%B %-d, %Y" }}</span>
+    <span class="pub-buy-btn pub-buy-btn--disabled" aria-disabled="true">Coming soon · {% if pub.date_label %}{{ pub.date_label }}{% else %}{{ pub.date | date: "%B %-d, %Y" }}{% endif %}</span>
     {% endif %}
   </li>
   {% endfor %}
