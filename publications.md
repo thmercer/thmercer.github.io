@@ -5,7 +5,7 @@ permalink: /publications/
 description: "Anthology and journal credits by T. H. Mercer."
 ---
 
-<p class="site-intro">Published work in anthologies, journals, and collections. Anthology stories appear in their collections; none are freely available here.</p>
+<p class="site-intro">Published work in anthologies, journals, and collections — here's where to find each one.</p>
 
 {% assign pubs = site.data.publications | sort: "date" %}
 {% if pubs.size > 0 %}

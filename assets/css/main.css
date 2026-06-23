@@ -1330,17 +1330,25 @@ button.cta-link:hover {
 .reader-magnet {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: var(--space-6) var(--space-8);
-  align-items: start;
-  padding: var(--space-8) 0;
-  margin-bottom: 0;
+  gap: var(--space-4) var(--space-6);
+  align-items: center;
+  margin-top: var(--space-8);
+  padding: var(--space-6);
+  background: var(--color-surface-offset);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-lg);
 }
 
 .reader-magnet-cover {
-  width: clamp(100px, 28vw, 140px);
+  width: clamp(72px, 20vw, 104px);
   height: auto;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
   border-radius: var(--radius-sm);
+}
+
+/* Demote the free-story block below the collection hero. */
+.reader-magnet .home-collection-title {
+  font-size: var(--text-lg);
 }
 
 .reader-magnet-heading {
@@ -1408,6 +1416,13 @@ button.cta-link:hover {
   border-bottom: 1px solid var(--color-border);
 }
 
+/* The cover is the feature here, so keep it full-size (the home block's
+   .reader-magnet-cover is deliberately smaller/demoted). */
+.subscribe-hero .reader-magnet-cover {
+  width: clamp(100px, 28vw, 140px);
+  box-shadow: var(--shadow-md);
+}
+
 .subscribe-hero-body .home-collection-hook {
   margin-bottom: 0;
 }
@@ -1450,6 +1465,32 @@ button.cta-link:hover {
 .fiction-newsletter-note {
   margin-top: var(--space-8);
   font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.work-section-heading {
+  margin-top: var(--space-12);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-divider);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.work-section-heading + .site-intro {
+  margin-top: var(--space-2);
+}
+
+.post-reprint-note {
+  margin-top: var(--space-2);
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+}
+
+.post-reprint-note em {
+  font-style: italic;
   color: var(--color-text-muted);
 }
 

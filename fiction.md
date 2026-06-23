@@ -4,7 +4,7 @@ title: Fiction
 permalink: /fiction/
 ---
 
-<p class="site-intro">Speculative short fiction — near-future, magical realism, stories where things get hard.</p>
+<p class="site-intro">Speculative short fiction — near-future and magical realism, about people meeting moments bigger than they are.</p>
 
 {% assign story_posts = site.posts | where: "layout", "story" %}
 {% assign anthology_posts = site.posts | where: "layout", "anthology" %}

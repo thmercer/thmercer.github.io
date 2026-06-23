@@ -2,6 +2,8 @@
 layout: default
 ---
 
+<h1 class="sr-only">T. H. Mercer — speculative fiction and essays</h1>
+
 <p class="site-intro">I'm T. H. Mercer — speculative fiction and essays. Stories where things get hard. People who rise to meet them.</p>
 
 {% assign ma = site.data.publications | where: "title", "Moral Arithmetic" | first %}
@@ -71,7 +73,7 @@ layout: default
         Check your inbox — your download is on its way.
       </div>
     </div>
-    <p class="home-collection-more">New stories go to subscribers first. I write when there's something worth sending.</p>
+    <p class="home-collection-more">New stories go to subscribers first — no schedule, no filler.</p>
   </div>
 </section>
 
@@ -87,5 +89,5 @@ layout: default
 
 <ul class="post-list">
   <li><a href="{{ '/fiction/' | relative_url }}">Fiction</a><div class="post-excerpt">Short stories, mostly speculative.</div></li>
-  <li><a href="{{ '/essays/' | relative_url }}">Essays</a><div class="post-excerpt">When something won't stay in the margins.</div></li>
+  <li><a href="{{ '/essays/' | relative_url }}">Essays</a><div class="post-excerpt">When an idea needs more room than a post.</div></li>
 </ul>
