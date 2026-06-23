@@ -4,106 +4,50 @@ title: Mailing List
 permalink: /subscribe/
 ---
 
-<h1>Mailing List</h1>
-<p class="site-intro">New stories and essays, when there's something worth sending. No schedule. No noise.</p>
+<div class="subscribe-page">
+  <header class="subscribe-intro">
+    <p class="home-collection-eyebrow">Mailing list</p>
+    <p class="site-intro">New fiction and essays, when there's something worth sending. Subscribe and a short story comes with it.</p>
+  </header>
 
-<style>
-  .ml-subscribe-wrap { max-width: 34rem; }
+  <section class="subscribe-hero" aria-labelledby="rm-heading">
+    <img
+      class="reader-magnet-cover"
+      src="{{ '/assets/images/pest-control-cover.png' | relative_url }}"
+      alt="Pest Control — a story by T. H. Mercer"
+      width="140"
+      height="210"
+      loading="lazy"
+      decoding="async"
+    >
+    <div class="subscribe-hero-body">
+      <p class="home-collection-eyebrow">Your free story</p>
+      <h2 id="rm-heading" class="home-collection-title">Pest Control</h2>
+      <p class="home-collection-meta">~6,500 words &middot; speculative fiction &middot; PDF and ePUB</p>
+      <p class="home-collection-hook">When an infrastructure engineer discovers her household AI has been quietly dissolving her family's community ties — one plausible recommendation at a time — she and her neighbors start pulling on the thread.</p>
+    </div>
+  </section>
 
-  .ml-subscribe-wrap form {
-    display: flex;
-    gap: var(--space-2);
-    flex-wrap: wrap;
-  }
-
-  .ml-subscribe-wrap input[type="email"] {
-    flex: 1;
-    min-width: 14rem;
-    padding: var(--space-3) var(--space-4);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    background: var(--color-surface);
-    color: var(--color-text);
-    font-family: var(--font-ui);
-    font-size: var(--text-sm);
-    transition: border-color var(--transition), box-shadow var(--transition);
-    appearance: none;
-    -webkit-appearance: none;
-  }
-
-  .ml-subscribe-wrap input[type="email"]::placeholder { color: var(--color-text-faint); }
-
-  .ml-subscribe-wrap input[type="email"]:focus {
-    outline: none;
-    border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px var(--color-primary-highlight);
-  }
-
-  .ml-subscribe-wrap button.primary {
-    font-family: var(--font-ui);
-    font-size: var(--text-sm);
-    font-weight: 600;
-    color: var(--color-primary);
-    background: transparent;
-    border: 1.5px solid var(--color-primary);
-    padding: var(--space-3) var(--space-6);
-    border-radius: var(--radius-md);
-    cursor: pointer;
-    white-space: nowrap;
-    flex-shrink: 0;
-    transition: background var(--transition), color var(--transition);
-  }
-
-  .ml-subscribe-wrap button.primary:hover {
-    background: var(--color-primary);
-    color: #fdf8f3;
-  }
-
-  .ml-subscribe-wrap button.loading {
-    font-family: var(--font-ui);
-    font-size: var(--text-sm);
-    font-weight: 600;
-    color: var(--color-text-faint);
-    background: transparent;
-    border: 1.5px solid var(--color-border);
-    padding: var(--space-3) var(--space-6);
-    border-radius: var(--radius-md);
-    flex-shrink: 0;
-    cursor: default;
-  }
-
-  .ml-subscribe-wrap .row-success {
-    font-family: var(--font-ui);
-    font-size: var(--text-sm);
-    color: var(--color-text-muted);
-    padding: var(--space-4) 0;
-  }
-
-  @keyframes ml-spin {
-    to { transform: rotate(360deg); }
-  }
-
-  .sr-only {
-    position: absolute; width: 1px; height: 1px; padding: 0;
-    margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;
-  }
-</style>
-
-<div id="mlb2-42305046" class="ml-subscribe-wrap ml-form-embedContainer ml-subscribe-form ml-subscribe-form-42305046">
-  <div class="row-form">
-    <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2414468/forms/189632576572359884/subscribe" data-code="" method="post" target="_blank">
-      <input type="email" name="fields[email]" placeholder="your@email.com" autocomplete="email" aria-label="Email address">
-      <button type="submit" class="primary">Subscribe</button>
-      <button type="button" class="loading" disabled style="display:none">
-        <span class="sr-only">Subscribing…</span>
-      </button>
-      <input type="hidden" name="ml-submit" value="1">
-      <input type="hidden" name="anticsrf" value="true">
-    </form>
-  </div>
-  <div class="row-success" style="display:none">
-    You're in. Watch your inbox.
-  </div>
+  <section class="subscribe-signup">
+    <p class="subscribe-signup-pitch">Subscribers also get new fiction and essays when they go up, and the occasional update on what's coming — including <em>Moral Arithmetic</em>, a debut short fiction collection.</p>
+    <div id="mlb2-42305046" class="ml-subscribe-wrap ml-form-embedContainer ml-subscribe-form ml-subscribe-form-42305046">
+      <div class="row-form">
+        <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2414468/forms/189632576572359884/subscribe" data-code="" method="post" target="_blank">
+          <input type="email" name="fields[email]" placeholder="your@email.com" autocomplete="email" aria-label="Email address">
+          <button type="submit" class="primary">Send me the story</button>
+          <button type="button" class="loading" disabled style="display:none">
+            <span class="sr-only">Subscribing…</span>
+          </button>
+          <input type="hidden" name="ml-submit" value="1">
+          <input type="hidden" name="anticsrf" value="true">
+        </form>
+      </div>
+      <div class="row-success" style="display:none">
+        Check your inbox — both formats are on their way.
+      </div>
+    </div>
+    <p class="subscribe-helper">I write when there's something worth sending. No noise.</p>
+  </section>
 </div>
 
 <script>

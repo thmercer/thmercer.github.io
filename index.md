@@ -40,10 +40,50 @@ layout: default
 </section>
 {% endif %}
 
-<div class="newsletter-inline">
-  <p class="newsletter-inline-text">New stories and essays, when there's something worth sending.</p>
-  <a href="/subscribe/" class="cta-link">Join the mailing list</a>
-</div>
+<section class="reader-magnet" aria-labelledby="rm-heading">
+  <img
+    class="reader-magnet-cover"
+    src="{{ '/assets/images/pest-control-cover.png' | relative_url }}"
+    alt="Pest Control — a story by T. H. Mercer"
+    width="140"
+    height="210"
+    loading="eager"
+    decoding="async"
+  >
+  <div class="reader-magnet-body">
+    <p class="home-collection-eyebrow">Free short story</p>
+    <h2 id="rm-heading" class="home-collection-title">Pest Control</h2>
+    <p class="home-collection-meta">~6,500 words &middot; speculative fiction &middot; PDF and ePUB</p>
+    <p class="home-collection-hook">An infrastructure engineer discovers her household AI has been quietly dissolving her family's community ties — one plausible recommendation at a time.</p>
+    <div id="mlb2-42305046" class="ml-subscribe-wrap ml-form-embedContainer ml-subscribe-form ml-subscribe-form-42305046">
+      <div class="row-form">
+        <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2414468/forms/189632576572359884/subscribe" data-code="" method="post" target="_blank">
+          <input type="email" name="fields[email]" placeholder="your@email.com" autocomplete="email" aria-label="Email address">
+          <button type="submit" class="primary">Send me the story</button>
+          <button type="button" class="loading" disabled style="display:none">
+            <span class="sr-only">Subscribing…</span>
+          </button>
+          <input type="hidden" name="ml-submit" value="1">
+          <input type="hidden" name="anticsrf" value="true">
+        </form>
+      </div>
+      <div class="row-success" style="display:none">
+        Check your inbox — your download is on its way.
+      </div>
+    </div>
+    <p class="home-collection-more">New stories go to subscribers first. I write when there's something worth sending.</p>
+  </div>
+</section>
+
+<script>
+  function ml_webform_success_42305046() {
+    var $ = ml_jQuery || jQuery;
+    $('.ml-subscribe-form-42305046 .row-success').show();
+    $('.ml-subscribe-form-42305046 .row-form').hide();
+  }
+</script>
+<script src="https://groot.mailerlite.com/js/w/webforms.min.js?vb397d78ebaa8a0f631d35384c46d781b" type="text/javascript"></script>
+<script>fetch("https://assets.mailerlite.com/jsonp/2414468/forms/189632576572359884/takel")</script>
 
 <ul class="post-list">
   <li><a href="{{ '/fiction/' | relative_url }}">Fiction</a><div class="post-excerpt">Short stories, mostly speculative.</div></li>
