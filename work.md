@@ -20,6 +20,36 @@ sitemap: false
 
 <p class="site-intro">Short stories and books. Some you can read here for free; the rest live in anthologies, journals, and a debut collection.</p>
 
+<h2 class="work-section-heading">Read here</h2>
+<p class="site-intro">Short fiction you can read on this site, free.</p>
+
+{% assign posts = site.posts | where: "layout", "story" | sort: "date" | reverse %}
+{% assign story_titles = posts | map: "title" %}
+{% if posts.size > 0 %}
+<ul class="post-list">
+  {% for post in posts %}
+  <li>
+    <a href="{{ post.link | default: post.url }}">{{ post.title }}</a>
+    <p class="post-meta">{% include fiction-availability-badge.html availability=post.availability layout=post.layout %}{% include post-word-count.html content=post.content word_count=post.word_count %}<span>{{ post.date | date: "%B %-d, %Y" }}{% if post.venue %} · {{ post.venue }}{% endif %}</span></p>
+    {% if post.listing_hook %}
+    <div class="post-excerpt">{{ post.listing_hook | markdownify }}</div>
+    {% else %}
+    <div class="post-excerpt">{{ post.excerpt }}</div>
+    {% endif %}
+    {% assign reprint = site.data.publications | where: "title", post.title | first %}
+    {% if reprint %}
+    <p class="post-reprint-note">Also being collected in <em>{{ reprint.anthology | default: reprint.title }}</em> — {% if reprint.date_label %}{{ reprint.date_label }}{% else %}{{ reprint.date | date: "%B %Y" }}{% endif %}{% if reprint.press %}, {{ reprint.press }}{% endif %}.</p>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>Stories forthcoming.</p>
+{% endif %}
+
+<h2 class="work-section-heading">In print</h2>
+<p class="site-intro">A debut collection, anthologies, and journals — here's where to find each one.</p>
+
 {% assign ma = site.data.publications | where: "title", "Moral Arithmetic" | first %}
 {% if ma %}
 <section class="home-collection-feature" aria-labelledby="work-ma-title">
@@ -54,36 +84,6 @@ sitemap: false
   </div>
 </section>
 {% endif %}
-
-<h2 class="work-section-heading">Read here</h2>
-<p class="site-intro">Short fiction you can read on this site, free.</p>
-
-{% assign posts = site.posts | where: "layout", "story" | sort: "date" | reverse %}
-{% assign story_titles = posts | map: "title" %}
-{% if posts.size > 0 %}
-<ul class="post-list">
-  {% for post in posts %}
-  <li>
-    <a href="{{ post.link | default: post.url }}">{{ post.title }}</a>
-    <p class="post-meta">{% include fiction-availability-badge.html availability=post.availability layout=post.layout %}{% include post-word-count.html content=post.content word_count=post.word_count %}<span>{{ post.date | date: "%B %-d, %Y" }}{% if post.venue %} · {{ post.venue }}{% endif %}</span></p>
-    {% if post.listing_hook %}
-    <div class="post-excerpt">{{ post.listing_hook | markdownify }}</div>
-    {% else %}
-    <div class="post-excerpt">{{ post.excerpt }}</div>
-    {% endif %}
-    {% assign reprint = site.data.publications | where: "title", post.title | first %}
-    {% if reprint %}
-    <p class="post-reprint-note">Also being collected in <em>{{ reprint.anthology | default: reprint.title }}</em> — {% if reprint.date_label %}{{ reprint.date_label }}{% else %}{{ reprint.date | date: "%B %Y" }}{% endif %}{% if reprint.press %}, {{ reprint.press }}{% endif %}.</p>
-    {% endif %}
-  </li>
-  {% endfor %}
-</ul>
-{% else %}
-<p>Stories forthcoming.</p>
-{% endif %}
-
-<h2 class="work-section-heading">In print</h2>
-<p class="site-intro">Anthologies and journals — here's where to find each one.</p>
 
 {% assign pubs = site.data.publications | where_exp: "p", "p.title != 'Moral Arithmetic'" | sort: "date" %}
 {% if pubs.size > 0 %}
