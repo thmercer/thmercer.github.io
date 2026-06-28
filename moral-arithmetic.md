@@ -5,6 +5,8 @@ permalink: /moral-arithmetic/
 description: "Four stories about the quiet decisions people make when the systems they serve stop deserving them."
 ---
 
+{% assign ma = site.data.publications | where: "title", "Moral Arithmetic" | first %}
+
 <div class="collection-header">
   <div class="collection-cover-wrap">
     <img src="{{ '/assets/images/ma-front-cover-new.png' | relative_url }}" alt="Moral Arithmetic: Stories — T. H. Mercer" class="collection-cover-static">
@@ -18,7 +20,7 @@ description: "Four stories about the quiet decisions people make when the system
 </div>
 
 <div class="collection-cta">
-  <a href="https://www.amazon.com/dp/B0GX36GXQG" class="btn-primary" target="_blank" rel="noopener">Pre-order now →</a>
+  <a href="{{ ma.url }}" class="btn-primary" target="_blank" rel="noopener">Pre-order now</a>
 </div>
 
 <section class="collection-stories" aria-label="Stories in this collection">
@@ -47,7 +49,7 @@ description: "Four stories about the quiet decisions people make when the system
 </section>
 
 <div class="collection-cta">
-  <a href="https://www.amazon.com/dp/B0GX36GXQG" class="btn-primary" target="_blank" rel="noopener">Pre-order now →</a>
+  <a href="{{ ma.url }}" class="btn-primary" target="_blank" rel="noopener">Pre-order now</a>
 </div>
 
 <script>

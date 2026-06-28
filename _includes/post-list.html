@@ -1,0 +1,23 @@
+{% if include.posts.size > 0 %}
+<ul class="post-list">
+  {% for post in include.posts %}
+  <li>
+    <a href="{{ post.link | default: post.url }}">{{ post.title }}</a>
+    <p class="post-meta">{% if include.show_badge %}{% include fiction-availability-badge.html availability=post.availability layout=post.layout %}{% endif %}{% include post-word-count.html content=post.content word_count=post.word_count %}<span>{{ post.date | date: "%B %-d, %Y" }}{% if post.venue %} · {{ post.venue }}{% endif %}</span></p>
+    {% if post.listing_hook %}
+    <div class="post-excerpt">{{ post.listing_hook | markdownify }}</div>
+    {% else %}
+    <div class="post-excerpt">{{ post.excerpt }}</div>
+    {% endif %}
+    {% if include.show_reprint %}
+    {% assign reprint = site.data.publications | where: "title", post.title | first %}
+    {% if reprint %}
+    <p class="post-reprint-note">Also being collected in <em>{{ reprint.anthology | default: reprint.title }}</em> — {% if reprint.date_label %}{{ reprint.date_label }}{% else %}{{ reprint.date | date: "%B %Y" }}{% endif %}{% if reprint.press %}, {{ reprint.press }}{% endif %}.</p>
+    {% endif %}
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>{{ include.empty | default: "Posts forthcoming." }}</p>
+{% endif %}

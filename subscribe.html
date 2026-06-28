@@ -20,41 +20,16 @@ permalink: /subscribe/
       decoding="async"
     >
     <div class="subscribe-hero-body">
-      <p class="home-collection-eyebrow">Your free story</p>
-      <h2 id="rm-heading" class="home-collection-title">Pest Control</h2>
-      <p class="home-collection-meta">~6,500 words &middot; speculative fiction &middot; PDF and ePUB</p>
-      <p class="home-collection-hook">When an infrastructure engineer discovers her household AI has been quietly dissolving her family's community ties — one plausible recommendation at a time — she and her neighbors start pulling on the thread.</p>
+      <p class="feature-eyebrow">Your free story</p>
+      <h2 id="rm-heading" class="feature-title">Pest Control</h2>
+      <p class="feature-meta">~6,500 words &middot; speculative fiction &middot; PDF and ePUB</p>
+      <p class="feature-hook">When an infrastructure engineer discovers her household AI has been quietly dissolving her family's community ties — one plausible recommendation at a time — she and her neighbors start pulling on the thread.</p>
     </div>
   </section>
 
   <section class="subscribe-signup">
     <p class="subscribe-signup-pitch">Subscribers also get new fiction and essays when they go up, and the occasional update on what's coming — including <em>Moral Arithmetic</em>, a debut short fiction collection.</p>
-    <div id="mlb2-42305046" class="ml-subscribe-wrap ml-form-embedContainer ml-subscribe-form ml-subscribe-form-42305046">
-      <div class="row-form">
-        <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2414468/forms/189632576572359884/subscribe" data-code="" method="post" target="_blank">
-          <input type="email" name="fields[email]" placeholder="your@email.com" autocomplete="email" aria-label="Email address">
-          <button type="submit" class="primary">Send me the story</button>
-          <button type="button" class="loading" disabled style="display:none">
-            <span class="sr-only">Subscribing…</span>
-          </button>
-          <input type="hidden" name="ml-submit" value="1">
-          <input type="hidden" name="anticsrf" value="true">
-        </form>
-      </div>
-      <div class="row-success" style="display:none">
-        Check your inbox — both formats are on their way.
-      </div>
-    </div>
+    {% include mailerlite-form.html success_text="Check your inbox — both formats are on their way." %}
     <p class="subscribe-helper">Just the work, when it's ready. No noise.</p>
   </section>
 </div>
-
-<script>
-  function ml_webform_success_42305046() {
-    var $ = ml_jQuery || jQuery;
-    $('.ml-subscribe-form-42305046 .row-success').show();
-    $('.ml-subscribe-form-42305046 .row-form').hide();
-  }
-</script>
-<script src="https://groot.mailerlite.com/js/w/webforms.min.js?vb397d78ebaa8a0f631d35384c46d781b" type="text/javascript"></script>
-<script>fetch("https://assets.mailerlite.com/jsonp/2414468/forms/189632576572359884/takel")</script>
