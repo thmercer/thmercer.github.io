@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Stories
-permalink: /work/
+permalink: /stories/
 description: "Stories and books by T. H. Mercer — what to read here and where to find the rest."
 sitemap: false
 ---
@@ -64,7 +64,7 @@ sitemap: false
 <ul class="post-list">
   {% for post in posts %}
   <li>
-    <a href="{{ post.url }}">{{ post.title }}</a>
+    <a href="{{ post.link | default: post.url }}">{{ post.title }}</a>
     <p class="post-meta">{% include fiction-availability-badge.html availability=post.availability layout=post.layout %}{% include post-word-count.html content=post.content word_count=post.word_count %}<span>{{ post.date | date: "%B %-d, %Y" }}{% if post.venue %} · {{ post.venue }}{% endif %}</span></p>
     {% if post.listing_hook %}
     <div class="post-excerpt">{{ post.listing_hook | markdownify }}</div>
