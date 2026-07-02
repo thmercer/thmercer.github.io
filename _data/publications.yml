@@ -11,9 +11,10 @@
 - title: "Fluffy, Horror of the Deep"
   anthology: "Pet Monsters"
   press: "Raconteur Press"
-  date: 2026-07-07
-  cover: /assets/images/pet-monsters-announcement.jpg
-  cover_alt: "Pet Monsters anthology announcement"
+  date: 2026-07-01
+  cover: /assets/images/pet-monsters-cover.png
+  cover_alt: "Pet Monsters anthology cover"
+  url: "https://amzn.to/4gRWSnT"
 - title: "Flinch"
   anthology: "Wyrd Warfare 3"
   press: "Raconteur Press"
