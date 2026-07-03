@@ -12,7 +12,7 @@
     {% if include.show_reprint %}
     {% assign reprint = site.data.publications | where: "title", post.title | first %}
     {% if reprint %}
-    <p class="post-reprint-note">Also being collected in <em>{{ reprint.anthology | default: reprint.title }}</em> — {% if reprint.date_label %}{{ reprint.date_label }}{% else %}{{ reprint.date | date: "%B %Y" }}{% endif %}{% if reprint.press %}, {{ reprint.press }}{% endif %}.</p>
+    <p class="post-reprint-note">Also being collected in {% if reprint.url %}<a href="{{ reprint.url }}" target="_blank" rel="noopener"><em>{{ reprint.anthology | default: reprint.title }}</em></a>{% else %}<em>{{ reprint.anthology | default: reprint.title }}</em>{% endif %} — {% if reprint.date_label %}{{ reprint.date_label }}{% else %}{{ reprint.date | date: "%B %Y" }}{% endif %}{% if reprint.press %}, {{ reprint.press }}{% endif %}.</p>
     {% endif %}
     {% endif %}
   </li>
