@@ -11,15 +11,18 @@ permalink: /subscribe/
   </header>
 
   <section class="subscribe-hero" aria-labelledby="rm-heading">
-    <img
-      class="feature-secondary-cover"
-      src="{{ '/assets/images/pest-control-cover.png' | relative_url }}"
-      alt="Pest Control — a story by T. H. Mercer"
-      width="140"
-      height="210"
-      loading="lazy"
-      decoding="async"
-    >
+    <picture>
+      <source srcset="{{ '/assets/images/pest-control-cover.webp' | relative_url }}" type="image/webp">
+      <img
+        class="feature-secondary-cover"
+        src="{{ '/assets/images/pest-control-cover.png' | relative_url }}"
+        alt="Pest Control — a story by T. H. Mercer"
+        width="140"
+        height="210"
+        loading="eager"
+        decoding="async"
+      >
+    </picture>
     <div class="subscribe-hero-body">
       <p class="feature-subtitle">Your free story</p>
       <h2 id="rm-heading" class="feature-title">Pest Control</h2>
@@ -31,6 +34,6 @@ permalink: /subscribe/
   <section class="subscribe-signup">
     <p class="subscribe-signup-pitch">Subscribers also get new fiction and essays when they go up, and the occasional update on what's coming — including <em>Moral Arithmetic</em>, a debut short fiction collection.</p>
     {% include mailerlite-form.html success_text="Check your inbox — both formats are on their way." %}
-    <p class="subscribe-helper">Just the work, when it's ready. No noise.</p>
+    <p class="subscribe-helper">Just the work, when it's ready. No noise, and unsubscribe anytime with one click.</p>
   </section>
 </div>

@@ -9,14 +9,16 @@
       <input type="hidden" name="ml-submit" value="1">
       <input type="hidden" name="anticsrf" value="true">
     </form>
-    <p class="ml-subscribe-fallback" hidden>This form couldn't load. <a href="{{ '/contact/' | relative_url }}">Use the contact form</a> instead and I'll add you by hand.</p>
+    <p class="ml-subscribe-fallback" role="status" aria-live="polite" hidden>This form couldn't load. <a href="{{ '/contact/' | relative_url }}">Use the contact form</a> instead and I'll add you by hand.</p>
   </div>
-  <div class="row-success" style="display:none">
+  <div class="row-success" role="status" aria-live="polite" style="display:none">
     {{ include.success_text }}
   </div>
 </div>
 
 <script>
+  window.__ml42305046FailedShown = false;
+
   function ml_webform_success_42305046() {
     var $ = ml_jQuery || jQuery;
     $('.ml-subscribe-form-42305046 .row-success').show();
@@ -28,6 +30,8 @@
   // pointed at a JSONP endpoint: submitting opens a blank tab with zero
   // feedback on the page itself.
   window.mlWebformLoadFailed = function (wrapId) {
+    if (window.__ml42305046FailedShown) return;
+    window.__ml42305046FailedShown = true;
     var wrap = document.getElementById(wrapId);
     if (!wrap) return;
     var form = wrap.querySelector('form');
@@ -39,6 +43,17 @@
       fallback.hidden = false;
     }
   };
+  // onerror alone misses the case where an ad/privacy blocker returns an
+  // empty 200 for the script instead of failing the request: the load event
+  // still fires, but none of the widget's own setup ever runs. The widget
+  // sets window.ml_jQuery once it has actually initialized (confirmed by
+  // reading the served script), so polling for it catches that silent
+  // failure path too, not just a hard network error.
+  window.setTimeout(function () {
+    if (typeof window.ml_jQuery === 'undefined') {
+      window.mlWebformLoadFailed('mlb2-42305046');
+    }
+  }, 4000);
 </script>
 <script
   src="https://groot.mailerlite.com/js/w/webforms.min.js?vb397d78ebaa8a0f631d35384c46d781b"

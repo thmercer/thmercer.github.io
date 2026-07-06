@@ -9,15 +9,18 @@ layout: default
 </section>
 
 <section class="feature-block feature-block--hero" aria-labelledby="home-free-title">
-  <img
-    class="feature-cover"
-    src="{{ '/assets/images/pest-control-cover.png' | relative_url }}"
-    alt="Pest Control — a story by T. H. Mercer"
-    width="140"
-    height="210"
-    loading="eager"
-    decoding="async"
-  >
+  <picture>
+    <source srcset="{{ '/assets/images/pest-control-cover.webp' | relative_url }}" type="image/webp">
+    <img
+      class="feature-cover"
+      src="{{ '/assets/images/pest-control-cover.png' | relative_url }}"
+      alt="Pest Control — a story by T. H. Mercer"
+      width="140"
+      height="210"
+      loading="eager"
+      decoding="async"
+    >
+  </picture>
   <div class="feature-body">
     <p class="feature-subtitle">Free short story</p>
     <h2 id="home-free-title" class="feature-title">Pest Control</h2>
