@@ -39,7 +39,7 @@
     {% if pub.url %}
     <a href="{{ pub.url }}" class="pub-buy-btn" target="_blank" rel="noopener">{{ pub.cta_label | default: "Buy collection" }}</a>
     {% else %}
-    <span class="pub-buy-btn pub-buy-btn--disabled" aria-disabled="true">Coming soon · {% if pub.date_label %}{{ pub.date_label }}{% else %}{{ pub.date | date: "%B %-d, %Y" }}{% endif %}</span>
+    <span class="pub-buy-btn pub-buy-btn--disabled" aria-disabled="true">Coming soon · {% if pub.short_date_label %}{{ pub.short_date_label }}{% elsif pub.date_label %}{{ pub.date_label }}{% else %}{{ pub.date | date: "%B %-d, %Y" }}{% endif %}</span>
     {% endif %}
   </li>
   {% endfor %}

@@ -1,47 +1,46 @@
 ---
 name: T. H. Mercer
-description: Warm, literary author site for speculative fiction — ink and aged paper, restrained and confident.
+description: Ember in the Machine — a warm, human accent inside a cool, precise dark system.
 colors:
-  study-ink: "#5c3a1e"
-  worn-leather: "#8c5e3a"
-  aged-paper: "#f7f5f0"
-  fresh-page: "#faf9f6"
-  bright-page: "#fcfcfa"
-  shaded-margin: "#f0ede7"
-  paper-fold: "#ddd9d2"
-  pencil-line: "#d4cfc7"
-  ink-black: "#1e1c17"
-  soft-graphite: "#6b6860"
-  faint-graphite: "#b0ada8"
-  rust-warning: "#a35346"
-  paper-white: "#fdf8f3"
+  ember: "oklch(0.72 0.17 45)"
+  ember-hover: "oklch(0.79 0.16 47)"
+  machine-bg: "oklch(0.16 0.014 255)"
+  machine-surface: "oklch(0.205 0.014 255)"
+  machine-surface-2: "oklch(0.24 0.014 255)"
+  machine-surface-offset: "oklch(0.225 0.017 255)"
+  machine-divider: "oklch(0.32 0.015 255)"
+  machine-border: "oklch(0.38 0.017 255)"
+  human-text: "oklch(0.93 0.012 80)"
+  human-text-muted: "oklch(0.72 0.015 75)"
+  human-text-faint: "oklch(0.58 0.017 70)"
+  signal-error: "oklch(0.64 0.2 22)"
+  on-ember: "oklch(0.16 0.014 255)"
 typography:
+  hero:
+    fontFamily: "'Literata', Georgia, 'Times New Roman', serif"
+    fontSize: "clamp(2.5rem, 1.5rem + 5vw, 5rem)"
+    fontWeight: 600
+    lineHeight: 1.05
+    letterSpacing: "-0.01em"
   display:
-    fontFamily: "'Source Serif 4', Georgia, 'Times New Roman', serif"
+    fontFamily: "'Literata', Georgia, 'Times New Roman', serif"
     fontSize: "clamp(2rem, 1.2rem + 2.5vw, 3.5rem)"
     fontWeight: 600
     lineHeight: 1.2
-    letterSpacing: "normal"
   headline:
-    fontFamily: "'Source Serif 4', Georgia, 'Times New Roman', serif"
+    fontFamily: "'Literata', Georgia, 'Times New Roman', serif"
     fontSize: "clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem)"
     fontWeight: 600
     lineHeight: 1.25
-  title:
-    fontFamily: "'Source Serif 4', Georgia, 'Times New Roman', serif"
-    fontSize: "clamp(1.125rem, 1rem + 0.75vw, 1.5rem)"
-    fontWeight: 600
-    lineHeight: 1.3
   body:
-    fontFamily: "'Source Serif 4', Georgia, 'Times New Roman', serif"
+    fontFamily: "'Literata', Georgia, 'Times New Roman', serif"
     fontSize: "clamp(1rem, 0.95rem + 0.25vw, 1.125rem)"
     fontWeight: 400
     lineHeight: 1.65
   label:
-    fontFamily: "'Source Sans 3', system-ui, sans-serif"
+    fontFamily: "'Literata', Georgia, 'Times New Roman', serif"
     fontSize: "clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem)"
     fontWeight: 500
-    letterSpacing: "0.06em"
 rounded:
   sm: "0.25rem"
   md: "0.375rem"
@@ -58,23 +57,23 @@ spacing:
   12: "3rem"
 components:
   button-primary:
-    backgroundColor: "{colors.study-ink}"
-    textColor: "{colors.paper-white}"
+    backgroundColor: "{colors.ember}"
+    textColor: "{colors.on-ember}"
     rounded: "{rounded.md}"
     padding: "0.5rem 1.25rem"
   button-primary-hover:
-    backgroundColor: "#3e2710"
+    backgroundColor: "{colors.ember-hover}"
   button-outline:
     backgroundColor: "transparent"
-    textColor: "{colors.study-ink}"
+    textColor: "{colors.ember}"
     rounded: "{rounded.md}"
     padding: "0.5rem 1.25rem"
   button-outline-hover:
-    backgroundColor: "{colors.study-ink}"
-    textColor: "{colors.paper-white}"
+    backgroundColor: "{colors.ember}"
+    textColor: "{colors.on-ember}"
   input:
-    backgroundColor: "{colors.fresh-page}"
-    textColor: "{colors.ink-black}"
+    backgroundColor: "{colors.machine-surface}"
+    textColor: "{colors.human-text}"
     rounded: "{rounded.md}"
     padding: "0.75rem 1rem"
 ---
@@ -83,108 +82,122 @@ components:
 
 ## 1. Overview
 
-**Creative North Star: "The Writer's Study"**
+**Creative North Star: "Ember in the Machine"**
 
-This is a working author's quiet private space rendered as a website, not a public storefront. The palette is ink on aged paper; the type is a serif built for reading, not for shouting; the layout gives the prose room and gets out of its way. Every page resolves to one clear next action — read, subscribe, buy — the way a study has one desk, not a wall of signage.
+The fiction's own throughline — cold systems, warm people caught inside them — is staged literally in the palette. Dark is the primary, default experience: a cool, precise near-black (a system, a machine, indifferent) with a single saturated warm ember accent (the human, the choice made anyway). Light mode is the secondary/utility mode, a true off-white rather than a warm cream — the same system in daylight, not a different brand.
 
-The system explicitly rejects two failure modes: pulp genre-fiction design (busy hero banners, stock sci-fi imagery, loud color, cover-art collage) and SaaS marketing gloss (gradient text, hero-metric templates, uppercase eyebrow labels over every section, identical card grids, numbered feature scaffolding). Neither belongs in a writer's study.
+This supersedes the earlier "Writer's Study" ink-on-paper system. That system was tasteful but was also, on reflection, the safest possible answer for this brand — a warm-neutral near-white body with a muted brown accent sits squarely in the OKLCH band that's become the default reflex for indie-literary sites in 2026. Ember in the Machine commits harder: a genuinely saturated accent, a dark-first posture, and a single typeface carried at real weight contrast rather than a safe serif/sans split.
+
+The system still rejects the same two failure modes: pulp genre-fiction design (busy hero banners, stock sci-fi imagery, loud saturated color used without restraint) and SaaS marketing gloss (gradient text, hero-metric templates, uppercase eyebrow labels over every section, identical card grids, numbered feature scaffolding). Committing to one bold accent is not the same as pulp loudness — the ember is precise and singular, not a riot of color.
 
 **Key Characteristics:**
-- Warm neutral paper background, single deep-ink accent color, no secondary or tertiary hues.
-- Serif for everything that is prose or a heading; sans-serif reserved for UI chrome (nav, labels, buttons, form fields).
-- Flat surfaces — no drop shadows anywhere. Separation comes from borders, dividers, and background tints only.
-- Restrained, confident components: outlined by default, filled only on hover or as the one primary CTA per view.
+- Dark is the default, brand-defining experience; light is the same system in daylight, not a separate mood.
+- One saturated ember accent carries real visual weight (filled buttons, the homepage hero glow) — a "Committed" color strategy, not "Restrained."
+- Literata (a single serif family, built for on-screen book reading) carries both prose and UI chrome — no second sans-serif family.
+- Flat surfaces — no drop shadows anywhere. Separation comes from borders, dividers, and background tints only (this rule survives from the prior system unchanged).
+- Exactly one deliberate motion moment (the homepage hero's entrance) rather than scattered micro-interactions everywhere.
 
 ## 2. Colors
 
-Ink and aged paper: warm, low-chroma neutrals carry the page; a single deep-brown ink color is the only accent, used sparingly.
+Ember in the machine: a cool, low-chroma near-black system with a single saturated warm accent.
 
 ### Primary
-- **Study Ink** (`#5c3a1e`): the site's only accent. Links, primary buttons, active nav state, focus rings. In dark mode this inverts to a lighter **Amber Ink** (`#c4885a`) so it still reads as ink against a near-black page — same hue family, opposite end of the ramp.
+- **Ember** (`oklch(0.72 0.17 45)`): the site's only accent. Filled buttons, links, active nav state, focus rings, the homepage hero glow. In light mode this deepens to a darker ember (`oklch(0.5 0.18 40)`) to hold contrast against the off-white — same hue, opposite end of the ramp, same rule as before.
 
 ### Neutral
-- **Aged Paper** (`#f7f5f0`): page background. Dark mode: near-black `#141210`.
-- **Fresh Page** (`#faf9f6`): card and form surfaces, one step brighter than the page.
-- **Bright Page** (`#fcfcfa`): the brightest surface step, used sparingly for nested elements.
-- **Shaded Margin** (`#f0ede7`): offset surface for hover states and subtle containers (details/disclosure blocks).
-- **Paper Fold** (`#ddd9d2`): dividers between list rows and sections.
-- **Pencil Line** (`#d4cfc7`): borders on cards, inputs, buttons.
-- **Ink Black** (`#1e1c17`): primary text.
-- **Soft Graphite** (`#6b6860`): secondary/muted text (meta lines, body copy in cards).
-- **Faint Graphite** (`#726d65`): tertiary text (timestamps, footnote-weight labels). Retuned from an earlier `#b0ada8` — the original value failed WCAG AA contrast at the small sizes this role is used at.
-- **Rust Warning** (`#a35346`): form validation errors only. Never decorative.
-- **Paper White** (`#fdf8f3`): text printed on top of Study Ink (button labels).
+- **Machine Black** (`oklch(0.16 0.014 255)`): page background, dark mode (default theme). Light mode: true off-white `oklch(0.985 0.002 90)` — zero warm tint, not cream.
+- **Machine Surface** (`oklch(0.205 0.014 255)`): card and panel surfaces, one step up from the page.
+- **Machine Surface 2** (`oklch(0.24 0.014 255)`): the brightest surface step, used sparingly.
+- **Machine Surface Offset** (`oklch(0.225 0.017 255)`): offset surface for hover states and subtle containers.
+- **Machine Divider** (`oklch(0.32 0.015 255)`): dividers between list rows and sections.
+- **Machine Border** (`oklch(0.38 0.017 255)`): borders on cards, inputs, buttons.
+- **Human Text** (`oklch(0.93 0.012 80)`): primary text — a warm off-white, not a cold white, against the cool-black system.
+- **Human Text Muted** (`oklch(0.72 0.015 75)`): secondary/muted text.
+- **Human Text Faint** (`oklch(0.58 0.017 70)`): tertiary text (timestamps, footnote-weight labels).
+- **Signal Error** (`oklch(0.64 0.2 22)`): form validation errors only. Never decorative. Kept far enough from Ember's hue (45 vs 22) to stay distinguishable at a glance.
+- **On Ember** (`oklch(0.16 0.014 255)`): text printed on top of Ember (button labels) — the machine-black color reused, so ember buttons read as "dark ink on a warm glow," not "white on orange."
 
 ### Named Rules
-**The One Ink Rule.** There is exactly one accent color. It never gains a second hue — no complementary blue, no success-green, no gradient. Warmth and hierarchy come from value and saturation steps within the same ink-and-paper family, not from additional hues.
+**The One Ink Rule.** There is exactly one accent color. It never gains a second hue — no complementary blue, no success-green, no gradient. Warmth and hierarchy come from value and saturation steps within the same ember-and-machine family, not from additional hues.
+
+**The Dark-First Rule.** Dark is the default theme (`<html data-theme="dark">` is the static fallback; the inline theme script only switches to light on an explicit `prefers-color-scheme: light` or a stored preference). Light mode is a fully-supported, equally-polished alternate — never treat it as an afterthought — but it is not what a new visitor sees by default.
 
 ## 3. Typography
 
-**Display Font:** Source Serif 4 (with Georgia, Times New Roman fallback)
-**Label Font:** Source Sans 3 (with system-ui fallback)
+**Family:** Literata (variable, optical-size axis 7–72pt), with Georgia/Times New Roman fallback.
 
-**Character:** A literary serif carries every heading and every sentence of prose; a plain grotesque sans is reserved strictly for interface chrome (nav links, buttons, form labels, timestamps, badges). The pairing reads as "book" wherever there's writing, and "tool" only where there's an interface control — never blurred together.
+**Character:** One serif family, deliberately, carrying both literary prose and interface chrome. Literata was designed for on-screen book reading (commissioned for Google Play Books) — it has real small-caps and oldstyle-figure OpenType support, and its optical-size axis sharpens automatically at display sizes and softens at body sizes. This is a considered single-family choice per the brand register's own guidance ("you often don't need a second font") — not a shortcut. UI chrome (nav, labels, buttons) is differentiated from prose by size, weight, and letter-spacing, not by switching families.
 
 ### Hierarchy
+- **Hero** (600, `clamp(2.5rem, 1.5rem + 5vw, 5rem)`, 1.05, letter-spacing -0.01em): the homepage's one oversized opening line only.
 - **Display** (600, `clamp(2rem, 1.2rem + 2.5vw, 3.5rem)`, 1.2): collection landing titles (Moral Arithmetic).
 - **Headline** (600, `clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem)`, 1.25): article/story h1, homepage feature title.
-- **Title** (600, `clamp(1.125rem, 1rem + 0.75vw, 1.5rem)`, 1.3): section h2, story-entry headings, work-section headings.
-- **Body** (400, `clamp(1rem, 0.95rem + 0.25vw, 1.125rem)`, 1.65–1.8): story and essay prose, capped at 72ch; site-intro copy capped at 60ch.
-- **Label** (500, `clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem)`, tracked 0.06–0.1em uppercase where used): nav links, eyebrows, badges, meta lines, button text.
+- **Title** (600, `clamp(1.125rem, 1rem + 0.75vw, 1.5rem)`, 1.3): section h2/h3, story-entry headings.
+- **Body** (400, `clamp(1rem, 0.95rem + 0.25vw, 1.125rem)`, 1.65–1.8): story and essay prose, capped at 72ch.
+- **Label** (500, `clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem)`): nav links, meta lines, button text — same family as prose, differentiated by size/weight/spacing only.
 
 ### Named Rules
-**The Serif-Is-Prose Rule.** If it's a sentence a reader is meant to read for content, it's serif. If it's a control a user clicks or a timestamp they scan, it's sans. Never mix within one role.
+**The One Family Rule.** Every role — prose, headline, nav, button — is Literata. No second sans-serif is introduced for UI chrome. Hierarchy comes from size, weight, and letter-spacing, never from switching typefaces.
 
 ## 4. Elevation
 
-Flat by default, flat everywhere — including the objects (book covers, avatar, cards) that currently carry a soft shadow in code. The target doctrine removes `box-shadow` entirely; depth and separation come from a 1px border (Pencil Line) or a background-tint step (Shaded Margin vs. Fresh Page), never from a shadow. This is a deliberate tightening from the current CSS, which still defines `--shadow-sm` / `--shadow-md` on cover images and cards — those should be retired in favor of borders as the system is touched.
+Flat by default, flat everywhere. No `box-shadow` anywhere in the system, including on cover images and cards. The homepage hero panel's "glow" is a `radial-gradient` background tint, not a shadow — it reads as ambient light, not as an elevated surface. Depth and separation come from a 1px border (Machine Border) or a background-tint step (Machine Surface Offset vs. Machine Surface), never from a shadow.
 
 ### Named Rules
 **The Flat Page Rule.** No `box-shadow` anywhere in the system. A book cover sits on the page the way a photograph sits in a paper book: bordered, not lit from below.
 
 ## 5. Components
 
-Restrained and confident: outlined at rest, filled only on hover, and never more than one filled/primary control per view.
+Restrained and confident: outlined at rest, filled only on hover or as the one primary CTA per view — same discipline as before, now expressed in ember rather than brown.
 
 ### Buttons
-- **Shape:** `border-radius: 0.375rem` (Pencil-Line-bordered rectangle, never pill-shaped).
-- **Primary** (`.btn-primary`): filled Study Ink background, Paper White text, 1px Study Ink border. Reserved for the single most important action on a view (pre-order, submit).
-- **Outline** (`.cta-link`, `.pub-buy-btn`, `.contact-submit`, `.newsletter-cta-submit`): transparent background, Study Ink text and 1px (to 1.5px) Study Ink border at rest; fills to solid Study Ink with Paper White text on hover. This is the default button — most actions on the site are outline, not primary.
-- **Hover / Focus:** color and background transition over 180ms (`cubic-bezier(0.16, 1, 0.3, 1)`, ease-out-quint); focus-visible gets a 2px Study Ink outline offset 2–3px.
-- **Disabled:** 55% opacity, `pointer-events: none`, no hover state change.
+- **Shape:** `border-radius: 0.375rem` (Machine-Border-bordered rectangle, never pill-shaped).
+- **Primary** (`.btn-primary`, `.ml-subscribe-wrap button.primary`): filled Ember background, On-Ember (near-black) text, 1px Ember border. Reserved for the single most important action on a view.
+- **Outline** (`.cta-link`, `.pub-buy-btn`, `.contact-submit`): transparent background, Ember text and border at rest; fills to solid Ember with On-Ember text on hover. The default button — most actions on the site are outline, not primary.
+- **Hover / Focus:** color/background transition over 180ms (`cubic-bezier(0.16, 1, 0.3, 1)`, ease-out-quint); focus-visible gets a 2px Ember outline offset 2–3px.
+- **Disabled:** explicit muted colors (Human Text Muted / Machine Border) at full opacity — never opacity-faded, since fading an already-midtone color toward the background drops below AA contrast.
 
 ### Cards / Containers
-- **Corner Style:** 0.375–0.5rem radius (`md`/`lg`).
-- **Background:** Fresh Page on Aged Paper, or Shaded Margin for offset/nested contexts (details blocks). Secondary/demoted feature panels (e.g. a homepage secondary feature) sit on Fresh Page rather than Shaded Margin, since Shaded Margin's tint doesn't leave enough contrast headroom for Faint Graphite or Soft Graphite text at small sizes.
-- **Shadow Strategy:** none, per the Flat Page Rule (see Elevation) — supersedes any remaining `box-shadow` in current CSS.
-- **Border:** 1px Pencil Line.
-- **Internal Padding:** `space-6` to `space-8` (1.5–2rem).
+- **Corner Style:** 0.375–0.5rem radius.
+- **Background:** Machine Surface on Machine Black, or Machine Surface Offset for nested/offset contexts.
+- **Shadow Strategy:** none, per the Flat Page Rule.
+- **Border:** 1px Machine Border.
 
 ### Inputs / Fields
-- **Style:** Fresh Page background, 1px Pencil Line border, `md` radius, serif body font inside text areas, sans for email/text inputs in forms.
-- **Focus:** border shifts to Worn Leather accent plus a 3px Study-Ink-tinted glow (`box-shadow: 0 0 0 3px var(--color-primary-highlight)`) — the one place a shadow-like glow is allowed, since it communicates focus state rather than elevation.
-- **Error:** border switches to Rust Warning; error text below the field in Label type, also Rust Warning.
+- **Style:** Machine Surface background, 1px Machine Border, `md` radius.
+- **Focus:** border shifts to Ember, plus a 3px Ember-tinted glow (`box-shadow: 0 0 0 3px var(--color-primary-highlight)`) — the one intentional exception to the Flat Page Rule, since it communicates focus state, not elevation.
+- **Error:** border switches to Signal Error; error text below the field, also Signal Error.
 
 ### Navigation
-- **Style:** sans-serif Label type, Soft Graphite at rest, Ink Black on hover, Ink Black + medium weight for the active/current page (`aria-current="page"`). No underlines, no pill backgrounds.
-- **Mobile:** nav wraps under the logo above 700px breakpoint; still text-only, no hamburger — the link count stays low enough to wrap gracefully.
+- **Style:** Label-weight Literata, Human Text Muted at rest, Human Text on hover, Human Text + medium weight for the active/current page.
+- **Logo:** `white-space: nowrap` and `flex-shrink: 0` — the header bar widened to `--content-wide` (60rem) to fit "Moral Arithmetic" as a full nav item without squeezing the logo into wrapping.
 
-### Badges
-- **Style:** small uppercase Label type, tracked 0.06em, `sm` radius pill. "Free" badge uses an 8%-Ink-tinted neutral background with Soft Graphite text; "In Anthology" uses a 12%-Study-Ink-tinted background with Study Ink text. The only place two "weights" of the same ink color appear side by side, and only to distinguish free vs. paid at a glance.
+### Homepage Hero Panel (signature component)
+- **Structure:** a single, restrained (`--text-2xl`) opening line inside a `.hero-panel.hero-panel--quiet` container with a radial-gradient ember glow anchored top-left, fading to transparent — no sub-line. The free-story feature block sits immediately below, outside the glow panel, so the reading pitch reaches the top of the page with minimal scroll.
+- **Motion:** the hero line and the feature block each rise and fade in on load (`translateY(14px)` → `0`, `opacity: 0` → `1`, 700ms ease-out-expo, staggered ~90ms apart). This is the site's one deliberate signature motion moment — everything else is instant/transition-only. Respects `prefers-reduced-motion: reduce` (animation removed entirely, content shows at its final state immediately).
+- **Scope:** this panel and its glow appear once, on the homepage only. Every other page stays in the flat, un-glowing register.
+- **Rationale:** an earlier, taller two-line hero was tried and rejected — it pushed the free story below a full screen of copy on mobile before any reading content appeared. The quiet, single-line version keeps the voice but gets out of the way faster.
+
+### Book Strip (secondary-commerce component)
+- **Structure:** a compact horizontal `.book-strip` — cover thumbnail, date/availability label (Ember), title, one-line hook, and a single outline CTA — inside an Ember-bordered, Ember-tinted (6% wash) container. Stacks vertically, centered, under 560px.
+- **Purpose:** presents the forthcoming debut collection on the homepage as *confidently secondary* — distinct enough to read as intentional, not the same demoted `.feature-secondary` card reused on About. Still visually subordinate to the free story above it: outline button only, no filled CTA competing with "Send me the story."
+- **Scope:** homepage only, directly below the free-story feature block. `.feature-secondary` (the plainer bordered card, no Ember tint) remains the correct component for anthology-credit listings on About.
 
 ## 6. Do's and Don'ts
 
 ### Do:
-- **Do** keep exactly one accent hue (Study Ink / Amber Ink) — all hierarchy comes from value/tint steps, not new hues.
+- **Do** keep exactly one accent hue (Ember) — all hierarchy comes from value/tint steps, not new hues.
+- **Do** default to dark; treat light as an equally-finished alternate, not an afterthought.
 - **Do** use outline buttons as the default and reserve the filled primary button for one action per view.
-- **Do** separate surfaces with a 1px Pencil-Line border or a Shaded-Margin tint, never a shadow.
-- **Do** cap prose measure at 65–75ch and use serif for anything a reader reads as content.
-- **Do** end every page in one clear next action (read → subscribe → buy), matching PRODUCT.md's "one clear next action per page" principle.
+- **Do** separate surfaces with a 1px Machine-Border or a Surface-Offset tint, never a shadow.
+- **Do** cap prose measure at 65–75ch and set disabled-state colors explicitly rather than via opacity.
+- **Do** keep the hero-glow motion moment singular — the homepage only, not repeated on every page.
 
 ### Don't:
-- **Don't** add a second accent color, a gradient, or "success green" / "info blue" semantic colors — errors use Rust Warning; nothing else needs a new hue.
-- **Don't** use `box-shadow` on cards, cover images, or buttons (see The Flat Page Rule) — replace remaining `--shadow-sm`/`--shadow-md` usage with borders as those components are touched.
-- **Don't** reach for pulp genre-fiction styling: busy hero banners, stock sci-fi imagery, collage-style cover art treatments, loud saturated color.
-- **Don't** reach for SaaS marketing gloss: gradient text, hero-metric templates, uppercase tracked eyebrows over every section, identical icon-card grids, numbered feature scaffolding (01 / 02 / 03).
-- **Don't** mix serif and sans within one role (e.g. a sans-serif heading, or a serif nav link).
-- **Don't** stack more than one filled/primary button in the same view — competing CTAs contradict the "one next action" principle.
+- **Don't** add a second accent color, a gradient, or "success green" / "info blue" semantic colors.
+- **Don't** use `box-shadow` on cards, cover images, or buttons — the one exception is the input focus ring, which communicates state rather than elevation.
+- **Don't** reach for pulp genre-fiction styling: busy hero banners, stock sci-fi imagery, collage-style cover art treatments.
+- **Don't** reach for SaaS marketing gloss: gradient text, hero-metric templates, uppercase tracked eyebrows over every section, identical icon-card grids, numbered feature scaffolding.
+- **Don't** introduce a second typeface for UI chrome — Literata carries every role.
+- **Don't** stack more than one filled/primary button in the same view.
+- **Don't** repeat the hero-panel glow/motion treatment on other pages — it's a homepage-only signature, not a reusable pattern.

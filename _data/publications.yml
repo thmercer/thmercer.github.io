@@ -32,12 +32,20 @@
   url: "http://books2read.com/DSPSlayer"
   cta_label: "Pre-order"
   hook: "Calvin Rourke writes an apologetic letter about strange happenings in his home, not realizing that he himself is the strange thing happening."
+- title: "Working As Intended"
+  anthology: "Space & Time"
+  press: "Authortunities Press"
+  date: 2026-08-01
+  date_label: "August 2026 · Issue No. 153"
+  short_date_label: "August 2026"
+  hook: "El treats creation like shipped code — until an angel shows up with an incident report he didn't see coming."
 - title: "Exit Conditions"
-  anthology: "The Ones Behind the Bookshelves"
-  press: "Substack literary series"
+  anthology: "Fall 2026 Literary Series"
+  press: "The Ones Behind the Bookshelves"
   date: 2026-09-01
   date_label: "Fall 2026"
   cover: /assets/images/the-ones-behind-the-bookshelves.png
   cover_alt: "The Ones Behind the Bookshelves — literary series logo"
-  url: "https://theonesbehindthebookshelves.substack.com/"
+  landing: /2026/exit-conditions/
+  hook: "Priya spends her days finding where two systems disagree — until the friction that keeps her human starts disappearing too."
   cover_logo: true
