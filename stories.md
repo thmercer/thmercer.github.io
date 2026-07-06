@@ -5,12 +5,17 @@ permalink: /stories/
 description: "Stories and books by T. H. Mercer — what to read here and where to find the rest."
 ---
 
+<h1 class="sr-only">Stories — T. H. Mercer</h1>
+
 <p class="site-intro">Short stories and books. Some you can read here for free; the rest live in anthologies, journals, and a debut collection.</p>
 
 <h2 class="work-section-heading">Read here</h2>
 <p class="site-intro">Short fiction you can read on this site, free.</p>
 
-{% assign posts = site.posts | where: "layout", "story" | sort: "date" | reverse %}
+{% assign story_posts = site.posts | where: "layout", "story" %}
+{% assign onsite_posts = story_posts | where_exp: "p", "p.link == nil" | sort: "date" | reverse %}
+{% assign gated_posts = story_posts | where_exp: "p", "p.link != nil" | sort: "date" | reverse %}
+{% assign posts = onsite_posts | concat: gated_posts %}
 {% include post-list.html posts=posts show_badge=true show_reprint=true empty="Stories forthcoming." %}
 
 <h2 class="work-section-heading">In print</h2>
@@ -31,10 +36,10 @@ description: "Stories and books by T. H. Mercer — what to read here and where 
     >
   </a>
   <div class="feature-body">
-    <p class="feature-eyebrow">{{ ma.subtitle }}</p>
-    <h2 id="work-ma-title" class="feature-title">
+    <p class="feature-subtitle">{{ ma.subtitle }}</p>
+    <h3 id="work-ma-title" class="feature-title">
       <a href="{{ ma.landing | relative_url }}">{{ ma.title }}</a>
-    </h2>
+    </h3>
     {% if ma.date_label %}
     <p class="feature-meta">{{ ma.date_label }}</p>
     {% endif %}

@@ -3,7 +3,7 @@
   hook: "Four stories about the quiet decisions people make when the systems they serve stop deserving them."
   date: 2026-07-16
   date_label: "July 16, 2026 · Pre-order available"
-  cover: /assets/images/ma-front-cover-new.png
+  cover: /assets/images/ma-front-cover-new.webp
   cover_alt: "Moral Arithmetic: Stories — T. H. Mercer"
   landing: /moral-arithmetic/
   url: "https://www.amazon.com/dp/B0GX36GXQG"
@@ -15,12 +15,14 @@
   cover: /assets/images/pet-monsters-cover.png
   cover_alt: "Pet Monsters anthology cover"
   url: "https://amzn.to/4gRWSnT"
+  hook: "Milo hides a glowing, tentacled creature in his basement from his distracted parents, and learns what it costs to truly see someone."
 - title: "Flinch"
   anthology: "Forgotten Fronts Wyrd Warfare"
   press: "Raconteur Press"
   date: 2026-07-17
   cover: /assets/images/wyrd-warfare-3.jpg
   cover_alt: "Forgotten Fronts Wyrd Warfare anthology cover"
+  hook: "Clark sees the shimmer before every shot fired at his squad, but the men who call him a coward don't know what it costs him."
 - title: "The Woodsboro Correspondence"
   anthology: "Slayer"
   press: "Dragon Soul Press"
@@ -29,6 +31,7 @@
   cover_alt: "Slayer anthology cover"
   url: "http://books2read.com/DSPSlayer"
   cta_label: "Pre-order"
+  hook: "Calvin Rourke writes an apologetic letter about strange happenings in his home, not realizing that he himself is the strange thing happening."
 - title: "Exit Conditions"
   anthology: "The Ones Behind the Bookshelves"
   press: "Substack literary series"

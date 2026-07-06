@@ -9,7 +9,7 @@ description: "Four stories about the quiet decisions people make when the system
 
 <div class="collection-header">
   <div class="collection-cover-wrap">
-    <img src="{{ '/assets/images/ma-front-cover-new.png' | relative_url }}" alt="Moral Arithmetic: Stories — T. H. Mercer" class="collection-cover-static">
+    <img src="{{ '/assets/images/ma-front-cover-new.webp' | relative_url }}" alt="Moral Arithmetic: Stories — T. H. Mercer" class="collection-cover-static">
     <video class="collection-cover-video" muted playsinline preload="none">
       <source src="{{ '/assets/videos/moral-arithmetic-new-animated.mp4' | relative_url }}" type="video/mp4">
     </video>

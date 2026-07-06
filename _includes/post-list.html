@@ -2,7 +2,7 @@
 <ul class="post-list">
   {% for post in include.posts %}
   <li>
-    <a href="{{ post.link | default: post.url }}">{{ post.title }}</a>
+    <a href="{{ post.link | default: post.url }}">{{ post.title }}</a>{% if post.link %} <span class="post-list-note">(delivered by email, not read here)</span>{% endif %}
     <p class="post-meta">{% if include.show_badge %}{% include fiction-availability-badge.html availability=post.availability layout=post.layout %}{% endif %}{% include post-word-count.html content=post.content word_count=post.word_count %}<span>{{ post.date | date: "%B %-d, %Y" }}{% if post.venue %} · {{ post.venue }}{% endif %}</span></p>
     {% if post.listing_hook %}
     <div class="post-excerpt">{{ post.listing_hook | markdownify }}</div>

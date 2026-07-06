@@ -31,8 +31,10 @@
       <p class="pub-detail">
         {% if pub.press %}<span>{{ pub.press }}</span>{% endif %}
         <span>{% if pub.date_label %}{{ pub.date_label }}{% else %}{{ pub.date | date: "%B %-d, %Y" }}{% endif %}</span>
-        {% unless pub.url %}<span>Coming soon</span>{% endunless %}
       </p>
+      {% if pub.hook %}
+      <p class="pub-hook">{{ pub.hook }}</p>
+      {% endif %}
     </div>
     {% if pub.url %}
     <a href="{{ pub.url }}" class="pub-buy-btn" target="_blank" rel="noopener">{{ pub.cta_label | default: "Buy collection" }}</a>

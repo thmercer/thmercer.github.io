@@ -1,7 +1,7 @@
 <div id="mlb2-42305046" class="ml-subscribe-wrap ml-form-embedContainer ml-subscribe-form ml-subscribe-form-42305046">
   <div class="row-form">
     <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2414468/forms/189632576572359884/subscribe" data-code="" method="post" target="_blank">
-      <input type="email" name="fields[email]" placeholder="your@email.com" autocomplete="email" aria-label="Email address">
+      <input type="email" name="fields[email]" placeholder="your@email.com" autocomplete="email" aria-label="Email address" required>
       <button type="submit" class="primary">Send me the story</button>
       <button type="button" class="loading" disabled style="display:none">
         <span class="sr-only">Subscribing…</span>
@@ -9,6 +9,7 @@
       <input type="hidden" name="ml-submit" value="1">
       <input type="hidden" name="anticsrf" value="true">
     </form>
+    <p class="ml-subscribe-fallback" hidden>This form couldn't load. <a href="{{ '/contact/' | relative_url }}">Use the contact form</a> instead and I'll add you by hand.</p>
   </div>
   <div class="row-success" style="display:none">
     {{ include.success_text }}
@@ -21,6 +22,27 @@
     $('.ml-subscribe-form-42305046 .row-success').show();
     $('.ml-subscribe-form-42305046 .row-form').hide();
   }
+  // Registered before the widget script tag below so it's guaranteed to be in
+  // place if that (parser-blocking) script fails to load — e.g. blocked by an
+  // ad/tracker blocker. Without this, a blocked script leaves the raw form
+  // pointed at a JSONP endpoint: submitting opens a blank tab with zero
+  // feedback on the page itself.
+  window.mlWebformLoadFailed = function (wrapId) {
+    var wrap = document.getElementById(wrapId);
+    if (!wrap) return;
+    var form = wrap.querySelector('form');
+    var fallback = wrap.querySelector('.ml-subscribe-fallback');
+    if (form) {
+      form.addEventListener('submit', function (e) { e.preventDefault(); });
+    }
+    if (fallback) {
+      fallback.hidden = false;
+    }
+  };
 </script>
-<script src="https://groot.mailerlite.com/js/w/webforms.min.js?vb397d78ebaa8a0f631d35384c46d781b" type="text/javascript"></script>
+<script
+  src="https://groot.mailerlite.com/js/w/webforms.min.js?vb397d78ebaa8a0f631d35384c46d781b"
+  type="text/javascript"
+  onerror="window.mlWebformLoadFailed('mlb2-42305046')"
+></script>
 <script>fetch("https://assets.mailerlite.com/jsonp/2414468/forms/189632576572359884/takel")</script>
