@@ -5,3 +5,22 @@ _site/
 vendor/bundle/
 .bundle/
 thmercer-publication-mockup.html
+
+# Impeccable — ephemeral / per-developer
+.impeccable/critique/
+.impeccable/config.local.json
+.impeccable/hook.cache.json
+.impeccable/hook.pending.json
+.impeccable/design.json
+.impeccable/live/server.json
+.impeccable/live/sessions/
+.impeccable/live/previews/
+.impeccable/live/annotations/
+.impeccable/live/cache/
+.impeccable/live/manual-edit-*
+.impeccable/live/pending-manual-edits.json
+.impeccable-live/
+node_modules/.impeccable-live/
+
+# Local agent tooling (not site content)
+.claude/
