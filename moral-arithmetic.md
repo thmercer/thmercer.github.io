@@ -8,7 +8,7 @@ description: "Four stories about the quiet decisions people make when the system
 {% assign ma = site.data.publications | where: "title", "Moral Arithmetic" | first %}
 
 <div class="collection-header">
-  <div class="collection-cover-wrap">
+  <div class="collection-cover-wrap" tabindex="0" role="button" aria-label="Play the cover animation">
     <img src="{{ '/assets/images/ma-front-cover-new.webp' | relative_url }}" alt="Moral Arithmetic: Stories — T. H. Mercer" class="collection-cover-static">
     <video class="collection-cover-video" muted playsinline preload="none">
       <source src="{{ '/assets/videos/moral-arithmetic-new-animated.mp4' | relative_url }}" type="video/mp4">
@@ -59,17 +59,42 @@ description: "Four stories about the quiet decisions people make when the system
   var img = document.querySelector('.collection-cover-static');
   if (!wrap || !video || !img) return;
 
-  wrap.addEventListener('mouseenter', function () {
+  var playing = false;
+
+  function startPlay() {
+    if (playing) return;
+    playing = true;
     video.style.transition = 'none';
     video.currentTime = 0;
     video.play();
     video.style.opacity = '1';
-  });
+  }
 
-  wrap.addEventListener('mouseleave', function () {
+  function stopPlay() {
+    if (!playing) return;
+    playing = false;
     video.style.transition = 'opacity 2.5s ease 1.2s';
     video.pause();
     video.style.opacity = '0';
+  }
+
+  // Mouse (desktop hover)
+  wrap.addEventListener('mouseenter', startPlay);
+  wrap.addEventListener('mouseleave', stopPlay);
+
+  // Keyboard: focus/blur mirrors hover; Enter/Space toggles like a tap
+  wrap.addEventListener('focus', startPlay);
+  wrap.addEventListener('blur', stopPlay);
+  wrap.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+      e.preventDefault();
+      playing ? stopPlay() : startPlay();
+    }
+  });
+
+  // Touch: no hover state, so a tap toggles play/pause directly
+  wrap.addEventListener('click', function () {
+    playing ? stopPlay() : startPlay();
   });
 }());
 </script>

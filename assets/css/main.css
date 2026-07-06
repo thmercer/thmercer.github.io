@@ -284,6 +284,12 @@ button {
   margin-bottom: 0;
 }
 
+.post-list li h3 {
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
+}
+
 .post-list li:first-child {
   border-top: 1px solid var(--color-divider);
 }
@@ -617,8 +623,13 @@ article details[open]::after {
   width: clamp(200px, 55%, 300px);
   margin: 0 auto var(--space-8);
   border: 1px solid var(--color-border);
-  cursor: default;
+  cursor: pointer;
   display: block;
+}
+
+.collection-cover-wrap:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
 }
 
 .collection-cover-static,
@@ -904,6 +915,17 @@ button.cta-link:hover {
   height: 100%;
   max-width: none;
   object-fit: cover;
+}
+
+/* Below ~520px the float's fixed min-height (clamp floor: 4.25rem) is
+   shorter than the first paragraph, so body text wraps narrow for a few
+   lines then jumps to full width mid-paragraph. Unfloat and stack instead. */
+@media (max-width: 520px) {
+  .about-with-avatar .about-avatar-float {
+    float: none;
+    display: block;
+    margin: 0 auto var(--space-5);
+  }
 }
 
 .about-with-avatar .about-body > h2:first-child {
