@@ -20,7 +20,7 @@ description: "Four stories about the quiet decisions people make when the system
 </div>
 
 <div class="collection-cta">
-  <a href="{{ ma.url }}" class="btn-primary" target="_blank" rel="noopener">Pre-order now</a>
+  <a href="{{ ma.url }}" class="btn-primary" target="_blank" rel="noopener">Get your copy</a>
 </div>
 
 <section class="collection-stories" aria-label="Stories in this collection">
@@ -49,7 +49,7 @@ description: "Four stories about the quiet decisions people make when the system
 </section>
 
 <div class="collection-cta">
-  <a href="{{ ma.url }}" class="btn-primary" target="_blank" rel="noopener">Pre-order now</a>
+  <a href="{{ ma.url }}" class="btn-primary" target="_blank" rel="noopener">Get your copy</a>
 </div>
 
 <script>

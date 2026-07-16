@@ -9,7 +9,7 @@ description: "Free stories and essays by T. H. Mercer — read on the site, no e
 
 <p class="site-intro">Everything here is free to read, right now.</p>
 
-<p class="site-intro">Also placed in anthologies from Raconteur Press and Dragon Soul Press. Debut collection <em>Moral Arithmetic</em> arrives this July — see <a href="/about/#publications">Publications</a>.</p>
+<p class="site-intro">Also placed in anthologies from Raconteur Press and Dragon Soul Press. Debut collection <em>Moral Arithmetic</em> is out now — see <a href="/about/#publications">Publications</a>.</p>
 
 <h2 class="work-section-heading">Stories</h2>
 <p class="site-intro">Short fiction, mostly speculative.</p>
