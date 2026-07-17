@@ -20,8 +20,10 @@
   anthology: "Forgotten Fronts Wyrd Warfare"
   press: "Raconteur Press"
   date: 2026-07-17
+  date_label: "July 17, 2026 · Available now"
   cover: /assets/images/wyrd-warfare-cover.webp
   cover_alt: "Forgotten Fronts: Wyrd Warfare — anthology cover, edited by Chris Dinote"
+  url: "https://amzn.to/4wakQQg"
   hook: "Clark sees the shimmer before every shot fired at his squad, but the men who call him a coward don't know what it costs him."
 - title: "The Woodsboro Correspondence"
   anthology: "Slayer"
