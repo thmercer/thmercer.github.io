@@ -38,8 +38,12 @@
   anthology: "Space & Time"
   press: "Authortunities Press"
   date: 2026-08-01
-  date_label: "August 2026 · Issue No. 153"
+  date_label: "August 2026 · Issue No. 153 · Available now"
   short_date_label: "August 2026"
+  cover: /assets/images/space-time-153-cover.webp
+  cover_alt: "Space & Time Issue No. 153 cover"
+  url: "https://authortunitiespress.com/b/153"
+  cta_label: "Buy issue"
   hook: "El treats creation like shipped code — until an angel shows up with an incident report he didn't see coming."
 - title: "Exit Conditions"
   anthology: "Fall 2026 Literary Series"
