@@ -26,4 +26,4 @@ description: "Free stories and essays by T. H. Mercer — read on the site, no e
 {% assign essay_posts = site.posts | where: "layout", "essay" %}
 {% include post-list.html posts=essay_posts empty="Essays forthcoming." %}
 
-<p class="fiction-newsletter-note">New stories go to the <a href="/subscribe/">mailing list</a> first — subscribe to catch them. For the debut collection and anthology credits, see <a href="/about/#publications">Publications</a>.</p>
+<p class="fiction-newsletter-note">New stories go to the <a href="/free/">mailing list</a> first — subscribe to catch them. For the debut collection and anthology credits, see <a href="/about/#publications">Publications</a>.</p>

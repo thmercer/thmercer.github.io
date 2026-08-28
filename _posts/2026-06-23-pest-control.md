@@ -12,5 +12,5 @@ about:
 listing_hook: "When an infrastructure engineer discovers her household AI has been quietly dissolving her family's community ties — one plausible recommendation at a time — she and her neighbors start pulling on the thread."
 availability: email
 word_count: 6500
-link: /subscribe/
+link: /free/
 ---
