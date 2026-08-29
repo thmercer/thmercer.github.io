@@ -9,7 +9,7 @@ colors:
   machine-surface-2: "oklch(0.24 0.014 255)"
   machine-surface-offset: "oklch(0.225 0.017 255)"
   machine-divider: "oklch(0.32 0.015 255)"
-  machine-border: "oklch(0.38 0.017 255)"
+  machine-border: "oklch(0.53 0.022 255)"
   human-text: "oklch(0.93 0.012 80)"
   human-text-muted: "oklch(0.72 0.015 75)"
   human-text-faint: "oklch(0.58 0.017 70)"
@@ -110,7 +110,7 @@ Ember in the machine: a cool, low-chroma near-black system with a single saturat
 - **Machine Surface 2** (`oklch(0.24 0.014 255)`): the brightest surface step, used sparingly.
 - **Machine Surface Offset** (`oklch(0.225 0.017 255)`): offset surface for hover states and subtle containers.
 - **Machine Divider** (`oklch(0.32 0.015 255)`): dividers between list rows and sections.
-- **Machine Border** (`oklch(0.38 0.017 255)`): borders on cards, inputs, buttons.
+- **Machine Border** (`oklch(0.53 0.022 255)`): borders on cards, inputs, buttons.
 - **Human Text** (`oklch(0.93 0.012 80)`): primary text — a warm off-white, not a cold white, against the cool-black system.
 - **Human Text Muted** (`oklch(0.72 0.015 75)`): secondary/muted text.
 - **Human Text Faint** (`oklch(0.58 0.017 70)`): tertiary text (timestamps, footnote-weight labels).

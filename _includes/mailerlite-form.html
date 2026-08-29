@@ -2,7 +2,7 @@
   <div class="row-form">
     <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2414468/forms/189632576572359884/subscribe" data-code="" method="post" target="_blank">
       <input type="email" name="fields[email]" placeholder="your@email.com" autocomplete="email" aria-label="Email address" required>
-      <button type="submit" class="primary">Send me the story</button>
+      <button type="submit" class="primary">{{ include.button_text | default: "Subscribe" }}</button>
       <button type="button" class="loading" disabled style="display:none">
         <span class="sr-only">Subscribing…</span>
       </button>
@@ -17,43 +17,85 @@
 </div>
 
 <script>
+(function () {
+  var WRAP_ID = 'mlb2-42305046';
+  var wrap = document.getElementById(WRAP_ID);
+  var form = wrap && wrap.querySelector('form');
+  var ready = false;      // widget has loaded and bound its own submit handler
+  var failed = false;     // widget could not load
+  var pending = false;    // a submit arrived before the widget was ready
+
+  function setLoading(on) {
+    if (!wrap) return;
+    var submit = wrap.querySelector('button.primary');
+    var loading = wrap.querySelector('button.loading');
+    if (submit) submit.style.display = on ? 'none' : '';
+    if (loading) loading.style.display = on ? '' : 'none';
+  }
+
+  // The raw <form> posts to a JSONP endpoint with target="_blank". A submit
+  // before the widget has bound its handler — or when the widget is blocked
+  // entirely — would open a blank tab with no feedback on the page. Guard it
+  // synchronously (not after a 4s timeout) so that window is never open:
+  // hold premature submits, show the loading state, and let the poll below
+  // either replay them once the widget is live or surface the fallback.
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      if (ready) return;
+      e.preventDefault();
+      if (failed) return;
+      pending = true;
+      setLoading(true);
+    });
+  }
+
   window.__ml42305046FailedShown = false;
 
-  function ml_webform_success_42305046() {
-    var $ = ml_jQuery || jQuery;
+  window.ml_webform_success_42305046 = function () {
+    var $ = window.ml_jQuery || window.jQuery;
     $('.ml-subscribe-form-42305046 .row-success').show();
     $('.ml-subscribe-form-42305046 .row-form').hide();
-  }
-  // Registered before the widget script tag below so it's guaranteed to be in
-  // place if that (parser-blocking) script fails to load — e.g. blocked by an
-  // ad/tracker blocker. Without this, a blocked script leaves the raw form
-  // pointed at a JSONP endpoint: submitting opens a blank tab with zero
-  // feedback on the page itself.
+  };
+
+  // Defined before the widget script tag so it's in place if that
+  // (parser-blocking) script is blocked by an ad/tracker blocker.
   window.mlWebformLoadFailed = function (wrapId) {
     if (window.__ml42305046FailedShown) return;
     window.__ml42305046FailedShown = true;
-    var wrap = document.getElementById(wrapId);
-    if (!wrap) return;
-    var form = wrap.querySelector('form');
-    var fallback = wrap.querySelector('.ml-subscribe-fallback');
-    if (form) {
-      form.addEventListener('submit', function (e) { e.preventDefault(); });
-    }
-    if (fallback) {
-      fallback.hidden = false;
-    }
+    failed = true;
+    setLoading(false);
+    var w = document.getElementById(wrapId || WRAP_ID);
+    if (!w) return;
+    var f = w.querySelector('form');
+    var fallback = w.querySelector('.ml-subscribe-fallback');
+    if (f) f.addEventListener('submit', function (e) { e.preventDefault(); });
+    if (fallback) fallback.hidden = false;
   };
-  // onerror alone misses the case where an ad/privacy blocker returns an
-  // empty 200 for the script instead of failing the request: the load event
-  // still fires, but none of the widget's own setup ever runs. The widget
-  // sets window.ml_jQuery once it has actually initialized (confirmed by
-  // reading the served script), so polling for it catches that silent
-  // failure path too, not just a hard network error.
-  window.setTimeout(function () {
-    if (typeof window.ml_jQuery === 'undefined') {
-      window.mlWebformLoadFailed('mlb2-42305046');
+
+  // The widget sets window.ml_jQuery once it has actually initialised — poll
+  // for it. A short interval (not one 4s timeout) so the guard above releases
+  // as soon as the widget is live, and so a genuine failure (hard error, or
+  // an ad-blocker returning an empty 200 that still fires the load event)
+  // surfaces quickly.
+  var waited = 0;
+  var poll = window.setInterval(function () {
+    if (typeof window.ml_jQuery !== 'undefined') {
+      window.clearInterval(poll);
+      ready = true;
+      if (pending && form) {
+        pending = false;
+        if (typeof form.requestSubmit === 'function') form.requestSubmit();
+        else form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+      }
+      return;
     }
-  }, 4000);
+    waited += 250;
+    if (waited >= 4000) {
+      window.clearInterval(poll);
+      window.mlWebformLoadFailed(WRAP_ID);
+    }
+  }, 250);
+})();
 </script>
 <script
   src="https://groot.mailerlite.com/js/w/webforms.min.js?vb397d78ebaa8a0f631d35384c46d781b"

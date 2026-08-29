@@ -1,10 +1,9 @@
 ---
 layout: about
 title: About
+tagline: "Former engineer. Occasional cyborg. Storyteller."
 ---
 T. H. Mercer writes speculative fiction about the tension between cold systems and the people caught inside them — near-future stories where the stakes are human and the machinery is indifferent.
-
-Former engineer. Occasional cyborg. Storyteller.
 
 I have always been a creator. Sometimes stories. Sometimes worlds. Sometimes software. Software was the most lucrative, so I did it for years. This is me coming back.
 
@@ -33,25 +32,32 @@ New stories go to the [mailing list](/free/) first.
     >
   </a>
   <div class="feature-body">
-    <p class="feature-subtitle">{{ ma.subtitle }}</p>
     <h3 id="about-ma-title" class="feature-title">
       <a href="{{ ma.landing | relative_url }}">{{ ma.title }}</a>
     </h3>
-    {% if ma.date_label %}
-    <p class="feature-meta">{{ ma.date_label }}</p>
-    {% endif %}
+    <p class="feature-meta">Debut collection{% if ma.date_label %} &middot; {{ ma.date_label }}{% endif %}</p>
     {% if ma.hook %}
     <p class="feature-hook">{{ ma.hook }}</p>
     {% endif %}
     <div class="feature-actions">
-      <a href="{{ ma.landing | relative_url }}" class="cta-link">View collection</a>
-      {% if ma.url %}
-      <a href="{{ ma.url }}" class="btn-primary" target="_blank" rel="noopener">{{ ma.cta_label | default: "Pre-order" }} <span class="sr-only">(opens in a new tab)</span></a>
-      {% endif %}
+      <a href="{{ ma.landing | relative_url }}" class="btn-primary">View collection</a>
     </div>
   </div>
 </section>
 {% endif %}
 
-{% assign pubs = site.data.publications | where_exp: "p", "p.title != 'Moral Arithmetic'" | sort: "date" %}
-{% include pub-entry.html pubs=pubs heading_level="h3" %}
+{% assign pubs = site.data.publications | where_exp: "p", "p.title != 'Moral Arithmetic'" %}
+{% assign pubs_out = pubs | where: "status", "out" | sort: "date" | reverse %}
+{% assign pubs_soon = pubs | where_exp: "p", "p.status != 'out'" | sort: "date" %}
+
+{% if pubs_out.size > 0 %}
+### Available now
+
+{% include pub-entry.html pubs=pubs_out heading_level="h4" %}
+{% endif %}
+
+{% if pubs_soon.size > 0 %}
+### Coming soon
+
+{% include pub-entry.html pubs=pubs_soon heading_level="h4" %}
+{% endif %}

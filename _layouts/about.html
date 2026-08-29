@@ -1,13 +1,14 @@
 ---
 layout: default
 ---
-<h1 class="sr-only">{{ page.title }} — {{ site.title }}</h1>
-<div class="about-with-avatar">
-  <figure class="about-avatar-float">
-    <img class="about-avatar" src="{{ '/assets/images/thmercer-avatar.webp' | relative_url }}"
-         alt="T. H. Mercer" width="104" height="104" decoding="async">
-  </figure>
-  <div class="about-body">
-    {{ content }}
+<header class="about-header">
+  <img class="about-portrait" src="{{ '/assets/images/thmercer-avatar.webp' | relative_url }}"
+       alt="T. H. Mercer" width="104" height="104" decoding="async">
+  <div class="about-header-text">
+    <h1 class="about-name">{{ site.title }}</h1>
+    {% if page.tagline %}<p class="about-tagline">{{ page.tagline }}</p>{% endif %}
   </div>
+</header>
+<div class="about-body">
+  {{ content }}
 </div>

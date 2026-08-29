@@ -26,14 +26,20 @@
   "mainEntity": {{ person_entity }}
 }
 {% elsif page.layout == 'story' %}
+{%- assign story_free = true -%}
+{%- if page.availability == 'email' or page.availability == 'anthology' or page.link -%}{%- assign story_free = false -%}{%- endif -%}
 {
   "@context": "https://schema.org",
   "@type": "ShortStory",
   "name": {{ page.title | jsonify }},
   "author": {{ author_node }},
   "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
-  "url": {{ page_canonical | jsonify }}{% if page.genre and page.genre.size > 0 %},
-  "genre": {{ page.genre | jsonify }}{% endif %}{% if page.about and page.about.size > 0 %},
+  "url": {{ page_canonical | jsonify }},
+  "isAccessibleForFree": {{ story_free }}{% if page.description %},
+  "description": {{ page.description | jsonify }}{% endif %}{% if page.word_count %},
+  "wordCount": {{ page.word_count }}{% endif %}{% if page.genre and page.genre.size > 0 %},
+  "genre": {{ page.genre | jsonify }}{% endif %}{% if page.keywords and page.keywords.size > 0 %},
+  "keywords": {{ page.keywords | join: ", " | jsonify }}{% endif %}{% if page.about and page.about.size > 0 %},
   "about": [
     {% for topic in page.about %}
     {"@type": "Thing", "name": {{ topic | jsonify }}}{% unless forloop.last %},{% endunless %}

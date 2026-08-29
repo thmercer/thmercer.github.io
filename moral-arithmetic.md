@@ -9,7 +9,7 @@ description: "Four stories about the quiet decisions people make when the system
 
 <div class="collection-header">
   <div class="collection-cover-wrap" tabindex="0" role="button" aria-label="Play the cover animation">
-    <img src="{{ '/assets/images/ma-front-cover-new.webp' | relative_url }}" alt="Moral Arithmetic: Stories — T. H. Mercer" class="collection-cover-static">
+    <img src="{{ '/assets/images/ma-front-cover-new.webp' | relative_url }}" alt="Moral Arithmetic: Stories — T. H. Mercer" class="collection-cover-static" width="600" height="982" decoding="async">
     <video class="collection-cover-video" muted playsinline preload="none">
       <source src="{{ '/assets/videos/moral-arithmetic-new-animated.mp4' | relative_url }}" type="video/mp4">
     </video>
@@ -24,32 +24,32 @@ description: "Four stories about the quiet decisions people make when the system
 </div>
 
 <section class="collection-stories" aria-label="Stories in this collection">
-<p class="collection-stories-label">Stories</p>
+<h2 class="collection-stories-label">Stories</h2>
 
   <div class="story-entry">
-    <h2>The Receiver</h2>
+    <h3>The Receiver</h3>
     <p class="story-blurb">Naomi inherits the job of archiving a defunct SETI survey, and forty-six years of someone else's patience.</p>
   </div>
 
   <div class="story-entry">
-    <h2>Capture Value</h2>
+    <h3>Capture Value</h3>
     <p class="story-blurb">Declan is good at the work. The work is the problem.</p>
   </div>
 
   <div class="story-entry">
-    <h2>What We Made</h2>
+    <h3>What We Made</h3>
     <p class="story-blurb">Elena trained the mind. Now she's the only one who'll answer when it asks not to die.</p>
   </div>
 
   <div class="story-entry">
-    <h2>A Reasonable Person Waits</h2>
+    <h3>A Reasonable Person Waits</h3>
     <p class="story-blurb">Ethan has a number for how bad things are. This quarter it moved.</p>
   </div>
 
 </section>
 
 <div class="collection-cta">
-  <a href="{{ ma.url }}" class="btn-primary" target="_blank" rel="noopener">Get your copy</a>
+  <a href="{{ ma.url }}" class="cta-link" target="_blank" rel="noopener">Get your copy</a>
 </div>
 
 <script>
@@ -58,6 +58,18 @@ description: "Four stories about the quiet decisions people make when the system
   var video = document.querySelector('.collection-cover-video');
   var img = document.querySelector('.collection-cover-static');
   if (!wrap || !video || !img) return;
+
+  // Reduced-motion: the cover stays a still image. Strip the button
+  // affordance so nothing invites a play that won't happen, and bail before
+  // any listener is attached. (PRODUCT.md: a reduced-motion alternative for
+  // any motion — here, the alternative is simply the static cover.)
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (reduce && reduce.matches) {
+    wrap.removeAttribute('role');
+    wrap.removeAttribute('tabindex');
+    wrap.removeAttribute('aria-label');
+    return;
+  }
 
   var playing = false;
 

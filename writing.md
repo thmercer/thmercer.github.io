@@ -7,12 +7,9 @@ description: "Free stories and essays by T. H. Mercer — read on the site, no e
 
 <h1 class="sr-only">Writing — T. H. Mercer</h1>
 
-<p class="site-intro">Everything here is free to read, right now.</p>
-
-<p class="site-intro">Also placed in anthologies from Raconteur Press and Dragon Soul Press. Debut collection <em>Moral Arithmetic</em> is out now — see <a href="/about/#publications">Publications</a>.</p>
+<p class="site-intro">Everything here is free to read, right now. For anthology credits and the debut collection <em>Moral Arithmetic</em>, see <a href="/about/#publications">Publications</a>.</p>
 
 <h2 class="work-section-heading">Stories</h2>
-<p class="site-intro">Short fiction, mostly speculative.</p>
 
 {% assign story_posts = site.posts | where: "layout", "story" %}
 {% assign onsite_posts = story_posts | where_exp: "p", "p.link == nil" | sort: "date" | reverse %}
@@ -26,4 +23,4 @@ description: "Free stories and essays by T. H. Mercer — read on the site, no e
 {% assign essay_posts = site.posts | where: "layout", "essay" %}
 {% include post-list.html posts=essay_posts empty="Essays forthcoming." %}
 
-<p class="fiction-newsletter-note">New stories go to the <a href="/free/">mailing list</a> first — subscribe to catch them. For the debut collection and anthology credits, see <a href="/about/#publications">Publications</a>.</p>
+<p class="fiction-newsletter-note">New stories go to the <a href="/free/">mailing list</a> first. Subscribe to catch them. For the debut collection and anthology credits, see <a href="/about/#publications">Publications</a>.</p>

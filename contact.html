@@ -8,10 +8,10 @@ permalink: /contact/
 
 <p class="site-intro">If something you read stayed with you — or you just want to say you read it — I'd like to know. Rights enquiries and other messages welcome too.</p>
 
-<div class="contact-success" data-fs-success>
+<div class="contact-success" data-fs-success role="status">
   <p>Thanks — I'll get back to you soon.</p>
 </div>
-<p class="contact-global-error" data-fs-error></p>
+<p class="contact-global-error" data-fs-error role="alert"></p>
 
 <form id="contact-form" class="contact-form" action="https://formspree.io/f/mwvjvjgz" method="POST">
   <div class="contact-form-group">
@@ -39,6 +39,10 @@ permalink: /contact/
 
 <script>
   window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-  formspree('initForm', { formElement: '#contact-form', formId: 'mwvjvjgz' });
+  // useDefaultStyles:false — the site stylesheet owns the success/error
+  // visibility and styling (see [data-fs-active] rules in main.css). Formspree's
+  // own injected sheet is both off-brand (light-mode pink/green boxes) and
+  // injected too late to stop the success message flashing on load.
+  formspree('initForm', { formElement: '#contact-form', formId: 'mwvjvjgz', useDefaultStyles: false });
 </script>
 <script src="https://unpkg.com/@formspree/ajax@1" defer></script>

@@ -1,0 +1,20 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-color",
+        "value": "rgb(0, 0, 0)",
+        "createdAt": "2026-08-29T04:03:28.565Z",
+        "reason": "false positive: detector runs in degraded regex mode here (htmlparser2/css-tree modules absent), so it cannot resolve color:var(--color-bg)/var(--color-text) on the skip link and CSS-custom-property-colored elements and defaults to rgb(0,0,0). Confirmed in 2026-08-29 critique across 18 pages. No literal black in the codebase."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "oklch(1 0 0 / 0.7)",
+        "createdAt": "2026-08-29T04:25:37.802Z",
+        "reason": "sanctioned exception: the play-affordance triangle in .collection-cover-wrap::after sits on top of arbitrary book-cover artwork, so it needs a fixed translucent white + drop-shadow regardless of theme — not a palette token. Added 2026-08-29 during critique fixes."
+      }
+    ]
+  }
+}

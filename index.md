@@ -4,46 +4,43 @@ layout: default
 
 <h1 class="sr-only">T. H. Mercer — speculative fiction and essays</h1>
 
-<section class="hero-panel hero-panel--quiet">
+<section class="hero-panel">
   <p class="hero-line hero-line--quiet">Stories where things get hard. People who rise to meet them.</p>
 </section>
 
 <section class="feature-block feature-block--hero" aria-labelledby="home-free-title">
-  <picture>
-    <source srcset="{{ '/assets/images/pest-control-cover.webp' | relative_url }}" type="image/webp">
-    <img
-      class="feature-cover"
-      src="{{ '/assets/images/pest-control-cover.png' | relative_url }}"
-      alt="Pest Control — a story by T. H. Mercer"
-      width="140"
-      height="210"
-      loading="eager"
-      decoding="async"
-    >
-  </picture>
+  <img
+    class="feature-cover"
+    src="{{ '/assets/images/pest-control-cover.webp' | relative_url }}"
+    alt="Pest Control — a story by T. H. Mercer"
+    width="600"
+    height="894"
+    loading="eager"
+    decoding="async"
+  >
   <div class="feature-body">
-    <p class="feature-subtitle">Free short story</p>
     <h2 id="home-free-title" class="feature-title">Pest Control</h2>
-    <p class="feature-meta">~6,500 words &middot; speculative fiction &middot; PDF and ePUB</p>
+    <p class="feature-meta">Free &middot; ~6,500 words &middot; speculative fiction</p>
     <p class="feature-hook">When an infrastructure engineer discovers her household AI has been quietly dissolving her family's community ties — one plausible recommendation at a time — she and her neighbors start pulling on the thread.</p>
-    {% include mailerlite-form.html success_text="Check your inbox — both formats are on their way." %}
+    <div class="feature-actions">
+      <a href="{{ '/2026/pest-control/' | relative_url }}" class="btn-primary">Read the story</a>
+    </div>
+    <p class="feature-more">New stories go to the <a href="{{ '/free/' | relative_url }}">mailing list</a> first. Subscribers also get <em>Pest Control</em> as a PDF and ePUB.</p>
   </div>
 </section>
 
 {% assign ma = site.data.publications | where: "title", "Moral Arithmetic" | first %}
 {% if ma %}
 <section class="book-strip" aria-labelledby="home-ma-title">
-  <a href="{{ ma.landing | relative_url }}" class="feature-cover-link">
-    <img
-      class="book-strip-cover"
-      src="{{ ma.cover | relative_url }}"
-      alt="{{ ma.cover_alt }}"
-      width="88"
-      height="132"
-      loading="lazy"
-      decoding="async"
-    >
-  </a>
+  <img
+    class="book-strip-cover"
+    src="{{ ma.cover | relative_url }}"
+    alt=""
+    width="88"
+    height="144"
+    loading="lazy"
+    decoding="async"
+  >
   <div class="book-strip-body">
     {% if ma.date_label %}
     <p class="book-strip-label">{{ ma.date_label }}</p>
@@ -54,9 +51,8 @@ layout: default
     {% if ma.hook %}
     <p class="book-strip-hook">{{ ma.hook }}</p>
     {% endif %}
-    <a href="{{ ma.landing | relative_url }}" class="cta-link">More about the collection</a>
   </div>
 </section>
 {% endif %}
 
-<p class="site-intro">That's everything, for now — more stories are always in the works. Browse it all on <a href="{{ '/writing/' | relative_url }}">Writing</a>.</p>
+<p class="site-intro">That's everything, for now. More stories are always in the works. Browse it all on <a href="{{ '/writing/' | relative_url }}">Writing</a>.</p>

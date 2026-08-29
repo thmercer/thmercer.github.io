@@ -16,7 +16,7 @@ availability: free
 ---
 
 <details>
-<summary>Dust jacket</summary>
+<summary>Dust jacket — the blurb</summary>
 <p>In this story by <strong>T. H. Mercer</strong>, a financial reconciliation specialist watches the noise drain out of the world—from the settlement queues she monitors, from the weather data, from her colleague who quietly stopped reaching for his dead wife in the mornings. The exception desk is the last rough edge left. She has a daughter who keeps a list taped to the refrigerator of the things that go in their proper order.</p>
 </details>
 

@@ -26,3 +26,7 @@ exclude:
   - vendor
   - bin
   - thmercer-publication-mockup.html
+  # Internal working docs — kept in the repo, never published (were rendering
+  # at /DESIGN/ and /PRODUCT/ and landing in sitemap.xml).
+  - DESIGN.md
+  - PRODUCT.md

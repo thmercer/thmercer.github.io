@@ -1,8 +1,11 @@
+# status: out | preorder | forthcoming — drives the grouping on /about/#publications.
+# Keep it current; it's the one field that goes stale on its own.
 - title: "Moral Arithmetic"
   subtitle: "Debut short fiction collection — four stories"
   hook: "Four stories about the quiet decisions people make when the systems they serve stop deserving them."
   date: 2026-07-16
   date_label: "July 16, 2026 · Available now"
+  status: out
   cover: /assets/images/ma-front-cover-new.webp
   cover_alt: "Moral Arithmetic: Stories — T. H. Mercer"
   landing: /moral-arithmetic/
@@ -12,7 +15,9 @@
   anthology: "Pet Monsters"
   press: "Raconteur Press"
   date: 2026-07-01
-  cover: /assets/images/pet-monsters-cover.png
+  date_label: "July 2026"
+  status: out
+  cover: /assets/images/pet-monsters-cover.webp
   cover_alt: "Pet Monsters anthology cover"
   url: "https://amzn.to/4gRWSnT"
   hook: "Milo hides a glowing, tentacled creature in his basement from his distracted parents, and learns what it costs to truly see someone."
@@ -20,54 +25,66 @@
   anthology: "Forgotten Fronts Wyrd Warfare"
   press: "Raconteur Press"
   date: 2026-07-17
-  date_label: "July 17, 2026 · Available now"
+  date_label: "July 2026"
+  status: out
   cover: /assets/images/wyrd-warfare-cover.webp
   cover_alt: "Forgotten Fronts: Wyrd Warfare — anthology cover, edited by Chris Dinote"
   url: "https://amzn.to/4wakQQg"
   hook: "Clark sees the shimmer before every shot fired at his squad, but the men who call him a coward don't know what it costs him."
-- title: "The Woodsboro Correspondence"
-  anthology: "Slayer"
-  press: "Dragon Soul Press"
-  date: 2026-08-30
-  cover: /assets/images/slayer-anthology-cover.png
-  cover_alt: "Slayer anthology cover"
-  url: "http://books2read.com/DSPSlayer"
-  cta_label: "Pre-order"
-  hook: "Calvin Rourke writes an apologetic letter about strange happenings in his home, not realizing that he himself is the strange thing happening."
 - title: "Working As Intended"
   anthology: "Space & Time"
   press: "Authortunities Press"
   date: 2026-08-01
-  date_label: "August 2026 · Issue No. 153 · Available now"
+  date_label: "August 2026 · Issue No. 153"
   short_date_label: "August 2026"
+  status: out
   cover: /assets/images/space-time-153-cover.webp
   cover_alt: "Space & Time Issue No. 153 cover"
   url: "https://authortunitiespress.com/b/153"
   cta_label: "Buy issue"
   hook: "El treats creation like shipped code — until an angel shows up with an incident report he didn't see coming."
+- title: "The Woodsboro Correspondence"
+  anthology: "Slayer"
+  press: "Dragon Soul Press"
+  date: 2026-08-30
+  date_label: "August 2026"
+  short_date_label: "August 2026"
+  status: preorder
+  cover: /assets/images/slayer-anthology-cover.webp
+  cover_alt: "Slayer anthology cover"
+  url: "http://books2read.com/DSPSlayer"
+  cta_label: "Pre-order"
+  hook: "Calvin Rourke writes an apologetic letter about strange happenings in his home, not realizing that he himself is the strange thing happening."
+- title: "Spin"
+  anthology: "Arcane Intelligence"
+  press: "Raconteur Press"
+  date: 2026-09-18
+  date_label: "September 2026"
+  short_date_label: "September 2026"
+  status: forthcoming
+  hook: "Heaven and Hell run soul-collection like rival spy agencies, and Ash, a demon case officer, is sent to catch the honest angel leaking their secrets."
+- title: "Good Hit"
+  anthology: "Hold-My-Beer Heroes"
+  press: "Raconteur Press"
+  date: 2026-10-02
+  date_label: "October 2026"
+  short_date_label: "October 2026"
+  status: forthcoming
+  hook: "A foam-sword knight who's sure his blade-work makes him genuinely dangerous walks up to a stranger in the dark, calls a clean hit — and discovers the man was never playing."
 - title: "Mangoes in Alaska"
   anthology: "Space & Time"
   press: "Authortunities Press"
   date: 2026-12-01
   date_label: "December 2026 · Issue No. 157"
   short_date_label: "December 2026"
+  status: forthcoming
   hook: "Ionie's family has one joke about impossible hope — her niece is about to test it, in a dome full of green."
 - title: "Exit Conditions"
   anthology: "Fall 2026 Literary Series"
   press: "The Ones Behind the Bookshelves"
   date: 2026-12-06
-  cover: /assets/images/the-ones-behind-the-bookshelves.png
-  cover_alt: "The Ones Behind the Bookshelves — literary series logo"
+  date_label: "December 2026"
+  short_date_label: "December 2026"
+  status: forthcoming
   landing: /2026/exit-conditions/
   hook: "Priya spends her days finding where two systems disagree — until the friction that keeps her human starts disappearing too."
-  cover_logo: true
-- title: "Spin"
-  anthology: "Arcane Intelligence"
-  press: "Raconteur Press"
-  date: 2026-09-18
-  hook: "Heaven and Hell run soul-collection like rival spy agencies, and Ash, a demon case officer, is sent to catch the honest angel leaking their secrets."
-- title: "Good Hit"
-  anthology: "Hold-My-Beer Heroes"
-  press: "Raconteur Press"
-  date: 2026-10-02
-  hook: "A foam-sword knight who's sure his blade-work makes him genuinely dangerous walks up to a stranger in the dark, calls a clean hit — and discovers the man was never playing."
