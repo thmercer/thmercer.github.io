@@ -408,17 +408,17 @@ button {
   padding: var(--space-10) var(--space-8) var(--space-4);
 }
 
-/* Ember light pooling behind the opening line. Painted on a pseudo-element
-   that bleeds well past the panel on every side, so the gradient's own edge
-   never lands inside the visible box — what you see is a soft directional
-   wash that reads as light, not a rectangle. (.page has overflow-x:clip to
-   contain the sideways bleed.) */
+/* Ember light pooling behind the opening line. The gradient's soft falloff
+   completes before it reaches any edge that would clip it — the sides bleed
+   past .page (which has overflow-x:clip, and so also clips the top), and the
+   top is held flush to the panel so the glow never touches the opaque header
+   bar. What you see is a soft wash that reads as light, not a rectangle. */
 .hero-panel::before {
   content: "";
   position: absolute;
   z-index: -1;
-  inset: -3rem -18vw -9rem -10vw;
-  background: radial-gradient(42% 66% at 24% 40%, var(--hero-glow) 0%, transparent 68%);
+  inset: 0 -16vw -10rem -12vw;
+  background: radial-gradient(36% 58% at 33% 44%, var(--hero-glow) 0%, transparent 72%);
   pointer-events: none;
 }
 

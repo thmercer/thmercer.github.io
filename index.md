@@ -25,7 +25,7 @@ layout: default
     <div class="feature-actions">
       <a href="{{ '/2026/pest-control/' | relative_url }}" class="btn-primary">Read the story</a>
     </div>
-    <p class="feature-more">New stories go to the <a href="{{ '/free/' | relative_url }}">mailing list</a> first. Subscribers also get <em>Pest Control</em> as a PDF and ePUB.</p>
+    <p class="feature-more">The <a href="{{ '/free/' | relative_url }}">mailing list</a> is where I announce new stories. Subscribers also get <em>Pest Control</em> as a PDF and ePUB.</p>
   </div>
 </section>
 

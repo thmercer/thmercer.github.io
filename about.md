@@ -13,7 +13,7 @@ If you've ever dog-eared a Pratchett for the footnotes, or stayed up past midnig
 
 New here? Start with the free stories and essays on [Writing](/writing/), or go straight to the debut collection below.
 
-New stories go to the [mailing list](/free/) first.
+The [mailing list](/free/) is where I say when there's a new story out.
 
 ## Publications
 
