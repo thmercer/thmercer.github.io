@@ -298,12 +298,16 @@ was the actual gap.
   new one"; pitch rewritten), `_includes/newsletter-cta.html`, `index.md`
   `.feature-more`, `about.md`, `writing.md` `.fiction-newsletter-note`,
   `free.html` `description:` meta.
-- **Hero glow left edge (P1 residual).** The `::before` gradient still had
-  ~7% intensity where `.page`'s `overflow-x: clip` cut it on the left —
-  a soft but real vertical edge. Shrank the ellipse and moved its centre
-  in from the left (`34% 62% at 33% 36%`, `transparent 74%`,
-  `inset: -4rem -16vw -10rem -12vw`) so the falloff completes before the
-  clip. Now reads as a soft light pool on every side. Verified 1280 + 390
-  × dark + light via Playwright (`/home/teague/amz-categories/.venv`,
-  seed `localStorage.theme='light'` — site is dark-first, ignores
-  `prefers-color-scheme`).
+- **Hero glow edges (P1 residual).** The `::before` gradient still had
+  ~7% intensity where it hit clipping edges: first the left (`.page`'s
+  `overflow-x: clip`), then — since `overflow-x:clip` also clips y per
+  spec — a hard horizontal seam where the glow met the opaque
+  `.site-header` bar (`background: var(--color-bg)`). Final values:
+  `radius 36% 58% at 33% 44%`, `transparent 72%`,
+  `inset: 0 -16vw -10rem -12vw` (top flush to the panel, ~40px below the
+  header line; sides bleed past `.page`). Reads as a soft light pool with
+  no hard edge anywhere. Verified 1280 + 390 × dark + light via Playwright
+  (`/home/teague/amz-categories/.venv/bin/python`, seed
+  `localStorage.theme='light'` — site is dark-first, ignores
+  `prefers-color-scheme`; `document.fonts.ready` + wait, or Literata
+  hasn't loaded and the tagline mis-wraps to 3 lines).
