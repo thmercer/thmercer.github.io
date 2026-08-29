@@ -408,17 +408,23 @@ button {
   padding: var(--space-10) var(--space-8) var(--space-4);
 }
 
-/* Ember light pooling behind the opening line. The gradient's soft falloff
-   completes before it reaches any edge that would clip it — the sides bleed
-   past .page (which has overflow-x:clip, and so also clips the top), and the
-   top is held flush to the panel so the glow never touches the opaque header
-   bar. What you see is a soft wash that reads as light, not a rectangle. */
+/* Ember light pooling behind the opening line. The box is flush to the panel
+   on both sides (no viewport-unit bleed): the earlier design leaned on .page's
+   overflow-x:clip to hide the gradient's edge, but the clip line and the
+   gradient scale with viewport width at different rates, so past a certain
+   width the clip cut through a still-bright part of the wash — a hard vertical
+   edge. Now the radial falloff reaches full transparency well inside this box
+   on every side, so nothing needs clipping and there is no edge to expose at
+   any width. .page's overflow-x:clip stays purely as a horizontal-scroll guard
+   (it never clips the vertical axis — overflow-y computes to visible when the
+   other axis is clip, so the -10rem bottom bleed is fine; the top is held
+   flush so the wash never rises into the opaque header bar). */
 .hero-panel::before {
   content: "";
   position: absolute;
   z-index: -1;
-  inset: 0 -16vw -10rem -12vw;
-  background: radial-gradient(36% 58% at 33% 44%, var(--hero-glow) 0%, transparent 72%);
+  inset: 0 0 -10rem 0;
+  background: radial-gradient(40% 50% at 40% 43%, var(--hero-glow) 0%, transparent 76%);
   pointer-events: none;
 }
 
