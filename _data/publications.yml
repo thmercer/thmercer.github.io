@@ -49,11 +49,11 @@
   date: 2026-08-30
   date_label: "August 2026"
   short_date_label: "August 2026"
-  status: preorder
+  status: out
   cover: /assets/images/slayer-anthology-cover.webp
   cover_alt: "Slayer anthology cover"
   url: "http://books2read.com/DSPSlayer"
-  cta_label: "Pre-order"
+  cta_label: "Buy anthology"
   hook: "Calvin Rourke writes an apologetic letter about strange happenings in his home, not realizing that he himself is the strange thing happening."
 - title: "Spin"
   anthology: "Arcane Intelligence"
