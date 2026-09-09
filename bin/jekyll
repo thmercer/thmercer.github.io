@@ -46,17 +46,24 @@ docker_run() {
 serve_cmd() {
   # Jekyll 3 (github-pages) reuses --host for LiveReload, so binding
   # 0.0.0.0 here exposes both the site and the WebSocket to the LAN.
-  # --force_polling is needed for reliable change detection over bind mounts.
-  cat <<'SH'
+  #
+  # Change detection uses inotify, which works over a native-Linux bind
+  # mount. Do NOT add --force_polling here: it makes Jekyll stat every
+  # source file on a ~1s loop, which pins a CPU core for the life of the
+  # container. It is only needed where the mount doesn't forward inotify
+  # events (Docker Desktop on macOS/Windows) — if running there, set
+  # JEKYLL_FORCE_POLLING=1 in the environment.
+  local poll=""
+  [[ -n "${JEKYLL_FORCE_POLLING:-}" ]] && poll=" --force_polling"
+  cat <<SH
 set -e
 gem install bundler --no-document
 bundle install --jobs 4
-exec bundle exec jekyll serve \
-  --host 0.0.0.0 \
-  --port 4000 \
-  --livereload \
-  --livereload-port 35729 \
-  --force_polling
+exec bundle exec jekyll serve \\
+  --host 0.0.0.0 \\
+  --port 4000 \\
+  --livereload \\
+  --livereload-port 35729${poll}
 SH
 }
 
