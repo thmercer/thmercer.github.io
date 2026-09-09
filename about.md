@@ -3,17 +3,17 @@ layout: about
 title: About
 tagline: "Former engineer. Occasional cyborg. Storyteller."
 ---
-T. H. Mercer writes speculative fiction about the tension between cold systems and the people caught inside them — near-future stories where the stakes are human and the machinery is indifferent.
+T. H. Mercer writes humane, wry speculative fiction — near-future stories where things get hard and people rise to meet them, built on competence, care, and making amends through action.
 
 I have always been a creator. Sometimes stories. Sometimes worlds. Sometimes software. Software was the most lucrative, so I did it for years. This is me coming back.
 
-My actual work has always been translation — between humans and technology, between what a system does and what a person needs. The fiction lives in that same gap. Characters who understand the rules, see the exits, and choose anyway.
+The fiction lives in the gap between what a system does and what a person needs. Characters who understand the rules, see the exits, and choose the harder way anyway.
 
-If you've ever dog-eared a Pratchett for the footnotes, or stayed up past midnight with Scalzi or Martha Wells or the Expanse, you'll probably feel at home here.
+If you've ever dog-eared a Pratchett for the footnotes, or stayed up past midnight with Scalzi, Martha Wells, Becky Chambers, or the Expanse, you'll probably feel at home here.
 
-New here? Start with the free stories and essays on [Writing](/writing/), or go straight to the debut collection below.
+New here? Start with the free stories on [Writing](/writing/) — every one reads free, right now. A few essays live there too.
 
-The [mailing list](/free/) is where I say when there's a new story out.
+The [mailing list](/free/) is where I say when there's a new story out, and new subscribers get the short story *Pest Control* as a PDF and ePUB to keep.
 
 ## Publications
 

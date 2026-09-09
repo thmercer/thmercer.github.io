@@ -18,9 +18,9 @@ description: "Free stories and essays by T. H. Mercer — read on the site, no e
 {% include post-list.html posts=posts show_badge=true show_reprint=true empty="Stories forthcoming." %}
 
 <h2 class="work-section-heading">Essays</h2>
-<p class="site-intro">Long-form pieces — publishing, politics, culture, and whatever won't stay in the margins.</p>
+<p class="site-intro">Occasional long-form pieces — on writing, publishing, and whatever won't stay in the margins.</p>
 
 {% assign essay_posts = site.posts | where: "layout", "essay" %}
 {% include post-list.html posts=essay_posts empty="Essays forthcoming." %}
 
-<p class="fiction-newsletter-note">I announce new stories on the <a href="/free/">mailing list</a>. Subscribe to catch them. For the debut collection and anthology credits, see <a href="/about/#publications">Publications</a>.</p>
+<p class="fiction-newsletter-note">I announce new stories on the <a href="/free/">mailing list</a>, and new subscribers get <em>Pest Control</em> as a PDF and ePUB to keep. For the debut collection and anthology credits, see <a href="/about/#publications">Publications</a>.</p>

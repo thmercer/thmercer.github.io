@@ -6,7 +6,7 @@ brand
 
 ## Users
 
-Readers of literary-leaning speculative fiction (fans of Pratchett, Scalzi, Martha Wells, The Expanse) who arrive via a shared story link, social media, or search. Secondary audience: editors, anthology curators, and agents evaluating T. H. Mercer professionally. Both audiences need the site to read as credible and unhurried, not salesy.
+Readers of literary-leaning speculative fiction (fans of Pratchett, Scalzi, Martha Wells, Becky Chambers, The Expanse) who arrive via a shared story link, a promo, social media, or search — not the systems-literate essay reader (see `literary-agent/READERSHIP-STRATEGY.md` §1). Secondary audience: editors, anthology curators, and agents evaluating T. H. Mercer professionally. Both audiences need the site to read as credible and unhurried, not salesy.
 
 ## Product Purpose
 
@@ -14,7 +14,7 @@ Showcase T. H. Mercer's short fiction and essays, and convert readers into maili
 
 ## Brand Personality
 
-Quiet, warm, humane — and precise, spare, confident. The fiction itself lives in the tension between cold systems and the people caught inside them; the site's design should hold that same tension: understated and literary, never gushing, but not clinical or cold either. Voice is direct and unpretentious (see About page: "Former engineer. Occasional cyborg. Storyteller.").
+Quiet, warm, humane — and precise, spare, confident. One register: humane, wry, hopeful speculative fiction — stories where things get hard and people rise to meet them (see `literary-agent/READERSHIP-STRATEGY.md` §1). The site's design should hold that warmth without going soft: understated and literary, never gushing, but not clinical or cold either. Voice is direct and unpretentious (see About page: "Former engineer. Occasional cyborg. Storyteller.").
 
 ## Anti-references
 
