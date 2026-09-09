@@ -1841,16 +1841,48 @@ button.cta-link:hover {
     padding-block: var(--space-4);
   }
 
+  /* Dissolve the actions group into the header bar so the logo and theme
+     toggle share the top row (space-between, inherited) and the nav gets a
+     row of its own via flex-basis:100% + order below. */
   .site-header-actions {
-    width: 100%;
-    align-items: flex-start;
-    justify-content: space-between;
+    display: contents;
   }
 
-  /* Left-align the wrapped nav so a second row reads as a continued list,
-     not an orphaned right-aligned fragment. */
+  /* On mobile the nav is one horizontal row that scrolls rather than
+     wrapping to a second line — five items (incl. "Moral Arithmetic") don't
+     fit across a phone. Where the labels do fit (~475px up) it's an ordinary
+     row; below that the last item is clipped at the screen edge as the
+     scroll cue. The negative inline margin bleeds the strip to the viewport
+     edge so a clipped item reads as "keep swiping", not broken layout, and
+     padding-inline pulls the first item back to the page gutter. */
   .site-nav {
+    order: 1;
+    flex-basis: 100%;
+    flex-wrap: nowrap;
     justify-content: flex-start;
+    gap: var(--space-4);
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin-inline: calc(var(--space-4) * -1);
+    padding-inline: var(--space-4);
+  }
+
+  /* The strip fires on resized desktop windows too, where a scrollbar would
+     otherwise flash across the header. */
+  .site-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Keep each label on one line, and carry the touch-target height on the
+     strip itself — the desktop negative-margin trick would overflow the
+     scroll container vertically. */
+  .site-nav a {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding-block: var(--space-3);
+    margin-block: 0;
   }
 
   .page {

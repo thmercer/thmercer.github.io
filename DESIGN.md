@@ -171,6 +171,7 @@ Restrained and confident: outlined at rest, filled only on hover or as the one p
 ### Navigation
 - **Style:** Label-weight Literata, Human Text Muted at rest, Human Text on hover, Human Text + medium weight for the active/current page.
 - **Logo:** `white-space: nowrap` and `flex-shrink: 0` — the header bar widened to `--content-wide` (60rem) to fit "Moral Arithmetic" as a full nav item without squeezing the logo into wrapping.
+- **Mobile (≤700px):** logo and theme toggle sit on the top row; the nav drops to a full-width row below and becomes a single horizontally-scrolling strip (bled to the viewport edge, scrollbar hidden) instead of wrapping to a second line. Where the five labels fit it reads as an ordinary row; on narrow phones the trailing item is clipped at the screen edge as the only scroll affordance — no gradient fade, per the Flat Page Rule.
 
 ### Homepage Hero Panel (signature component)
 - **Structure:** a single, restrained (`--text-2xl`) opening line inside a `.hero-panel.hero-panel--quiet` container with a radial-gradient ember glow anchored top-left, fading to transparent — no sub-line. The free-story feature block sits immediately below, outside the glow panel, so the reading pitch reaches the top of the page with minimal scroll.
