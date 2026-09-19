@@ -805,10 +805,21 @@ article details[open]::after {
   outline-offset: 2px;
 }
 
-/* Collection landing (Moral Arithmetic) */
+/* Collection landing (Moral Arithmetic, Relay) */
 .collection-header {
   margin-bottom: var(--space-10);
   text-align: center;
+}
+
+/* A still cover with no animated alternate (Relay) reuses the wrap's sizing
+   and border but drops the click-to-play affordance, which would otherwise
+   promise an interaction that doesn't exist. */
+.collection-cover-wrap--plain {
+  cursor: default;
+}
+
+.collection-cover-wrap--plain::after {
+  display: none;
 }
 
 .collection-cover-wrap {
@@ -910,6 +921,26 @@ article details[open]::after {
   margin-top: var(--space-10);
   text-align: center;
   max-width: none;
+  /* flex + centered wrap rather than plain text-align: a single CTA (Moral
+     Arithmetic) still just centers; a multi-platform row (Relay) wraps and
+     gaps evenly instead of relying on the incidental whitespace between
+     inline anchors in the markup. */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.collection-cta-note {
+  margin: var(--space-5) auto 0;
+  max-width: 42ch;
+  text-align: center;
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+}
+
+.collection-cta-note a {
+  color: inherit;
 }
 
 .collection-stories + .collection-cta {

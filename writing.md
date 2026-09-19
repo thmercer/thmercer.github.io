@@ -9,6 +9,8 @@ description: "Free stories and essays by T. H. Mercer — read on the site, no e
 
 <p class="site-intro">Everything here is free to read, right now. For anthology credits and the debut collection <em>Moral Arithmetic</em>, see <a href="/about/#publications">Publications</a>.</p>
 
+<p class="site-intro">Currently serializing <a href="/relay/"><em>Relay</em></a>, a near-future novella — new chapter every Friday, free on Wattpad, Lantern, and Scribble Hub.</p>
+
 <h2 class="work-section-heading">Stories</h2>
 
 {% assign story_posts = site.posts | where: "layout", "story" %}
