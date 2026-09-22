@@ -17,14 +17,14 @@ The [mailing list](/free/) is where I say when there's a new story out, and new 
 
 ## Publications
 
-{% assign ma = site.data.publications | where: "title", "Moral Arithmetic" | first %}
-{% if ma %}
-<section class="feature-block" aria-labelledby="about-ma-title">
-  <a href="{{ ma.landing | relative_url }}" class="feature-cover-link">
+{% assign featured = site.data.publications | where: "featured", true %}
+{% for fp in featured %}
+<section class="feature-block" aria-labelledby="about-feature-title-{{ forloop.index }}">
+  <a href="{{ fp.landing | relative_url }}" class="feature-cover-link">
     <img
       class="feature-cover"
-      src="{{ ma.cover | relative_url }}"
-      alt="{{ ma.cover_alt }}"
+      src="{{ fp.cover | relative_url }}"
+      alt="{{ fp.cover_alt }}"
       width="140"
       height="210"
       loading="lazy"
@@ -32,21 +32,21 @@ The [mailing list](/free/) is where I say when there's a new story out, and new 
     >
   </a>
   <div class="feature-body">
-    <h3 id="about-ma-title" class="feature-title">
-      <a href="{{ ma.landing | relative_url }}">{{ ma.title }}</a>
+    <h3 id="about-feature-title-{{ forloop.index }}" class="feature-title">
+      <a href="{{ fp.landing | relative_url }}">{{ fp.title }}</a>
     </h3>
-    <p class="feature-meta">Debut collection{% if ma.date_label %} &middot; {{ ma.date_label }}{% endif %}</p>
-    {% if ma.hook %}
-    <p class="feature-hook">{{ ma.hook }}</p>
+    <p class="feature-meta">{{ fp.subtitle }}{% if fp.date_label %} &middot; {{ fp.date_label }}{% endif %}</p>
+    {% if fp.hook %}
+    <p class="feature-hook">{{ fp.hook }}</p>
     {% endif %}
     <div class="feature-actions">
-      <a href="{{ ma.landing | relative_url }}" class="btn-primary">View collection</a>
+      <a href="{{ fp.landing | relative_url }}" class="btn-primary">{{ fp.feature_action | default: "Learn more" }}</a>
     </div>
   </div>
 </section>
-{% endif %}
+{% endfor %}
 
-{% assign pubs = site.data.publications | where_exp: "p", "p.title != 'Moral Arithmetic'" %}
+{% assign pubs = site.data.publications | where_exp: "p", "p.featured != true" %}
 {% assign pubs_out = pubs | where: "status", "out" | sort: "date" | reverse %}
 {% assign pubs_soon = pubs | where_exp: "p", "p.status != 'out'" | sort: "date" %}
 

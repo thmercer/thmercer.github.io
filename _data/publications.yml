@@ -1,6 +1,8 @@
 # status: out | preorder | forthcoming — drives the grouping on /about/#publications.
 # Keep it current; it's the one field that goes stale on its own.
 - title: "Moral Arithmetic"
+  featured: true
+  feature_action: "View collection"
   subtitle: "Debut short fiction collection — four stories"
   hook: "Four stories about the quiet decisions people make when the systems they serve stop deserving them."
   date: 2026-07-16
@@ -55,6 +57,17 @@
   url: "http://books2read.com/DSPSlayer"
   cta_label: "Buy anthology"
   hook: "Calvin Rourke writes an apologetic letter about strange happenings in his home, not realizing that he himself is the strange thing happening."
+- title: "Relay"
+  featured: true
+  feature_action: "Start reading"
+  subtitle: "Serial novella — new chapter every Friday"
+  hook: "Mara finds people who don't want to be found — her newest job is hiding a whistleblower carrying a piece of the machine that runs London."
+  date: 2026-09-19
+  date_label: "September 2026 · Serializing now"
+  status: out
+  cover: /assets/images/relay-cover-compressed.jpg
+  cover_alt: "Relay — T. H. Mercer"
+  landing: /relay/
 - title: "Spin"
   anthology: "Arcane Intelligence"
   press: "Raconteur Press"
