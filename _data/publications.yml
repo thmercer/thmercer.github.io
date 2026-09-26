@@ -75,6 +75,8 @@
   date_label: "September 2026"
   short_date_label: "September 2026"
   status: forthcoming
+  cover: /assets/images/arcane-intelligence-cover.webp
+  cover_alt: "Arcane Intelligence anthology cover"
   hook: "Heaven and Hell run soul-collection like rival spy agencies, and Ash, a demon case officer, is sent to catch the honest angel leaking their secrets."
 - title: "Good Hit"
   anthology: "Hold-My-Beer Heroes"
