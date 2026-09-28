@@ -1,5 +1,15 @@
 # status: out | preorder | forthcoming — drives the grouping on /about/#publications.
 # Keep it current; it's the one field that goes stale on its own.
+#
+# Dialect (litagent's sitedata.py line reader, not a general YAML parser).
+# literary-agent `validate-publications` rejects anything else:
+# - top-level sequence only; `- key:` starts an entry at column 0
+# - later keys indented exactly two spaces, one scalar per line
+# - quoted strings or bare scalars; no nested maps, lists, or block scalars (`|`, `>`)
+# - no anchors, aliases, or tabs
+# A nested `stories:` list under a collection would silently break Bluesky
+# and the release email. Collection membership stays one entry per placement
+# (or one entry for the whole book, matched by title), not a child list.
 - title: "Moral Arithmetic"
   featured: true
   feature_action: "View collection"
