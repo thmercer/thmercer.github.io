@@ -32,6 +32,7 @@
   cover: /assets/images/pet-monsters-cover.webp
   cover_alt: "Pet Monsters anthology cover"
   url: "https://amzn.to/4gRWSnT"
+  cta_label: "Buy anthology"
   hook: "Milo hides a glowing, tentacled creature in his basement from his distracted parents, and learns what it costs to truly see someone."
 - title: "Flinch"
   anthology: "Forgotten Fronts Wyrd Warfare"
@@ -42,6 +43,7 @@
   cover: /assets/images/wyrd-warfare-cover.webp
   cover_alt: "Forgotten Fronts: Wyrd Warfare — anthology cover, edited by Chris Dinote"
   url: "https://amzn.to/4wakQQg"
+  cta_label: "Buy anthology"
   hook: "Clark sees the shimmer before every shot fired at his squad, but the men who call him a coward don't know what it costs him."
 - title: "Working As Intended"
   anthology: "Space & Time"
