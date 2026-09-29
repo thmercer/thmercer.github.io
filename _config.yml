@@ -30,3 +30,11 @@ exclude:
   # at /DESIGN/ and /PRODUCT/ and landing in sitemap.xml).
   - DESIGN.md
   - PRODUCT.md
+
+# Unlisted beta pages under /read/ stay out of the sitemap (static files take
+# sitemap: false from defaults, not front matter). See choose-kindly BETA-HOSTING.md.
+defaults:
+  - scope:
+      path: "read"
+    values:
+      sitemap: false
