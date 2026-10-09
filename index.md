@@ -16,6 +16,7 @@ layout: default
     width="600"
     height="894"
     loading="eager"
+    fetchpriority="high"
     decoding="async"
   >
   <div class="feature-body">

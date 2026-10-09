@@ -2,7 +2,9 @@
 layout: default
 title: Writing
 permalink: /writing/
-description: "Free stories and essays by T. H. Mercer — read on the site, no email required."
+seo_title: "Free Short Stories and Essays | T. H. Mercer"
+description: "Free speculative fiction by T. H. Mercer: short stories including Pest Control, Within Reach, and Exit Conditions, plus essays. No email required."
+page_type: CollectionPage
 ---
 
 <h1 class="sr-only">Writing — T. H. Mercer</h1>

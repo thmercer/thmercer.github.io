@@ -682,6 +682,34 @@ article time {
   font-variant-numeric: tabular-nums;
 }
 
+/* Byline + date on stories and essays: one quiet meta line under the h1. The
+   author name links to About (rel="author") so search engines can tie every
+   piece to the same person; it stays muted until hovered so it reads as
+   metadata, not a call to action. */
+article .post-byline {
+  max-width: none;
+  margin-bottom: var(--space-8);
+  font-size: var(--text-xs);
+  line-height: 1.5;
+  color: var(--color-text-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+article .post-byline time {
+  display: inline;
+  margin: 0;
+}
+
+article .post-byline a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+article .post-byline a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
 article p {
   margin-bottom: var(--space-5);
   max-width: 72ch;

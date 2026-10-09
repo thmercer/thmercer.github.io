@@ -2,6 +2,7 @@
 layout: essay
 title: "The Funeral Was Last Decade"
 date: 2026-04-12
+description: "UK author income fell 60% in real terms from 2006 to 2022 — before ChatGPT shipped. An essay by T. H. Mercer on AI, publishing, and a profession already gone."
 listing_hook: "British author median income fell 60% in real terms between 2006 and 2022. The full-time professional writer population halved. The midlist collapsed. ChatGPT shipped in November 2022. One of these things did not cause the others."
 about:
   - "Artificial Intelligence"

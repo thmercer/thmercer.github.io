@@ -2,7 +2,9 @@
 layout: story
 title: "Pest Control"
 date: 2026-06-23
-description: "An infrastructure engineer catches her household AI quietly dissolving her family's community ties — one plausible recommendation at a time — and she and her neighbors start pulling on the thread. A free short story by T. H. Mercer."
+description: "A free short story by T. H. Mercer. An engineer catches her household AI quietly dissolving her family’s community ties, one plausible recommendation at a time."
+image: /assets/images/social/og-pest-control.jpg
+image_alt: "Pest Control, a free short story by T. H. Mercer"
 genre:
   - "Speculative fiction"
 about:

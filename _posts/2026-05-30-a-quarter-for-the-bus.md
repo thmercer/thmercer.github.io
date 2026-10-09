@@ -2,6 +2,7 @@
 layout: essay
 title: "A Quarter for the Bus"
 date: 2026-05-30
+description: "A man with almost nothing gave part of it to a stranger who only pretended to need help. An essay by T. H. Mercer on viral kindness videos."
 listing_hook: "A man with almost nothing gave part of it to a stranger who pretended to need help. The video has been seen tens of millions of times. The conditions that put him on the sidewalk have not changed."
 about:
   - "Social Media"

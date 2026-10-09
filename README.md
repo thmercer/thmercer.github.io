@@ -69,32 +69,44 @@ bundle exec jekyll serve
 
 Then open http://127.0.0.1:4000.
 
-## Content types and SEO (JSON-LD)
+## Content types and SEO
+
+Head metadata is rendered by `_includes/seo.html` (not jekyll-seo-tag): `<title>`, meta description, canonical, robots, Open Graph / Twitter card, and — via `_includes/jsonld.html` — a single schema.org `@graph` per page. Every graph carries the same `WebSite` and `Person` nodes (`https://thmercer.com/#website`, `#person`), so search engines see one author entity across the site.
 
 Posts use one of three layouts:
 
-| Layout | Use | Schema.org type (custom block in `_includes/jsonld.html`) |
-|--------|-----|-------------------------------------------------------------|
-| `essay` | Nonfiction / commentary | `BlogPosting` |
-| `story` | Free fiction on site | `ShortStory` |
-| `anthology` | Paid anthology credit (no story text) | `ShortStory` (`isAccessibleForFree: false`) |
+| Layout | Use | Schema.org main entity | Generated `<title>` |
+|--------|-----|------------------------|---------------------|
+| `essay` | Nonfiction / commentary | `BlogPosting` | `Title \| Essay by T. H. Mercer` |
+| `story` | Free fiction on site | `ShortStory` | `Title \| Free Short Story by T. H. Mercer` |
+| `anthology` | Paid anthology credit (no story text) | `ShortStory` (`isAccessibleForFree: false`) | `Title \| Short Story by T. H. Mercer` |
 
-The home page (`index.md`) emits a `Person` graph (with `sameAs` from `social.links` in `_config.yml`). The About page emits `AboutPage` with `mainEntity` pointing at the same person.
+The home page title is `T. H. Mercer | <tagline>` (`tagline` in `_config.yml`). The About page emits `ProfilePage` (main entity: the person) plus one node per published credit in `_data/publications.yml`. Pages with a `book:` block (Moral Arithmetic, Relay) emit a `Book`. Redirect stubs and the 404 page emit no JSON-LD.
+
+**SEO front matter (any page or post, all optional)**
+
+- `description` — meta/OG description. Plain text, aim for 155 characters or fewer, and lead with what the page is plus the author name. Without it, posts fall back to `listing_hook`, then the excerpt.
+- `seo_title` — full `<title>` override, used verbatim (otherwise generated as above).
+- `image` / `image_alt` — link-preview image. **Must be 1200×630 JPG/PNG** (the tags hard-code that size). Defaults to `social_image` in `_config.yml`. Cards live in `assets/images/social/`.
+- `robots` — e.g. `noindex` (used on `/arc/`, which redirects off-site).
+- `canonical_url` — absolute URL when the page duplicates another (redirect stubs). Also set `sitemap: false` on those.
+- `page_type` — schema.org WebPage subtype (`CollectionPage`, `ContactPage`); default `WebPage`.
+- `book` — on a book landing page: `publication` (title in `_data/publications.yml`, which supplies date, cover, hook and retail link), plus optional `alternate_name`, `genre`, `free`, `same_as` (list), `parts` (list of story titles).
 
 **Optional front matter on posts**
 
 - `about` — list of topic strings (maps to `about` as `Thing` entities in JSON-LD).
-- `keywords` — list of strings (essays only; joined into `BlogPosting.keywords`).
+- `keywords` — list of strings (joined into `keywords` in JSON-LD; there is no `<meta name="keywords">`, which search engines ignore).
 - `genre` — list of strings (stories only; `ShortStory.genre`).
 - `word_count` — optional integer override for Fiction/Essays listing word counts. Omit to auto-count from the post body (rounded to the nearest 100).
 
-Author name and profile URLs come from `author` and `social.links` in `_config.yml`.
+Author name, alternate spellings, bio and profile URLs (`sameAs`) come from `author` and `social.links` in `_config.yml`. Only list profiles that are T. H. Mercer's own. Search Console / Bing verification tokens go under `webmaster_verifications` if the meta-tag method is used (DNS verification needs nothing here).
 
 ### Fiction posts (`layout: story`)
 
 Use this structure for each new story under `_posts/` (filename `YYYY-MM-DD-slug.md`).
 
-1. **YAML front matter:** `layout: story`, `title`, `date`, plus **`genre`** and **`about`** as arrays of short strings. Treat `genre` as shelf- or mode-style labels (for example Hopepunk, cli-fi) and `about` as thematic keywords (for example human interconnectedness, grief, consent). They map to `ShortStory` JSON-LD as documented above.
+1. **YAML front matter:** `layout: story`, `title`, `date`, a **`description`** (search snippet, ≤155 characters, naming the author and that it's a free story), plus **`genre`** and **`about`** as arrays of short strings. Treat `genre` as shelf- or mode-style labels (for example Hopepunk, cli-fi) and `about` as thematic keywords (for example human interconnectedness, grief, consent). They map to `ShortStory` JSON-LD as documented above.
 2. **`availability`** (optional, off by default): When `fiction_availability_badges` is `true` in `_config.yml`, the Fiction listing shows a **Free** or **In Anthology** badge per story. Omit `availability` (or set `availability: free`) for free-to-read posts; set `availability: anthology` for paid anthology entries surfaced in the feed.
 3. **`listing_hook`:** Strongly recommended — a one-line, spoiler-free blurb in markdown. The home page uses `listing_hook` when present; if you omit it, the auto-generated excerpt can be poor when the body begins with raw HTML.
 4. **Dust jacket:** Right below the front matter, before the story text, add a **1–2 sentence** spoiler-free teaser that explicitly names the author (**T. H. Mercer**, matching `author.name` in `_config.yml`), the story’s **genre** in plain language (aligned with `genre`), and **core themes** (aligned with `about`). Wrap it in HTML `<details>` **without** the `open` attribute so it stays collapsed by default. Give `<summary>` a clear label (for example “Dust jacket” or “About this story”).

@@ -2,6 +2,7 @@
 layout: story
 title: "Within Reach"
 date: 2026-04-22
+description: "Free magical realism by T. H. Mercer: Ben Tomaszewski catches everything within reach — and one Tuesday on the Orange Line, a briefcase falls into his hands."
 genre:
   - "Magical realism"
   - "Literary fiction"

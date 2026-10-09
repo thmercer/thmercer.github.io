@@ -1,12 +1,16 @@
 title: T. H. Mercer
-description: Speculative fiction and essays by T. H. Mercer.
+# Home-page <title> becomes "T. H. Mercer | <tagline>" (see _includes/seo.html).
+tagline: Speculative Fiction Author
+description: "T. H. Mercer writes humane, wry speculative fiction — near-future stories where things get hard and people rise to meet them. Free stories, books, and essays."
 url: "https://thmercer.com"
 permalink: /:year/:slug/
 markdown: kramdown
 plugins:
   - jekyll-feed
-  - jekyll-seo-tag
   - jekyll-sitemap
+# Head metadata (title, description, Open Graph, canonical, JSON-LD) is
+# rendered by _includes/seo.html rather than jekyll-seo-tag, so posts can carry
+# a search title distinct from their h1 and the page emits one JSON-LD graph.
 
 # Set true to show Free / In Anthology badges on the Fiction listing (Option A mockup).
 fiction_availability_badges: true
@@ -14,12 +18,39 @@ fiction_availability_badges: true
 author:
   name: T. H. Mercer
   url: https://thmercer.com
+  # Spellings people search for; emitted as Person/WebSite alternateName.
+  alternate_names:
+    - TH Mercer
+    - T.H. Mercer
+    - T H Mercer
+    - thmercer
+  job_title: Author
+  image: /assets/images/thmercer-avatar.webp
+  bio: "T. H. Mercer writes humane, wry speculative fiction — near-future stories where things get hard and people rise to meet them, built on competence, care, and making amends through action."
 
+# Profiles that are the same person — emitted as Person.sameAs. Only list
+# accounts that are T. H. Mercer's own (each links back to thmercer.com or
+# lists the books).
 social:
   name: T. H. Mercer
   links:
     - https://bsky.app/profile/thmercer.com
+    - https://www.youtube.com/@thmercer
+    - https://www.wattpad.com/user/thmercer
+    - https://lanternserials.com/author/t-h-mercer
+    - https://duotrope.com/profile/@thmercer
     - https://github.com/thmercer
+
+# Default link-preview image (1200x630). Pages override with `image` +
+# `image_alt` front matter; every image used there must also be 1200x630.
+social_image: /assets/images/social/og-default.jpg
+social_image_alt: "T. H. Mercer — speculative fiction. Covers of Relay, Moral Arithmetic, and Pest Control."
+
+# Search-engine ownership tokens (content="" value only). DNS verification is
+# preferred; these are only needed if a meta-tag method is used instead.
+webmaster_verifications:
+  google:
+  bing:
 
 exclude:
   - README.md

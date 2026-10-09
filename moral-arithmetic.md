@@ -2,14 +2,28 @@
 layout: default
 title: Moral Arithmetic
 permalink: /moral-arithmetic/
-description: "Four stories about the quiet decisions people make when the systems they serve stop deserving them."
+seo_title: "Moral Arithmetic: Stories by T. H. Mercer"
+description: "T. H. Mercer’s debut speculative fiction collection: four stories about the quiet decisions people make when the systems they serve stop deserving them."
+image: /assets/images/social/og-moral-arithmetic.jpg
+image_alt: "Moral Arithmetic: Stories by T. H. Mercer"
+# Book JSON-LD (see _includes/jsonld.html). Date, cover, hook and retail link
+# come from the matching entry in _data/publications.yml.
+book:
+  publication: "Moral Arithmetic"
+  alternate_name: "Moral Arithmetic: Stories"
+  genre: "Speculative fiction"
+  parts:
+    - "The Receiver"
+    - "Capture Value"
+    - "What We Made"
+    - "A Reasonable Person Waits"
 ---
 
 {% assign ma = site.data.publications | where: "title", "Moral Arithmetic" | first %}
 
 <div class="collection-header">
   <div class="collection-cover-wrap" tabindex="0" role="button" aria-label="Play the cover animation">
-    <img src="{{ '/assets/images/ma-front-cover-new.webp' | relative_url }}" alt="Moral Arithmetic: Stories — T. H. Mercer" class="collection-cover-static" width="600" height="982" decoding="async">
+    <img src="{{ '/assets/images/ma-front-cover-new.webp' | relative_url }}" alt="Moral Arithmetic: Stories — T. H. Mercer" class="collection-cover-static" width="600" height="982" fetchpriority="high" decoding="async">
     <video class="collection-cover-video" muted playsinline preload="none">
       <source src="{{ '/assets/videos/moral-arithmetic-new-animated.mp4' | relative_url }}" type="video/mp4">
     </video>

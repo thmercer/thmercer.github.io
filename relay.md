@@ -2,12 +2,25 @@
 layout: default
 title: Relay
 permalink: /relay/
-description: "A near-future novella, serializing free — new chapter every Friday."
+seo_title: "Relay: A Free Serial Novella by T. H. Mercer"
+description: "A free near-future serial novella by T. H. Mercer. Mara hides a whistleblower carrying a piece of the machine that runs London. New chapter every Friday."
+image: /assets/images/social/og-relay.jpg
+image_alt: "Relay, a novella by T. H. Mercer"
+# Book JSON-LD (see _includes/jsonld.html); date, cover and hook come from
+# _data/publications.yml. same_as lists where the serial is published.
+book:
+  publication: "Relay"
+  genre: "Speculative fiction"
+  free: true
+  same_as:
+    - "https://www.wattpad.com/story/416277807-relay"
+    - "https://lanternserials.com/story/relay-a1c39688"
+    - "https://www.scribblehub.com/series/2567716/relay/"
 ---
 
 <div class="collection-header">
   <div class="collection-cover-wrap collection-cover-wrap--plain">
-    <img src="{{ '/assets/images/relay-cover-compressed.jpg' | relative_url }}" alt="Relay — T. H. Mercer" class="collection-cover-static" width="512" height="800" decoding="async">
+    <img src="{{ '/assets/images/relay-cover-compressed.jpg' | relative_url }}" alt="Relay — T. H. Mercer" class="collection-cover-static" width="512" height="800" fetchpriority="high" decoding="async">
   </div>
   <h1>Relay</h1>
   <p class="collection-byline">T. H. Mercer &middot; novella &middot; serializing now, free</p>

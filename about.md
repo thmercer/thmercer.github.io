@@ -2,6 +2,8 @@
 layout: about
 title: About
 tagline: "Former engineer. Occasional cyborg. Storyteller."
+seo_title: "About T. H. Mercer | Author of Moral Arithmetic and Relay"
+description: "Speculative fiction author T. H. Mercer: former engineer, author of Moral Arithmetic, with stories in Space & Time and Raconteur Press anthologies."
 ---
 T. H. Mercer writes humane, wry speculative fiction — near-future stories where things get hard and people rise to meet them, built on competence, care, and making amends through action.
 

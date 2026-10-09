@@ -2,6 +2,7 @@
 layout: essay
 title: "The Side That Costs Nothing"
 date: 2026-06-08
+description: "My employer gives me one paid volunteer day a year, from an approved list. What the list leaves out says more. An essay by T. H. Mercer on corporate neutrality."
 listing_hook: "My employer gives me one paid day a year to volunteer. The approved list runs to pages. What it doesn't include—and why—says more than the list itself."
 about:
   - "Labor"

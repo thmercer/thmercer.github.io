@@ -2,6 +2,7 @@
 layout: essay
 title: "Service Guarantees Contact"
 date: 2026-04-16
+description: "The fight over Starship Troopers asks the wrong question. Service doesn’t select for virtue; it manufactures contact. An essay by T. H. Mercer on polarization."
 listing_hook: "The argument about *Starship Troopers* is whether the franchise requirement is fascist or aspirational. That's the wrong question. Service doesn't select for virtue — it manufactures contact with people you'd never choose. You can't dehumanize someone who kept you alive. The polarization data after 1973 follows from there."
 about:
   - "Political Polarization"

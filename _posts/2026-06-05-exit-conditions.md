@@ -2,6 +2,7 @@
 layout: story
 title: "Exit Conditions"
 date: 2026-06-05
+description: "Free speculative fiction by T. H. Mercer. The noise is draining out of the world, and Priya must decide whether to stay rough enough to matter."
 genre:
   - "Speculative fiction"
   - "Literary fiction"
