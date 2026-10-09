@@ -95,12 +95,14 @@
 - title: "Good Hit"
   anthology: "Hold My Beer Heroes"
   press: "Raconteur Press"
-  date: 2026-10-02
+  date: 2026-10-09
   date_label: "October 2026"
   short_date_label: "October 2026"
-  status: forthcoming
+  status: out
   cover: /assets/images/hold-my-beer-cover.webp
   cover_alt: "Hold My Beer Heroes anthology cover, edited by David Badurina"
+  url: "https://www.amazon.com/dp/B0GXV7JBXY"
+  cta_label: "Buy anthology"
   hook: "A foam-sword knight who's sure his blade-work makes him genuinely dangerous walks up to a stranger in the dark, calls a clean hit — and discovers the man was never playing."
 - title: "Mangoes in Alaska"
   anthology: "Space & Time"
