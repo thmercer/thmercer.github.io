@@ -1,0 +1,38 @@
+{% comment %}
+  A book trailer, click-to-load. At rest it's a plain link to the YouTube
+  watch page wrapped around a local poster, so nothing from YouTube loads
+  until a reader asks for it, and it still works with JS off. On click the
+  script swaps in the privacy-enhanced (youtube-nocookie) player and starts
+  it — playback is reader-initiated, so there's no reduced-motion conflict.
+
+  Params: id (YouTube video id), title (book title), poster (path under the
+  site), duration (human-readable, e.g. "1 min 11 s").
+{% endcomment %}
+<figure class="trailer">
+  <a class="trailer-link" href="https://www.youtube.com/watch?v={{ include.id }}" data-yt="{{ include.id }}" data-title="{{ include.title }} trailer" target="_blank" rel="noopener">
+    <img class="trailer-poster" src="{{ include.poster | relative_url }}" alt="" width="1280" height="720" loading="lazy" decoding="async">
+    <span class="trailer-play" aria-hidden="true"></span>
+    <span class="sr-only">Play the {{ include.title }} trailer ({{ include.duration }}, YouTube)</span>
+  </a>
+  <figcaption class="trailer-caption">Trailer &middot; {{ include.duration }}</figcaption>
+</figure>
+
+<script>
+(function () {
+  var link = document.querySelector('.trailer-link[data-yt="{{ include.id }}"]');
+  if (!link) return;
+  link.addEventListener('click', function (e) {
+    // Let modified clicks (new tab/window) go to YouTube as a normal link.
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+    e.preventDefault();
+    var frame = document.createElement('iframe');
+    frame.className = 'trailer-frame';
+    frame.src = 'https://www.youtube-nocookie.com/embed/' + link.dataset.yt + '?autoplay=1&rel=0';
+    frame.title = link.dataset.title;
+    frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    frame.allowFullscreen = true;
+    link.replaceWith(frame);
+    frame.focus();
+  });
+}());
+</script>

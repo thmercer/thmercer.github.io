@@ -943,6 +943,115 @@ article details[open]::after {
   color: inherit;
 }
 
+/* Book trailer (Relay, Moral Arithmetic): a local poster linking to YouTube,
+   swapped for the player on click (_includes/trailer.html). Bordered and
+   flat like the covers, per the Flat Page Rule. */
+.trailer {
+  margin: 0 auto var(--space-10);
+  max-width: var(--content-max);
+}
+
+.trailer-link,
+.trailer-frame {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--color-border);
+}
+
+.trailer-link {
+  position: relative;
+}
+
+.trailer-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.trailer-poster {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Play cue: a dark disc with an ember triangle — brighter on hover/focus,
+   so the poster reads as a player, not a still. Bottom-right, not centered:
+   both posters put the title type in the middle-left, and a centered disc
+   lands on it at phone widths. */
+.trailer-play {
+  position: absolute;
+  right: var(--space-4);
+  bottom: var(--space-4);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: oklch(0.15 0.02 250 / 0.72);
+  border: 1px solid oklch(1 0 0 / 0.35);
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.trailer-play::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -10px 0 0 -6px;
+  border-style: solid;
+  border-width: 10px 0 10px 17px;
+  border-color: transparent transparent transparent var(--color-primary);
+}
+
+.trailer-link:hover .trailer-play,
+.trailer-link:focus-visible .trailer-play {
+  background: oklch(0.15 0.02 250 / 0.9);
+  border-color: var(--color-primary);
+}
+
+.trailer-frame {
+  height: auto;
+}
+
+.trailer-caption {
+  margin-top: var(--space-2);
+  text-align: center;
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* Mailing-list signup at the foot of a collection page — the page's one
+   filled action (DESIGN.md), set off by a divider like the bottom CTA. */
+.collection-signup {
+  margin-top: var(--space-10);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-divider);
+  text-align: center;
+}
+
+.collection-signup .feature-title {
+  margin-bottom: var(--space-3);
+}
+
+.collection-signup-pitch {
+  max-width: 52ch;
+  margin: 0 auto var(--space-5);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.collection-signup .ml-subscribe-wrap {
+  margin: 0 auto;
+}
+
+.collection-signup .ml-subscribe-wrap form {
+  justify-content: center;
+}
+
+.collection-signup .subscribe-helper {
+  margin: var(--space-4) auto 0;
+}
+
 .collection-stories + .collection-cta {
   margin-top: var(--space-8);
   padding-top: var(--space-8);

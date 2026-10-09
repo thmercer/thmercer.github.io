@@ -19,6 +19,8 @@ description: "Four stories about the quiet decisions people make when the system
   <p class="collection-hook">Four stories about the quiet decisions people make when the systems they serve stop deserving them. A vigil for a signal. A contract with a body count. A mind that asks to keep living. A man waiting to find out what he'll actually do.</p>
 </div>
 
+{% include trailer.html id="xGKlQ9B4SWA" title="Moral Arithmetic" poster="/assets/images/ma-trailer-poster.webp" duration="1 min 21 s" %}
+
 <div class="collection-cta">
   <a href="{{ ma.url }}" class="btn-primary" target="_blank" rel="noopener">Get your copy</a>
 </div>
@@ -51,6 +53,13 @@ description: "Four stories about the quiet decisions people make when the system
 <div class="collection-cta">
   <a href="{{ ma.url }}" class="cta-link" target="_blank" rel="noopener">Get your copy</a>
 </div>
+
+<section class="collection-signup" aria-labelledby="signup-heading">
+  <h2 id="signup-heading" class="feature-title">Word when there's a new one</h2>
+  <p class="collection-signup-pitch">The mailing list is where I announce new stories: where to read them, what they are. Rarely more than once a month. Subscribe and I'll send you <em>Pest Control</em>, a full short story, as a PDF and ePUB to keep.</p>
+  {% include mailerlite-form.html success_text="Check your inbox. Both formats are on their way." %}
+  <p class="subscribe-helper">No spam. Unsubscribe anytime with one click.</p>
+</section>
 
 <script>
 (function () {
