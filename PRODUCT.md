@@ -1,9 +1,5 @@
 # Product
 
-## Register
-
-brand
-
 ## Users
 
 Readers of literary-leaning speculative fiction (fans of Pratchett, Scalzi, Martha Wells, Becky Chambers, The Expanse) who arrive via a shared story link, a promo, social media, or search — not the systems-literate essay reader (see `literary-agent/READERSHIP-STRATEGY.md` §1). Secondary audience: editors, anthology curators, and agents evaluating T. H. Mercer professionally. Both audiences need the site to read as credible and unhurried, not salesy.
