@@ -18,6 +18,14 @@ book:
     - "Capture Value"
     - "What We Made"
     - "A Reasonable Person Waits"
+  # Editions on sale (ISBNs from printing-press books/moral-arithmetic
+  # metadata). Each becomes a workExample in the Book JSON-LD.
+  editions:
+    - format: "Paperback"
+      isbn: "9798199241090"
+    - format: "Hardcover"
+      isbn: "9798199718233"
+    - format: "EBook"
 # Trailer: the embed reads it, and jsonld.html emits a VideoObject from it.
 # upload_date is the YouTube upload (literary-agent trailers.md).
 trailer:
@@ -77,10 +85,8 @@ trailer:
 <h2 id="ma-about-title" class="collection-stories-label">About the book</h2>
 {% comment %}
   Back-cover copy, verbatim from printing-press books/moral-arithmetic/blurb.md.
-  TODO(author): formats line. The print build has paperback (ISBN
-  9798199241090) and hardcover (ISBN 9798199718233) metadata. Confirm which
-  editions are live, and whether there's a review or blurb to quote, before
-  adding them here or to the Book JSON-LD (isbn, bookFormat, offers).
+  TODO(author): a review or blurb to quote, if you get one. Retail links
+  for other stores go here and in book.editions once the book goes wide.
 {% endcomment %}
 <div class="collection-about-text" markdown="1">
 
@@ -93,7 +99,7 @@ Naomi is a postdoc cataloguing a defunct radio telescope program when she finds 
 For readers of Ted Chiang's *Stories of Your Life and Others* and Emily St. John Mandel's *Sea of Tranquility*.
 
 </div>
-<p class="collection-about-meta">Published {{ ma.date | date: "%B %-d, %Y" }} &middot; Debut collection &middot; Four stories</p>
+<p class="collection-about-meta">Published {{ ma.date | date: "%B %-d, %Y" }} &middot; Paperback, hardcover, and Kindle ebook &middot; Four stories</p>
 </section>
 
 <div class="collection-cta">
