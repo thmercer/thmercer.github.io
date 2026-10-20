@@ -1,0 +1,15 @@
+{% comment %}
+  Compact list of posts: title, kind, word count, date. No excerpts, so it
+  can sit on the home page, the About page and under a post without
+  repeating /writing/. Shares .post-list styling with the Writing page.
+  Usage: {% include writing-links.html posts=some_posts heading_level="h3" %}
+{% endcomment %}
+{% assign heading = include.heading_level | default: "h3" %}
+<ul class="post-list">
+  {% for post in include.posts %}
+  <li>
+    <{{ heading }}><a href="{{ post.link | default: post.url | relative_url }}">{{ post.title }}</a></{{ heading }}>
+    <p class="post-meta"><span>{% if post.layout == "essay" %}Essay{% else %}Story{% endif %}</span>{% include post-word-count.html content=post.content word_count=post.word_count %}<span>{{ post.date | date: "%B %-d, %Y" }}</span></p>
+  </li>
+  {% endfor %}
+</ul>

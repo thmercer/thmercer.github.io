@@ -56,4 +56,11 @@ layout: default
 </section>
 {% endif %}
 
-<p class="site-intro">That's everything, for now. More stories are always in the works. Browse it all on <a href="{{ '/writing/' | relative_url }}">Writing</a>.</p>
+<h2 class="work-section-heading">Latest writing</h2>
+
+{% assign latest_stories = site.posts | where: "layout", "story" %}
+{% assign latest_essays = site.posts | where: "layout", "essay" %}
+{% assign latest = latest_stories | concat: latest_essays | sort: "date" | reverse %}
+{% include writing-links.html posts=latest %}
+
+<p class="site-intro">More stories are always in the works. Browse it all, with a line on each, on <a href="{{ '/writing/' | relative_url }}">Writing</a>.</p>
