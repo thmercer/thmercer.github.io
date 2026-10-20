@@ -51,15 +51,15 @@ trailer:
   <p><em>Relay</em> is a near-future novella of about 38,000 words, released one chapter at a time. Every chapter is free to read.</p>
   <p>Chapter 1 is the place to start. Pick the site you already read on:</p>
   <ul class="relay-start">
-    <li><a href="https://www.wattpad.com/story/416277807-relay" target="_blank" rel="noopener">Start Chapter 1 on Wattpad</a></li>
-    <li><a href="https://lanternserials.com/story/relay-a1c39688" target="_blank" rel="noopener">Start Chapter 1 on Lantern</a></li>
+    <li><a href="https://www.wattpad.com/1658415839-relay-chapter-1" target="_blank" rel="noopener">Start Chapter 1 on Wattpad</a></li>
+    <li><a href="https://lanternserials.com/story/relay-a1c39688?episode=1" target="_blank" rel="noopener">Start Chapter 1 on Lantern</a></li>
     <li><a href="https://www.scribblehub.com/series/2567716/relay/" target="_blank" rel="noopener">Start Chapter 1 on Scribble Hub</a></li>
   </ul>
   {% comment %}
-    TODO(author): these go to each series page, not to chapter 1 itself.
-    Swap in the chapter-1 URL for each platform when you have them. A full
-    chapter index (number, title, date, link per platform) was skipped:
-    chapters have no titles and per-chapter URLs aren't recorded anywhere.
+    Wattpad and Lantern links go straight to chapter 1 (Wattpad part id from
+    its public API; Lantern uses ?episode=N). TODO(author): Scribble Hub
+    still points at the series page; its chapter-1 URL couldn't be fetched
+    (Cloudflare blocks it). It looks like /read/2567716-relay/chapter/<id>/.
   {% endcomment %}
 </section>
 
@@ -104,7 +104,7 @@ She unfolded it. Sparse: careful writing, by somebody who didn't know who'd read
 It told her the client wanted to look gentle, but she took the tangerine and let him have the point.
 
 </div>
-  <p class="relay-excerpt-more">Keep reading Chapter 1 on <a href="https://www.wattpad.com/story/416277807-relay" target="_blank" rel="noopener">Wattpad</a>, <a href="https://lanternserials.com/story/relay-a1c39688" target="_blank" rel="noopener">Lantern</a>, or <a href="https://www.scribblehub.com/series/2567716/relay/" target="_blank" rel="noopener">Scribble Hub</a>.</p>
+  <p class="relay-excerpt-more">Keep reading Chapter 1 on <a href="https://www.wattpad.com/1658415839-relay-chapter-1" target="_blank" rel="noopener">Wattpad</a>, <a href="https://lanternserials.com/story/relay-a1c39688?episode=1" target="_blank" rel="noopener">Lantern</a>, or <a href="https://www.scribblehub.com/series/2567716/relay/" target="_blank" rel="noopener">Scribble Hub</a>.</p>
 </section>
 
 <section class="collection-signup" aria-labelledby="signup-heading">
