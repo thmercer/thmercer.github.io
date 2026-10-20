@@ -5,7 +5,7 @@ layout: default
   <img class="about-portrait" src="{{ '/assets/images/thmercer-avatar.webp' | relative_url }}"
        alt="T. H. Mercer" width="104" height="104" decoding="async">
   <div class="about-header-text">
-    <h1 class="about-name">{{ site.title }}</h1>
+    <h1 class="about-name">{{ page.heading | default: site.title }}</h1>
     {% if page.tagline %}<p class="about-tagline">{{ page.tagline }}</p>{% endif %}
   </div>
 </header>

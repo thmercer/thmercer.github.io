@@ -40,6 +40,8 @@ social:
     - https://lanternserials.com/author/t-h-mercer
     - https://duotrope.com/profile/@thmercer
     - https://github.com/thmercer
+    # TODO(author): add Amazon author page, Goodreads, BookBub, ISFDB and
+    # Scribble Hub profile URLs once claimed and confirmed as yours.
 
 # Default link-preview image (1200x630). Pages override with `image` +
 # `image_alt` front matter; every image used there must also be 1200x630.

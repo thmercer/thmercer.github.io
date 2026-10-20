@@ -1,0 +1,7 @@
+{%- comment -%}
+  rel value for an outbound retail link: Amazon affiliate short links
+  (amzn.to, link.amazon) are marked sponsored. A plain amazon.com/dp/ link
+  carries no affiliate tag, so it stays noopener.
+  Usage: rel="{% include link-rel.html url=pub.url %}"
+{%- endcomment -%}
+{%- if include.url contains "amzn.to" or include.url contains "link.amazon" -%}sponsored noopener{%- else -%}noopener{%- endif -%}

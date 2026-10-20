@@ -1,6 +1,7 @@
 ---
 layout: about
 title: About
+heading: "About T. H. Mercer"
 tagline: "Former engineer. Occasional cyborg. Storyteller."
 seo_title: "About T. H. Mercer | Author of Moral Arithmetic and Relay"
 description: "Speculative fiction author T. H. Mercer: former engineer, author of Moral Arithmetic, with stories in Space & Time and Raconteur Press anthologies."
@@ -16,6 +17,15 @@ If you've ever dog-eared a Pratchett for the footnotes, or stayed up past midnig
 New here? Start with the free stories on [Writing](/writing/) — every one reads free, right now. A few essays live there too.
 
 The [mailing list](/free/) is where I say when there's a new story out, and new subscribers get the short story *Pest Control* as a PDF and ePUB to keep.
+
+## Free to read
+
+Every story and essay on the site, newest first.
+
+{% assign free_stories = site.posts | where: "layout", "story" %}
+{% assign free_essays = site.posts | where: "layout", "essay" %}
+{% assign free_posts = free_stories | concat: free_essays | sort: "date" | reverse %}
+{% include writing-links.html posts=free_posts %}
 
 ## Publications
 

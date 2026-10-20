@@ -90,6 +90,7 @@ The home page title is `T. H. Mercer | <tagline>` (`tagline` in `_config.yml`). 
 - `image` / `image_alt` — link-preview image. **Must be 1200×630 JPG/PNG** (the tags hard-code that size). Defaults to `social_image` in `_config.yml`. Cards live in `assets/images/social/`.
 - `robots` — e.g. `noindex` (used on `/arc/`, which redirects off-site).
 - `canonical_url` — absolute URL when the page duplicates another (redirect stubs). Also set `sitemap: false` on those.
+- `heading` — visible `<h1>` on the About layout (defaults to the site title).
 - `page_type` — schema.org WebPage subtype (`CollectionPage`, `ContactPage`); default `WebPage`.
 - `book` — on a book landing page: `publication` (title in `_data/publications.yml`, which supplies date, cover, hook and retail link), plus optional `alternate_name`, `genre`, `free`, `same_as` (list), `parts` (list of story titles).
 - `trailer` — YouTube book trailer: `id`, `poster` (local image), `duration` (human, e.g. "1 min 11 s"), `duration_iso` (e.g. `PT1M11S`), `upload_date`. Feeds the click-to-load embed (`{% include trailer.html id=page.trailer.id … %}`) and adds a `VideoObject` to the page's JSON-LD graph.
