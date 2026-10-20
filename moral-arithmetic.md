@@ -1,4 +1,5 @@
 ---
+last_modified_at: 2026-10-20
 layout: default
 title: Moral Arithmetic
 permalink: /moral-arithmetic/
