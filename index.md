@@ -36,7 +36,7 @@ layout: default
   <img
     class="book-strip-cover"
     src="{{ ma.cover | relative_url }}"
-    alt=""
+    alt="Moral Arithmetic: Stories by T. H. Mercer, book cover"
     width="88"
     height="144"
     loading="lazy"
