@@ -6,4 +6,5 @@ layout: default
   <p class="post-byline"><a href="{{ '/about/' | relative_url }}" rel="author">{{ site.author.name }}</a> <span aria-hidden="true">&middot;</span> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></p>
   {{ content }}
 </article>
+{% include more-writing.html %}
 {% include newsletter-cta.html %}

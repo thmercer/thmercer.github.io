@@ -1,0 +1,32 @@
+{% comment %}
+  "More from T. H. Mercer" under a story or essay: three posts of the other
+  kind (essay readers get stories, story readers get essays), then Writing
+  and Relay. The pick rotates by the post's position among its own kind, so
+  when the other kind has more than three posts each one still shows up on
+  some post page instead of the oldest always dropping off.
+{% endcomment %}
+{% if page.layout == "essay" %}
+{% assign own_kind = site.posts | where: "layout", "essay" %}
+{% assign other_kind = site.posts | where: "layout", "story" %}
+{% else %}
+{% assign own_kind = site.posts | where: "layout", "story" %}
+{% assign other_kind = site.posts | where: "layout", "essay" %}
+{% endif %}
+{% assign offset = 0 %}
+{% for p in own_kind %}{% if p.url == page.url %}{% assign offset = forloop.index0 %}{% endif %}{% endfor %}
+{% assign picks = "" | split: "" %}
+{% if other_kind.size > 0 %}
+{% for k in (0..2) %}
+{% if k < other_kind.size %}
+{% assign j = offset | plus: k | modulo: other_kind.size %}
+{% assign picks = picks | push: other_kind[j] %}
+{% endif %}
+{% endfor %}
+{% endif %}
+{% if picks.size > 0 %}
+<section class="more-writing" aria-labelledby="more-writing-title">
+  <h2 id="more-writing-title" class="work-section-heading">More from {{ site.author.name }}</h2>
+  {% include writing-links.html posts=picks %}
+  <p class="site-intro">Everything free to read is on <a href="{{ '/writing/' | relative_url }}">Writing</a>. Or start <a href="{{ '/relay/' | relative_url }}"><em>Relay</em></a>, a serial novella with a new chapter every Friday.</p>
+</section>
+{% endif %}

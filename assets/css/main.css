@@ -1986,6 +1986,11 @@ button.cta-link:hover {
   margin-top: var(--space-2);
 }
 
+/* "More from" block between a post and its newsletter CTA. */
+.more-writing .site-intro {
+  margin: var(--space-5) 0 0;
+}
+
 .post-reprint-note {
   margin-top: var(--space-2);
   font-family: var(--font-ui);
