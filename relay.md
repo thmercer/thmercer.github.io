@@ -48,7 +48,7 @@ trailer:
 
 <section class="relay-about" aria-labelledby="relay-about-title">
   <h2 id="relay-about-title" class="work-section-heading">About the serial</h2>
-  <p><em>Relay</em> is a near-future thriller set in London, told close on Mara: a courier and broker who works out of an arch in Bermondsey with her old mentor, Otis, and finds people by the way their voices catch on a call routed through her own network of relays. The novella runs about 38,000 words in 24 chapters. Every chapter is free to read, and the text is the same on all three sites.</p>
+  <p><em>Relay</em> is a near-future novella of about 38,000 words, released one chapter at a time. Every chapter is free to read.</p>
   <p>Chapter 1 is the place to start. Pick the site you already read on:</p>
   <ul class="relay-start">
     <li><a href="https://www.wattpad.com/story/416277807-relay" target="_blank" rel="noopener">Start Chapter 1 on Wattpad</a></li>
