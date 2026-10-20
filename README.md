@@ -81,7 +81,7 @@ Posts use one of three layouts:
 | `story` | Free fiction on site | `ShortStory` | `Title \| Free Short Story by T. H. Mercer` |
 | `anthology` | Paid anthology credit (no story text) | `ShortStory` (`isAccessibleForFree: false`) | `Title \| Short Story by T. H. Mercer` |
 
-The home page title is `T. H. Mercer | <tagline>` (`tagline` in `_config.yml`). The About page emits `ProfilePage` (main entity: the person) plus one node per published credit in `_data/publications.yml`. Pages with a `book:` block (Moral Arithmetic, Relay) emit a `Book`. Redirect stubs and the 404 page emit no JSON-LD.
+The home page title is `T. H. Mercer | <tagline>` (`tagline` in `_config.yml`). The About page emits `ProfilePage` (main entity: the person) plus one node per published credit in `_data/publications.yml`. Pages with a `book:` block (Moral Arithmetic, Relay) emit a `Book`, and a `trailer:` block adds a `VideoObject`. Story and essay nodes carry `wordCount` (from `word_count`, else counted from the body), `datePublished`, `dateModified` (from `last_modified_at`, else the post date) and the page's link-preview image. Redirect stubs and the 404 page emit no JSON-LD.
 
 **SEO front matter (any page or post, all optional)**
 
@@ -101,9 +101,36 @@ The home page title is `T. H. Mercer | <tagline>` (`tagline` in `_config.yml`). 
 - `about` — list of topic strings (maps to `about` as `Thing` entities in JSON-LD).
 - `keywords` — list of strings (joined into `keywords` in JSON-LD; there is no `<meta name="keywords">`, which search engines ignore).
 - `genre` — list of strings (stories only; `ShortStory.genre`).
-- `word_count` — optional integer override for Fiction/Essays listing word counts. Omit to auto-count from the post body (rounded to the nearest 100).
+- `word_count` — optional integer override for listing word counts and JSON-LD `wordCount`. Omit to auto-count from the post body (listings round to the nearest 100).
 
 Author name, alternate spellings, bio and profile URLs (`sameAs`) come from `author` and `social.links` in `_config.yml`. Only list profiles that are T. H. Mercer's own. Search Console / Bing verification tokens go under `webmaster_verifications` if the meta-tag method is used (DNS verification needs nothing here).
+
+### Internal linking
+
+Every post is linked from several pages automatically, so a new post needs no manual linking:
+
+- **Home** ("Latest writing") and **About** ("Free to read") list every story and essay, newest first, via `_includes/writing-links.html` (title, kind, word count, date).
+- **Each post** ends with "More from T. H. Mercer" (`_includes/more-writing.html`): three posts of the other kind (essays show stories, stories show essays), plus links to Writing and Relay. The pick rotates by the post's position, so no post is permanently left out when one kind has more than three.
+- **Writing** lists everything with its `listing_hook`.
+
+Contextual links inside essay prose are added by hand (for example, *A Quarter for the Bus* and *The Side That Costs Nothing* link to each other).
+
+### Retail and affiliate links
+
+Retail links come from `url` in `_data/publications.yml`. Pass them through `_includes/link-rel.html` for the `rel` value: Amazon affiliate short links (`amzn.to`, `link.amazon`) get `rel="sponsored noopener"`, everything else `noopener`. A plain `amazon.com/dp/…` link has no affiliate tag and isn't marked sponsored. The footer carries the Amazon Associates disclosure.
+
+### After publishing
+
+1. Bump `last_modified_at` on any page whose content changed, and on `/` and `/about/` when a post is added (they list every post).
+2. Once GitHub Pages has deployed, submit the new or changed URLs to IndexNow (Bing and other engines; Google ignores it). The key file `80aeb3d86b225fab25fdc07303b4c72b.txt` lives at the site root. A 200 or 202 response means accepted.
+
+   ```bash
+   curl -X POST https://api.indexnow.org/indexnow \
+     -H "Content-Type: application/json; charset=utf-8" \
+     -d '{"host":"thmercer.com","key":"80aeb3d86b225fab25fdc07303b4c72b","keyLocation":"https://thmercer.com/80aeb3d86b225fab25fdc07303b4c72b.txt","urlList":["https://thmercer.com/2026/new-post/","https://thmercer.com/","https://thmercer.com/about/","https://thmercer.com/writing/"]}'
+   ```
+
+3. For Google, use URL Inspection → Request indexing in Search Console for pages that matter.
 
 ### Fiction posts (`layout: story`)
 
@@ -111,7 +138,7 @@ Use this structure for each new story under `_posts/` (filename `YYYY-MM-DD-slug
 
 1. **YAML front matter:** `layout: story`, `title`, `date`, a **`description`** (search snippet, ≤155 characters, naming the author and that it's a free story), plus **`genre`** and **`about`** as arrays of short strings. Treat `genre` as shelf- or mode-style labels (for example Hopepunk, cli-fi) and `about` as thematic keywords (for example human interconnectedness, grief, consent). They map to `ShortStory` JSON-LD as documented above.
 2. **`availability`** (optional, off by default): When `fiction_availability_badges` is `true` in `_config.yml`, the Fiction listing shows a **Free** or **In Anthology** badge per story. Omit `availability` (or set `availability: free`) for free-to-read posts; set `availability: anthology` for paid anthology entries surfaced in the feed.
-3. **`listing_hook`:** Strongly recommended — a one-line, spoiler-free blurb in markdown. The home page uses `listing_hook` when present; if you omit it, the auto-generated excerpt can be poor when the body begins with raw HTML.
+3. **`listing_hook`:** Strongly recommended — a one-line, spoiler-free blurb in markdown. The Writing page uses `listing_hook` when present (and it's the meta description fallback); if you omit it, the auto-generated excerpt can be poor when the body begins with raw HTML.
 4. **Dust jacket:** Right below the front matter, before the story text, add a **1–2 sentence** spoiler-free teaser that explicitly names the author (**T. H. Mercer**, matching `author.name` in `_config.yml`), the story’s **genre** in plain language (aligned with `genre`), and **core themes** (aligned with `about`). Wrap it in HTML `<details>` **without** the `open` attribute so it stays collapsed by default. Give `<summary>` a clear label (for example “Dust jacket” or “About this story”).
 
 **Kramdown:** raw HTML in the body is fine. Avoid starting the first markdown paragraph immediately after `</details>` on the same line as a list marker, which can confuse the parser.
