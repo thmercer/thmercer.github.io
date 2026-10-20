@@ -1996,6 +1996,7 @@ button.cta-link:hover {
 .collection-about-text p {
   color: var(--color-text-muted);
   line-height: 1.7;
+  margin-bottom: var(--space-4);
 }
 
 .collection-about-meta {
@@ -2009,6 +2010,17 @@ button.cta-link:hover {
 .relay-excerpt-more {
   color: var(--color-text-muted);
   line-height: 1.65;
+  margin-bottom: var(--space-4);
+}
+
+/* Same paragraph rhythm as a post body (article p). */
+.relay-excerpt-text p {
+  margin-bottom: var(--space-5);
+  line-height: 1.8;
+}
+
+.relay-excerpt-text p:last-child {
+  margin-bottom: 0;
 }
 
 .relay-start {
