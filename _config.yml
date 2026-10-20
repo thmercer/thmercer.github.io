@@ -42,11 +42,9 @@ social:
     - https://github.com/thmercer
     - https://www.goodreads.com/author/show/70518593.T_H_Mercer
     - https://www.amazon.com/stores/author/B0H3HYP5HQ
-    # TODO(author): BookBub — https://www.bookbub.com/authors/t-h-mercer
-    # exists but shows no books to bots; uncomment once you confirm it's yours.
-    # - https://www.bookbub.com/authors/t-h-mercer
-    # TODO(author): Scribble Hub profile (Cloudflare blocks lookup) and ISFDB
-    # (no record found).
+    - https://www.bookbub.com/authors/t-h-mercer
+    - https://www.scribblehub.com/profile/283299/thmercer/
+    # TODO(author): ISFDB, once there's a record.
 
 # Default link-preview image (1200x630). Pages override with `image` +
 # `image_alt` front matter; every image used there must also be 1200x630.
