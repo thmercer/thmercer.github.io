@@ -17,6 +17,14 @@ book:
     - "Capture Value"
     - "What We Made"
     - "A Reasonable Person Waits"
+# Trailer: the embed reads it, and jsonld.html emits a VideoObject from it.
+# upload_date is the YouTube upload (literary-agent trailers.md).
+trailer:
+  id: "xGKlQ9B4SWA"
+  poster: "/assets/images/ma-trailer-poster.webp"
+  duration: "1 min 21 s"
+  duration_iso: "PT1M21S"
+  upload_date: 2026-10-09
 ---
 
 {% assign ma = site.data.publications | where: "title", "Moral Arithmetic" | first %}
@@ -33,7 +41,7 @@ book:
   <p class="collection-hook">Four stories about the quiet decisions people make when the systems they serve stop deserving them. A vigil for a signal. A contract with a body count. A mind that asks to keep living. A man waiting to find out what he'll actually do.</p>
 </div>
 
-{% include trailer.html id="xGKlQ9B4SWA" title="Moral Arithmetic" poster="/assets/images/ma-trailer-poster.webp" duration="1 min 21 s" %}
+{% include trailer.html id=page.trailer.id title=page.title poster=page.trailer.poster duration=page.trailer.duration %}
 
 <div class="collection-cta">
   <a href="{{ ma.url }}" class="btn-primary" target="_blank" rel="noopener">Get your copy</a>

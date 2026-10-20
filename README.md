@@ -92,6 +92,7 @@ The home page title is `T. H. Mercer | <tagline>` (`tagline` in `_config.yml`). 
 - `canonical_url` — absolute URL when the page duplicates another (redirect stubs). Also set `sitemap: false` on those.
 - `page_type` — schema.org WebPage subtype (`CollectionPage`, `ContactPage`); default `WebPage`.
 - `book` — on a book landing page: `publication` (title in `_data/publications.yml`, which supplies date, cover, hook and retail link), plus optional `alternate_name`, `genre`, `free`, `same_as` (list), `parts` (list of story titles).
+- `trailer` — YouTube book trailer: `id`, `poster` (local image), `duration` (human, e.g. "1 min 11 s"), `duration_iso` (e.g. `PT1M11S`), `upload_date`. Feeds the click-to-load embed (`{% include trailer.html id=page.trailer.id … %}`) and adds a `VideoObject` to the page's JSON-LD graph.
 
 **Optional front matter on posts**
 

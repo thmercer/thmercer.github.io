@@ -16,6 +16,14 @@ book:
     - "https://www.wattpad.com/story/416277807-relay"
     - "https://lanternserials.com/story/relay-a1c39688"
     - "https://www.scribblehub.com/series/2567716/relay/"
+# Trailer: the embed reads it, and jsonld.html emits a VideoObject from it.
+# upload_date is the YouTube upload (literary-agent trailers.md).
+trailer:
+  id: "O46ESuOVxsM"
+  poster: "/assets/images/relay-trailer-poster.webp"
+  duration: "1 min 11 s"
+  duration_iso: "PT1M11S"
+  upload_date: 2026-10-09
 ---
 
 <div class="collection-header">
@@ -27,7 +35,7 @@ book:
   <p class="collection-hook">Mara finds people who don't want to be found — by listening for the half-second flinch under a stranger's voice on a rerouted call. Her newest job is a whistleblower carrying a piece of the machine that runs London. Once she understands what he's holding, hiding him stops being the hard part.</p>
 </div>
 
-{% include trailer.html id="O46ESuOVxsM" title="Relay" poster="/assets/images/relay-trailer-poster.webp" duration="1 min 11 s" %}
+{% include trailer.html id=page.trailer.id title=page.title poster=page.trailer.poster duration=page.trailer.duration %}
 
 <div class="collection-cta">
   <a href="https://www.wattpad.com/story/416277807-relay" class="cta-link" target="_blank" rel="noopener">Read on Wattpad</a>

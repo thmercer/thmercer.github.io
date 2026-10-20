@@ -8,6 +8,7 @@
     essay layout              BlogPosting
     front matter `book:`      Book (Moral Arithmetic, Relay)
     about layout              ProfilePage + one node per published credit
+  Front matter `trailer:` adds a VideoObject (the YouTube book trailer).
   Redirect stubs (robots / canonical_url set) and the 404 page get none.
 {% endcomment %}
 {%- unless page.robots or page.canonical_url or page.url == '/404.html' -%}
@@ -57,6 +58,12 @@
 {"@type":{{ webpage_type | jsonify }},"@id":{{ webpage_id | jsonify }},"url":{{ canonical | jsonify }},"name":{{ seo_title | jsonify }},"description":{{ seo_description | jsonify }},"isPartOf":{"@id":{{ website_id | jsonify }}},"inLanguage":"en","primaryImageOfPage":{"@type":"ImageObject","url":{{ seo_image | jsonify }},"width":1200,"height":630}{% if is_post %},"datePublished":{{ page.date | date_to_xmlschema | jsonify }}{% endif %}{% if main_id %},"mainEntity":{"@id":{{ main_id | jsonify }}}{% elsif page.layout == 'about' %},"mainEntity":{"@id":{{ person_id | jsonify }}}{% elsif page.url == '/' %},"about":{"@id":{{ person_id | jsonify }}}{% endif %}}
 {%- endcapture -%}
 
+{%- capture video_node -%}
+{%- if page.trailer -%}
+,{"@type":"VideoObject","@id":{{ canonical | append: '#trailer' | jsonify }},"name":{{ page.title | append: ' trailer' | jsonify }},"description":{{ 'Book trailer for ' | append: page.title | append: ' by ' | append: author_name | append: '.' | jsonify }},"thumbnailUrl":{{ page.trailer.poster | absolute_url | jsonify }},"uploadDate":{{ page.trailer.upload_date | date: "%Y-%m-%d" | jsonify }},"duration":{{ page.trailer.duration_iso | jsonify }},"embedUrl":{{ 'https://www.youtube.com/embed/' | append: page.trailer.id | jsonify }},"url":{{ 'https://www.youtube.com/watch?v=' | append: page.trailer.id | jsonify }},"inLanguage":"en","author":{"@id":{{ person_id | jsonify }}}{% if main_id %},"about":{"@id":{{ main_id | jsonify }}}{% endif %}}
+{%- endif -%}
+{%- endcapture -%}
+
 {%- capture credit_nodes -%}
 {%- if page.layout == 'about' -%}
 {%- assign credits = site.data.publications | where: "status", "out" -%}
@@ -71,6 +78,6 @@
 {%- endif -%}
 {%- endcapture -%}
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{{ website_node }},{{ person_node }},{{ webpage_node }}{% if main_id %},{{ main_node }}{% endif %}{{ credit_nodes }}]}
+{"@context":"https://schema.org","@graph":[{{ website_node }},{{ person_node }},{{ webpage_node }}{% if main_id %},{{ main_node }}{% endif %}{{ video_node }}{{ credit_nodes }}]}
 </script>
 {%- endunless -%}
