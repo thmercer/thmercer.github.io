@@ -1986,6 +1986,39 @@ button.cta-link:hover {
   margin-top: var(--space-2);
 }
 
+/* Relay: serial facts, start links, and the chapter 1 excerpt. */
+.relay-about p,
+.relay-excerpt-more {
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+.relay-start {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: var(--space-4) 0 0;
+  padding: 0;
+}
+
+.relay-start a {
+  font-weight: 500;
+}
+
+.relay-excerpt .site-intro {
+  margin: var(--space-2) 0 var(--space-6);
+}
+
+.relay-excerpt-text {
+  padding-left: var(--space-5);
+  border-left: 2px solid var(--color-divider);
+}
+
+.relay-excerpt-more {
+  margin-top: var(--space-6);
+}
+
 /* "More from" block between a post and its newsletter CTA. */
 .more-writing .site-intro {
   margin: var(--space-5) 0 0;
