@@ -1,4 +1,5 @@
 ---
+last_modified_at: 2026-10-20
 layout: essay
 title: "A Quarter for the Bus"
 date: 2026-05-30
@@ -31,7 +32,7 @@ The first is Michael. He did not agree to be a character; he agreed, at most, to
 
 Critics have had a blunt name for this for decades: poverty porn. The phrase is ugly on purpose. It describes media that converts a person's suffering into sympathy you can sell, and the kindness format is its softest, most defensible-looking version. The suffering is still on display. The subject is still defined, for the length of the clip, by the worst fact about their life. The good deed at the center does not remove the exploitation; it decorates it.
 
-The second person being used is you, the one watching, and that is the use I find harder to forgive. When Michael gets rescued, you feel something move: relief, mostly, a small clean hit of faith in people. The feeling is satisfying, and the satisfaction is the problem. A man was about to lose his housing over a hundred and ninety-five dollars in the richest country in history, and what the video hands you is warmth, where the honest response is anger. The emotion that should have pointed at a broken system gets spent, in under a minute, on the person who profited from filming it. There is a word for what happens when political failure is turned into entertainment: depoliticization. The conditions that put Michael on the sidewalk recede behind the comfortable sense that someone, somewhere, is handling it. Nobody is handling it. You just feel as though they are.
+The second person being used is you, the one watching, and that is the use I find harder to forgive. When Michael gets rescued, you feel something move: relief, mostly, a small clean hit of faith in people. The feeling is satisfying, and the satisfaction is the problem. A man was about to lose his housing over a hundred and ninety-five dollars in the richest country in history, and what the video hands you is warmth, where the honest response is anger. The emotion that should have pointed at a broken system gets spent, in under a minute, on the person who profited from filming it. There is a word for what happens when political failure is turned into entertainment: [depoliticization](/2026/the-side-that-costs-nothing/). The conditions that put Michael on the sidewalk recede behind the comfortable sense that someone, somewhere, is handling it. Nobody is handling it. You just feel as though they are.
 
 The videos keep one question off-screen: where the money comes from, and what handing it over actually proves.
 

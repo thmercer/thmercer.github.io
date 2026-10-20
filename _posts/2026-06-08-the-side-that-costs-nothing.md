@@ -1,4 +1,5 @@
 ---
+last_modified_at: 2026-10-20
 layout: essay
 title: "The Side That Costs Nothing"
 date: 2026-06-08
@@ -26,7 +27,7 @@ The list is broad. Any licensed hospital. Any shelter. Any school. Food banks, r
 
 Then you notice what is missing, and the absences have a pattern.
 
-Every approved category is a form of service. You go somewhere, you help a person directly, you go home. None of them is a form of advocacy: no civil-rights groups, no LGBTQ community organizations, no reproductive-health nonprofits, nothing whose stated purpose is to change the conditions that produce the hunger and homelessness and illness the rest of the list treats. You may spend your day on the symptom. You may not spend it on the cause.
+Every approved category is a form of service. You go somewhere, you help a person directly, you go home. None of them is a form of advocacy: no civil-rights groups, no LGBTQ community organizations, no reproductive-health nonprofits, nothing whose stated purpose is to change the conditions that produce the hunger and homelessness and illness the rest of the list treats. [You may spend your day on the symptom.](/2026/a-quarter-for-the-bus/) You may not spend it on the cause.
 
 What the list sorts by is controversy. The quality of the work and the urgency of the need barely enter into it. The approved organizations share one trait: nobody who matters will be annoyed that you helped them.
 
