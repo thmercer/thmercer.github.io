@@ -19,7 +19,7 @@
 
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-IMAGE="ruby:3.2-bookworm"
+IMAGE="ruby:3.3-bookworm"
 NAME="thmercer-preview"
 HTTP_PORT="${JEKYLL_HTTP_PORT:-4000}"
 LR_PORT="${JEKYLL_LR_PORT:-35729}"
