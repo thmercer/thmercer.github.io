@@ -40,6 +40,15 @@
   // synchronously (not after a 4s timeout) so that window is never open:
   // hold premature submits, show the loading state, and let the poll below
   // either replay them once the widget is live or surface the fallback.
+  // /l/<slug>/ redirects land here as ?via=<slug>. Record the link, not the
+  // landing page, so back-matter and campaign signups get their own origin
+  // in litagent's signup-origins card (source_page is otherwise page.url).
+  if (form) {
+    var via = /[?&]via=([a-z0-9-]{1,40})(?:&|$)/.exec(window.location.search);
+    var sourceField = form.querySelector('input[name="fields[source_page]"]');
+    if (via && sourceField) sourceField.value = '/l/' + via[1] + '/';
+  }
+
   if (form) {
     form.addEventListener('submit', function (e) {
       if (ready) return;
