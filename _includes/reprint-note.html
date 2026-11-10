@@ -1,0 +1,27 @@
+{%- comment -%}
+Credit line for a story that also appears in a publications.yml venue.
+include.reprint = the publications.yml entry; include.story_date = the post's date.
+- Venue came out before the post: the story was first published there.
+    "First published in <venue>, Issue No. 153 (August 2026)."
+- Post came first, venue date still ahead: "Also being collected in <venue> — <date>."
+- Post came first, venue date has passed (as of this build): "Also published in <venue> — <date>."
+date_label is split on " · " into its month and issue parts ("August 2026 · Issue No. 153").
+{%- endcomment -%}
+{%- assign r = include.reprint -%}
+{%- assign venue_ymd = r.date | date: "%Y%m%d" -%}
+{%- assign story_ymd = include.story_date | date: "%Y%m%d" -%}
+{%- assign today_ymd = site.time | date: "%Y%m%d" -%}
+{%- assign label_parts = r.date_label | split: " · " -%}
+{%- assign month = label_parts[0] | default: "" -%}
+{%- if month == "" -%}{%- assign month = r.date | date: "%B %Y" -%}{%- endif -%}
+{%- assign issue = label_parts[1] -%}
+{%- capture venue -%}{% if r.url %}<a href="{{ r.url }}" target="_blank" rel="{% include link-rel.html url=r.url %}"><em>{{ r.anthology | default: r.title }}</em></a>{% else %}<em>{{ r.anthology | default: r.title }}</em>{% endif %}{%- endcapture -%}
+<p class="post-reprint-note">
+{%- if venue_ymd < story_ymd -%}
+First published in {{ venue }}{% if issue %}, {{ issue }}{% endif %} ({{ month }}).
+{%- elsif venue_ymd <= today_ymd -%}
+Also published in {{ venue }}{% if issue %}, {{ issue }}{% endif %}{% if r.press %} from {{ r.press }}{% endif %} ({{ month }}).
+{%- else -%}
+Also being collected in {{ venue }}{% if issue %}, {{ issue }}{% endif %}{% if r.press %} from {{ r.press }}{% endif %} ({{ month }}).
+{%- endif -%}
+</p>
