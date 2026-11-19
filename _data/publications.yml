@@ -108,10 +108,14 @@
 - title: "Golden Boot"
   anthology: "The Wyrd, Wyrd World of Sports"
   press: "Raconteur Press"
-  date: 2026-11-20
+  date: 2026-11-19
   date_label: "November 2026"
   short_date_label: "November 2026"
-  status: forthcoming
+  status: out
+  cover: /assets/images/wyrd-sports-cover.webp
+  cover_alt: "The Wyrd, Wyrd World of Sports — anthology cover, edited by Liska McCabe"
+  url: "https://link.amazon/B008FEeTC"
+  cta_label: "Buy anthology"
   hook: "At sixteen, Teo signed a Wyrd contract, and now he can't miss on the pitch, not even on purpose. It's taken all the joy out of the game. Then he picks up a pickleball paddle and rediscovers what it means to be bad at something."
 - title: "Mangoes in Alaska"
   anthology: "Space & Time"
